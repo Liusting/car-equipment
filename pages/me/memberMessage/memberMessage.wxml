@@ -1,0 +1,62 @@
+<view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">会员中心</view>
+			<!-- <view slot="content" class="text-yellow">会员专区</view> -->
+		</cu-custom>
+	</view>
+</view>
+<view>
+	<view class="padding margin-sm bg-white" style="border-radius:7px">
+		<view class="flex align-center">
+			<view class="cu-avatar lg round "
+				style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);">
+			</view>
+
+			<view class="margin-left flex align-center justify-between" style="width:80%">
+				<view>
+					<text class="text-df padding-xs">李晓芳</text>
+					<view class="flex align-center round bg-blue light margin-top-xs" bindtap="memberMessage">
+						<text class="cuIcon-vip" style="font-size:25rpx"></text>
+						<text class="margin-lr-xs" style="font-size:22rpx">普通会员</text>
+					</view>
+				</view>
+				<view>
+					当前积分<text class="text-sl margin-left text-bold">854</text>
+				</view>
+			</view>
+		</view>
+		<view class=" margin-top">
+			<view class="cu-progress round xs">
+				<view class="bg-green" style="width:{{loading?'30%':''}};"></view>
+			</view>
+		</view>
+		<view class="bg-white margin-top">
+			<view class="grid col-4">
+				<view class="text-center">注册会员</view>
+				<view class="text-center">白银会员</view>
+				<view class="text-center">黄金会员</view>
+				<view class="text-center">白金会员</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="margin-top">
+		<view class="bg-white margin-sm padding-sm" style="border-radius:7px">
+			<view class=" flex align-center justify-start">
+				<text class="text-lg text-black">会员权益</text>
+			</view>
+			<view class="grid col-4 no-border">
+				<view class="padding" wx:for="{{iconList}}" wx:key>
+					<view class="text-center" style="font-size:30px">
+						<view class="cuIcon-{{item.icon}} text-{{item.color}} text-xxl"></view>
+					</view>
+					<view class="text-center">
+						<text class="margin-top" style="color:{{item.color}}">{{item.name}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

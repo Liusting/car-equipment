@@ -1,0 +1,40 @@
+<view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<view class="margin-left text-xl text-white">
+			<text>设备分类</text>
+		</view>
+	</view>
+</view>
+
+
+
+<view class="VerticalBox">
+	<!-- 左边滚动导航栏 -->
+	<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation style="height:{{deviceH-CustomBar}}px">
+		<view class="cu-item {{index==TabCur?'text-orange cur ':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+			{{item.name}}
+		</view>
+		<view class='cu-tabbar-height'></view>
+	</scroll-view>
+
+	<!-- 右边联动左边的数据展示 -->
+	<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:{{deviceH-CustomBar}}px" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+		<view class=" " wx:for="{{list}}" wx:key id="main-{{index}}">
+			<view wx:for="{{item.listType2}}" wx:for-item="listType2" wx:key>
+				<view class="padding-sm flex justify-between bg-white ">
+					<text>{{listType2.name}}</text>
+					<text bindtap="checkAll">查看全部<text class="cuIcon-right"></text></text>
+				</view>
+				<view class="cu-list grid col-3 {{gridBorder?'':'no-border'}}">
+					<view class="cu-item" wx:for="{{listType2.listType3}}" wx:for-item="listType3" wx:key bindtap="typeClick" data-index="../sp_item_list/spItemList?name={{listType3.name}}" data-name="{{listType3.name}}">
+						<view>
+							<image class="scimg" mode="aspectFit" src="{{listType3.imageurl}}"></image>
+						</view>
+						<text>{{listType3.name}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+			<view class='cu-tabbar-height'></view>
+	</scroll-view>
+</view>

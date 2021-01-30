@@ -1,0 +1,15 @@
+/* pages/order/orderComplete.wxss */
+.dcimg{
+  width: 180rpx;
+  height: 180rpx;
+}
+.bg{
+  background:#2f70df;
+  height:450rpx;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.btn-img {
+  width: 40rpx;
+  height: 40rpx;
+}

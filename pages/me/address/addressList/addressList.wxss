@@ -1,0 +1,23 @@
+.add-address{
+  position: fixed;
+  width: 100%;
+  height: 100rpx;
+  bottom:0px;
+  background-color: #1cbbb4;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5rpx;
+  display: flex;
+ 
+}
+.shop_type{
+  display: block;  
+  width: auto;
+  color: ghostwhite;  
+  word-break:break-all;  
+  display:-webkit-box; 
+  -webkit-line-clamp:1;  
+  -webkit-box-orient:vertical;  
+  overflow:hidden;
+}

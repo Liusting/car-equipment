@@ -1,0 +1,28 @@
+/* pages/commodity_list/commodity_list.wxss */
+.height15{
+  height: 15rpx;
+}
+.box {  
+  margin: 20rpx 0; 
+}
+
+.box view.cu-bar {
+  margin-top: 20rpx; 
+}
+
+.cesi{
+   padding: 0;
+   margin: 0;
+}
+.text-hang{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.name{
+    display:-webkit-box;  
+  -webkit-line-clamp:2;  
+  -webkit-box-orient:vertical;  
+  overflow:hidden;
+  margin-top: 30rpx;
+}

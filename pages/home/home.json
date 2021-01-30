@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-notice-bar": "../../dist/notice-bar/index",
+    "i-icon": "../../dist/icon/index"
+},
+  "navigationBarTitleText": "首页"
+}

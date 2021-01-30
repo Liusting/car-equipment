@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/me/appraise/appraise",
+    "pages/item_type/sp_item_list/spItemList",
+    "pages/index/index",
+    "pages/home/home",
+    "pages/me/sp_order_list/refund/refund",
+    "pages/me/sp_order_list/spOrderList",
+    "pages/home/moreDiscount/moreDiscount",
+    "pages/me/userMessage/userMessage",
+    "pages/item_type/sp_item/spItem",
+    "pages/me/sp_order_list/expressInformation/expressInformation",
+    "pages/me/address/editAddress/editAddress",
+    "pages/me/preferential/preferential",
+    "pages/me/sp_order_list/applyRefund/applyRefund",
+    "pages/me/sp_order_list/orderDetail/orderDetail",
+    "pages/me/order/payResult/orderComplete",   
+    "pages/me/order/confirmOrder/order",
+  
+    "pages/home/goodSearch/goodSearch",
+    "pages/me/address/addAddress/address",
+    "pages/cart/cart",
+    "pages/me/memberMessage/memberMessage",
+    "pages/me/sp_order_list/steps/steps",
+
+    "pages/item_type/itemType/itemType",
+    "pages/home/couponCenter/coupon",
+    "pages/me/me",
+
+    "pages/me/address/addressList/addressList"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#fff"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 3000,
+    "uploadFile": 3000,
+    "downloadFile": 3000
+  },
+  "sitemapLocation": "sitemap.json"
+}

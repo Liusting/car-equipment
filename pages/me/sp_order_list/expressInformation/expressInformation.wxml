@@ -1,0 +1,33 @@
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">物流信息</view>
+		</cu-custom>
+	</view>
+</view>
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
+	<view class=" padding-sm bg-white flex">
+		<view class="productImg">
+			<image src="https://g-search2.alicdn.com/img/bao/uploaded/i4/i4/698982010/O1CN019EXhZH1Qicff7sCdP_!!0-item_pic.jpg_580x580Q90.jpg_.webp" mode="widthFix"></image>
+		</view>
+		<view class="margin-left-sm">
+			<view>物品名称：你说的谁黑i好的不断升级</view>
+			<view class="margin-top-sm text-lg text-bold">物流状态：<text class="text-red">派送中</text></view>
+			<view class="margin-tb-xs">运单号：{{nu}}</view>
+			<view>信息来源：中通快递</view>
+		</view>
+	</view>
+
+
+	<view class="cu-timeline" wx:for="{{expressList}}" wx:key="ddddd">
+		<view wx:if="{{index==0}}" class="cu-time">已签收</view>
+		<view class="cu-item cur {{index==0?'text-blue cuIcon-roundcheckfill':''}}">
+			<view class="">
+				{{item.context}}
+				<view>
+					{{item.time}}
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

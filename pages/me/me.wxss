@@ -1,0 +1,185 @@
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+
+.userInfo {
+  height: 300rpx;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.header {
+  width: auto;
+  height: 300rpx;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+
+}
+
+.order-head {
+  display: flex;
+  height: 60px;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 订单 */
+.order {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #f1f1f1
+}
+
+.ddddd {
+  height: 10rpx;
+  background-color: #f1f1f1;
+}
+
+.myorder-text {
+  font-size: 28rpx;
+  color: gray;
+  margin: 20rpx;
+  width: 45%;
+}
+
+.myorderlook-text {
+  font-size: 28rpx;
+  color: gray;
+  position: relative;
+  right: 10rpx;
+  width: 75%;
+  margin-left: 155px;
+}
+
+.next-image {
+  width: 20rpx;
+  height: 25rpx;
+  position: relative;
+  right: 10rpx;
+}
+
+/* 状态 */
+.navs {
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+  margin: 0px 10px 0px 10px
+}
+
+.navs1 {
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+  margin: 0px 10px 0px 10px
+}
+
+.nav-item {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.nav-item text {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  color: gray;
+}
+
+/* 列表 */
+.person-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.list-item {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  margin: 5px 0px 0px 0px
+}
+
+.item-text {
+  color: gray;
+  font-size: 25rpx;
+  margin-left: 15rpx;
+
+}
+
+.person-line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+  margin-left: 30rpx;
+
+}
+
+.bd {
+  position: relative;
+  top: -60px;
+}
+
+.cu-tag1 {
+  font-size: 24rpx;
+  vertical-align: middle;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 18rpx;
+  height: 48rpx;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+
+.cu-tag1.badge1 {
+  background-color: #dd514c;
+  position: absolute;
+  top: 300rpx;
+  font-size: 30rpx;
+  padding: 5rpx 10rpx;
+  height: 35rpx;
+  color: var(--white);
+
+}
+
+.kf_button{
+  background-color: rgba(255, 255, 255, 0);
+  border: 0px;
+  height: 160rpx;
+  right: 0;
+  bottom: 180rpx;
+  position: fixed;
+ }
+ .kf_button::after{
+  border: 0px;
+ }
+ .kf_image{
+  z-index: 9999;
+  width: 100rpx;
+  height: 100rpx;
+ }

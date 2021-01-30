@@ -1,0 +1,161 @@
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">优惠券</view>
+			<!-- <view slot="content">我的优惠</view> -->
+		</cu-custom>
+	</view>
+</view>
+
+<view class="bg-white cu-tabbar-height">
+	<view class="flex text-center text-lg">
+		<view class="cu-tabbar-height flex justify-center align-center  flex-sub {{currtab == item.index ? 'on' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+			{{item.name}}
+		</view>
+	</view>
+</view>
+
+
+
+<swiper current="{{currtab}}" class="swiper-box" duration="300" bindchange="tabChange" style="height:{{deviceH-CustomBar}}px">
+	<!-- 优惠卷未使用 -->
+	<swiper-item>
+		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-CustomBar}}px">
+			<view class="search_no" wx:if="{{!allOrder.length}}">
+				<view class="font_14">
+					<image class="scimg" src="/images/person/search_no.png"></image>
+				</view>
+				<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
+			</view>
+
+			<view class="" wx:for="{{allOrder}}" wx:key>
+				<view class="margin-sm">
+					<view class="wrapper">
+						<view class="content1 text-white">
+							<view class="padding-xs text-white">
+								<text class=" padding-xs" style="width:auto"><text class="text-white cuIcon-newshot"></text>折扣券</text>
+							</view>
+							<view class='padding-xs '>
+								<view class="text-df text-bold padding-xs">
+									{{item.name}}
+								</view>
+								<view class="text-sm padding-xs">
+									适用时间：{{item.valid_start_time}}-{{item.valid_end_time}}
+								</view>
+								<view class="text-sm padding-xs">
+									适用门店：全平台适用
+								</view>
+							</view>
+						</view>
+						<view class="split-line"></view>
+						<view class="tip text-white">
+							<view>
+								<view class="">
+									<text class="text-price text-sl text-bold">{{item.used_amount}}</text>
+								</view>
+								<view wx:if="{{item.status==1}}">
+									满{{item.with_amount}}元可用
+								</view>
+								<view class="conditions">
+									<button bindtap="cupon_use" class="cu-btn bg-white round sm">立即使用</button>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+	<!-- 已使用 -->
+	<swiper-item>
+		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-45-64}}px">
+			<view class="search_no" wx:if="{{!allOrder.length}}">
+				<view class="font_14">
+					<image class="scimg" src="/images/person/search_no.png"></image>
+				</view>
+				<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
+			</view>
+
+			<view class="" wx:for="{{allOrder}}" wx:key>
+				<view class="app">
+					<view class="wrapper">
+						<view class="content1 text-white">
+							<view class="padding-xs text-white">
+								<text class=" padding-xs" style="width:auto"><text class="text-white cuIcon-newshot"></text>折扣券</text>
+							</view>
+							<view class='padding-xs '>
+								<view class="text-df text-bold padding-xs">
+									{{item.name}}
+								</view>
+								<view class="text-sm padding-xs">
+									适用时间：{{item.from}}-{{item.to}}
+								</view>
+								<view class="text-sm padding-xs">
+									适用门店：全平台适用
+								</view>
+							</view>
+						</view>
+						<view class="split-line"></view>
+						<view class="tip text-white">
+							<view class="">
+								<text class="text-price text-sl text-bold">{{item.money}}</text>
+							</view>
+							<view wx:if="{{item.status==1}}">
+								满{{item.total}}元可用
+							</view>
+							<view class="conditions">
+								<button bindtap="cupon_use" class="cu-btn bg-white round sm">立即使用</button>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+	<!-- 已过期 -->
+	<swiper-item>
+		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-45-64}}px">
+			<view class="search_no" wx:if="{{!allOrder.length}}">
+				<view class="font_14">
+					<image class="scimg" src="/images/person/search_no.png"></image>
+				</view>
+				<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
+			</view>
+
+			<view class="" wx:for="{{allOrder}}" wx:key>
+				<view class="app">
+					<view class="wrapper ">
+						<view class="content1 text-white">
+							<view class="padding-xs text-white">
+								<text class=" padding-xs" style="width:auto"><text class="text-white cuIcon-newshot"></text>折扣券</text>
+							</view>
+							<view class='padding-xs '>
+								<view class="text-df text-bold padding-xs">
+									{{item.name}}
+								</view>
+								<view class="text-sm padding-xs">
+									适用时间：{{item.from}}-{{item.to}}
+								</view>
+								<view class="text-sm padding-xs">
+									适用门店：全平台适用
+								</view>
+							</view>
+						</view>
+						<view class="split-line"></view>
+						<view class="tip text-white">
+							<view class="">
+								<text class="text-price text-sl text-bold">{{item.money}}</text>
+							</view>
+							<view wx:if="{{item.status==1}}">
+								满{{item.total}}元可用
+							</view>
+							<view class="conditions">
+								<button bindtap="cupon_use" class="cu-btn bg-white round sm">立即使用</button>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</swiper-item>
+</swiper>

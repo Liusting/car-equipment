@@ -1,0 +1,41 @@
+.action1 {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  padding: 0;
+  display: block;
+  height: auto;
+  line-height: 1;
+  margin: 0;
+  overflow: initial;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+
+}
+
+.cu-tag1 {
+  font-size: 24rpx;
+  vertical-align: middle;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0rpx 18rpx;
+  height: 48rpx;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+
+.cu-tag1.badge1 {
+  background-color: #dd514c;
+  position: absolute;
+  right: 48rpx;
+bottom: 55rpx;
+  font-size: 30rpx;
+  padding: 5rpx 10rpx;
+  height: 35rpx;
+  color: var(--white);
+
+}

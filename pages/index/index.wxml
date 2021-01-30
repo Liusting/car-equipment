@@ -1,0 +1,43 @@
+<HomePage wx:if="{{PageCur=='HomePage'}}"></HomePage>
+<ClassificationOfCommodities wx:if="{{PageCur=='ClassificationOfCommodities'}}"></ClassificationOfCommodities>
+<!-- <Message wx:if="{{PageCur=='Message'}}"></Message> -->
+<MyCart wx:if="{{PageCur=='MyCart'}}"></MyCart>
+<MyMessage wx:if="{{PageCur=='MyMessage'}}"></MyMessage>
+
+<view class="cu-bar tabbar bg-white foot">
+	<!-- 导航栏首页 -->
+	<view class="action1" bindtap="NavChange" data-cur="HomePage">
+		<view style="font-size:50rpx">
+			<view class="{{PageCur=='HomePage'?'cuIcon-homefill text-blue' : 'cuIcon-homefill text-gray'}}"></view>
+		</view>
+		<view class="{{PageCur=='HomePage'?'text-blue text-sm margin-top-xs':'text-gray text-sm margin-top-xs'}}">首页</view>
+	</view>
+
+	<!-- 导航栏分类 -->
+	<view class="action1" bindtap="NavChange" data-cur="ClassificationOfCommodities">
+		<view style='font-size:50rpx'>
+			<view class="{{PageCur=='ClassificationOfCommodities'?'cuIcon-circlefill text-blue' : 'cuIcon-circlefill text-gray'}}"></view>
+		</view>
+		<view class="{{PageCur=='ClassificationOfCommodities'?'text-blue text-sm margin-top-xs':'text-gray text-sm margin-top-xs'}}">分类</view>
+	</view>
+	<!-- 导航栏购物车 -->
+	<view class="action1" bindtap="NavChange" data-cur="MyCart">
+		<view style='font-size:50rpx'>
+			<view class="{{PageCur=='MyCart'?'cuIcon-cartfill text-blue ' : 'cuIcon-cartfill text-gray'}}"></view>
+		</view>
+		<view class="{{PageCur=='MyCart'?'text-blue text-sm margin-top-xs':'text-gray text-sm margin-top-xs'}}">购物车
+		</view>
+		<view class="cu-tag1 round badge1 text-xxl" wx:if="{{cartTotal!=0}}">
+			<block wx:if="{{cartTotal!=0}}">{{cartTotal>99?"99+":cartTotal}}</block>
+		</view>
+	</view>
+
+	<!-- 导航栏我的 -->
+	<view class="action1" bindtap="NavChange" data-cur="MyMessage">
+		<view style='font-size:50rpx'>
+			<view class="{{PageCur=='MyMessage'?'cuIcon-myfill text-blue' : 'cuIcon-myfill text-gray'}}"></view>
+		</view>
+		<view class="{{PageCur=='MyMessage'?'text-blue text-sm margin-top-xs':'text-gray text-sm margin-top-xs'}}">我的</view>
+	</view>
+
+</view>

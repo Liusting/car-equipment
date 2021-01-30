@@ -1,0 +1,6 @@
+/* pages/sp_order_list/expressInformation/expressInformation.wxss */
+ .productImg {
+  height:200rpx;
+  width:200rpx;
+
+}

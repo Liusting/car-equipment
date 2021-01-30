@@ -1,0 +1,45 @@
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+  <view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+    <cu-custom  isBack="{{true}}">
+      <view slot="backText">返回</view>
+      <view slot="content">新增地址</view>
+    </cu-custom>
+  </view>
+</view>
+
+<form bindsubmit="saveAddress">
+  <view class="bg-white  ">
+    <view class="padding flex align-center" style="border-bottom: 1px solid #f1f1f1">
+      <text style="width:150rpx">姓名</text>
+      <input maxlength="8" style="width:500rpx" name="addresseeName" placeholder="收货人姓名"/>
+    </view>
+    <view class="padding flex align-center" style="border-bottom: 1px solid #f1f1f1">
+      <text style="width:150rpx">电话</text>
+      <input maxlength="11"  style="width:500rpx" name="phoneNumber" placeholder="收货人手机号"/>
+    </view>
+    <view class="padding flex align-center" style="border-bottom: 1px solid #f1f1f1">
+      <text style="width:150rpx">地区</text>
+      <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="text-cut" style="width:500rpx">
+        {{region[0]}}/{{region[1]}}/{{region[2]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="padding flex align-center">
+      <text style="width:150rpx">详细地址</text>
+      <input name="addressdetail" style="width:500rpx" placeholder="街道门牌、楼层房间号等信息"/>
+    </view>
+  </view>
+	<view class="cu-bar padding">
+		<view></view>
+		<view class="flex align-center">
+			<view  class="title margin-right-sm">默认地址</view>
+      	<switch bindchange="switchChange"></switch>
+		</view>
+	</view>
+  <view class="padding flex flex-direction">
+    <button type="primary" form-type="submit"  class="cu-btn bg-green lg">保存</button>
+  </view>
+
+</form>

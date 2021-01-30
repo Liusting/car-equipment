@@ -1,0 +1,91 @@
+<view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<view class="margin-left text-xl text-white">
+			<text>个人中心</text>
+		</view>
+	</view>
+</view>
+
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
+	<view class=" padding bg-blue" style="height:150rpx;">
+		<view class="flex align-center">
+			<view class="cu-avatar lg round " style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);"></view>
+
+			<view class="margin-left flex align-center justify-between" style="width:80%">
+				<view>
+					<text bindtap="userMessage" class="text-df padding-xs">李晓芳 <text class="cuIcon-write"></text> </text>
+					<view class="flex align-center round bg-blue padding-lr-xs light margin-top-xs" bindtap="memberMessage">
+						<text class="cuIcon-vip" style="font-size:25rpx"></text>
+						<text class="margin-lr-xs" style="font-size:22rpx">普通会员</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- <view class="userInfo" style="justify-content: center" hidden="{{flag}}">
+		<view class='header'>
+			<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+				微信授权登录
+			</button>
+		</view>
+	</view> -->
+	<!-- <view class=" bg-white margin-sm padding-sm" style="border-radius:7px;margin-top:-40px">
+		<view class="grid col-4">
+			<view class="" wx:for="{{headItems}}" wx:key wx:if="{{index<12}}">
+				<view class="padding-xs  text-center" data-id="{{item.id}}" bindtap="toMyAccount">
+					<view class="text-lg">
+						<text class="text-xl text-red"><text>{{item.number}}</text></text>
+					</view>
+					<view class="margin-top-xs ">
+						<text>{{item.name}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view> -->
+
+	<view class="margin-sm bg-white" style="border-radius:7px">
+		<view class="padding flex align-center justify-between" style="border-bottom:1px solid #f1f1f1">
+			<text class="text-lg text-black">我的订单</text>
+			<text class="text-gary" catchtap="toOrder" data-typeid="{{0}}"><text class="{{'cuIcon-right '}}"></text> </text>
+		</view>
+		<view class="bg-white " style="border-radius:7px">
+			<view class="flex text-center">
+				<view class="flex justify-center align-center margin-tb-lg flex-sub" wx:for="{{orderItems}}" wx:key bindtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+					<view class=" bg-white">
+						<view style="font-size:30px">
+							<text  class="cuIcon-{{item.icon}}"></text>
+						</view>
+						<view class="text-black"> {{item.name}}
+						</view>
+						<view class="cu-tag1 round badge1" wx:if="{{item.badge!=0}}">
+							<block wx:if="{{item.badge!=0}}">{{item.badge>99?"99+":item.badge}}</block>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+
+
+	<view class="bg-white margin-sm" style="border-radius:7px">
+	<view class=" grid col-4   padding-sm">
+		<view class="" wx:for="{{myTools}}" wx:key wx:if="{{index<12}}">
+			<view class="padding-xs margin-top-sm  text-center " bindtap="toTool" data-id="{{item.id}}">
+				<view class="text-lg">
+					<text class=" text-pink"><text style="font-size:30px" class="cuIcon-{{item.icon}}"></text></text>
+				</view>
+				<view class="margin-top-sm ">
+					<text class="text-black">{{item.name}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+	<view class="flex align-center padding justify-center">
+		<view class="margin-lr-sm text-grey">Powered by bona_marketing v.1.0.0</view>
+	</view>
+	<view class="cu-tabbar-height"></view>
+</scroll-view>

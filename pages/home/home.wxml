@@ -1,0 +1,104 @@
+<view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		<view class="margin-left text-xl text-white">
+			<text>普斯汽保</text>
+		</view>
+	</view>
+</view>
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px" >
+	<view class="bg-blue">
+		<view class="cu-bar solid-bottom">
+			<view class="search-form round" bindtap="searchGood">
+				<text class="cuIcon-search"></text>
+				<text class="margin-left-xs text-gray">搜索商品名称</text>
+				<!-- <input type="text" placeholder="搜索" bindconfirm="homeSearch" confirm-type="search"></input> -->
+			</view>
+		</view>
+	</view>
+	<view>
+		<i-panel title="滚动 通告栏">
+			<!-- 循环可以用loop -->
+			<i-notice-bar icon="systemprompt">
+				新品陆续发布中...
+			</i-notice-bar>
+		</i-panel>
+	</view>
+
+	<view>
+		<swiper class="screen-swiper round-dot  " indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+			<swiper-item wx:for="{{imgList}}" wx:key>
+				<image src="{{item.url}}" mode='scaleToFill'></image>
+			</swiper-item>
+		</swiper>
+	</view>
+
+
+	<view class="cu-list grid col-4 no-border margin-xs" style="border-radius:7px">
+		<view class="flex justify-center padding-sm" wx:for="{{iconList}}" wx:key>
+			<!-- <view bindtap="gotoClassify" class="cuIcon-{{item.icon}} text-{{item.color}}">
+			</view> -->
+			<view>
+				<view class="cu-avatar xl round " style="background-image:url({{item.imageUrl}})">
+
+				</view>
+				<view class="margin-top-sm  text-black">{{item.name}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="bg-white cu-bar text-df margin-xs padding-lr-sm">
+		<view class="flex align-center">
+			<i-icon type="clock_fill" size="28" class="text-red" />
+			<text class="text-black ">优惠专区</text>
+		</view>
+		<view>
+			<text bindtap="moreDiscount" >更多疯抢<text class=" cuIcon-right"></text></text>
+		</view>
+	</view>
+
+	<scroll-view scroll-x style='white-space: nowrap;'>
+
+		<view class="cu-card" wx:for="{{4}}" wx:key style="width: 250rpx;display: inline-block">
+			<view class="cu-item shadow">
+				<image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg" mode="widthFix"></image>
+
+				<text class="shop_name">小米9手机壳cc9e红米k20Pro青春note7版8保护6x套max3note5防摔mix2s全包屏幕指纹se八5plus九a硅胶note3磨砂</text>
+				<view class="padding-xs flex align-center justify-between">
+					<view>
+						<text class="text-red text-lg text-bold text-price">15.80</text>
+						<view class="text-sm text-price text-gray" style="text-decoration:line-through">15.80</view>
+					</view>
+					<view>
+						<button bindtap="goto" style="float:right;font-style:italic" class="cu-btn bg-red icon">抢</button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+	<view class="shopback">
+		<text class="text-bold text-xl">新品榜单</text>
+	</view>
+	<view style="background:#f1f1f1" class="cu-list grid col-2">
+		<view wx:for="{{8}}" wx:key="ssss">
+			<view style="background:#f1f1f1" class="cu-card" bindtap="itemDetail" data-shopId='{{item.shop_id}}' data-shopName='{{item.shopName}}' data-id="{{item.ID}}">
+				<view class="cu-item shadow">
+					<image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3454967093,1824291965&fm=26&gp=0.jpg" mode='widthFix'></image>
+					<view class="shop_name">{{item.NAME}}</view>
+					<view class="padding flex align-center justify-between">
+						<view>
+							<text class="text-xl text-price text-red">99.99</text>
+							<text class="margin-lr-xs text-price text-grey" style="text-decoration:line-through">100</text>
+						</view>
+						<text class="cuIcon-cart text-red" style="font-size:25px"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex align-center padding justify-center">
+		<view class=' bg-grey' style="width: 200rpx;height: 1rpx;"></view>
+		<view class="margin-lr-sm text-grey">我是有底线的</view>
+		<view class=' bg-grey' style="width: 200rpx;height: 1rpx;"></view>
+	</view>
+	<view class='cu-tabbar-height'></view>
+</scroll-view>

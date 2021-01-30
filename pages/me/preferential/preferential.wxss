@@ -1,0 +1,176 @@
+.on {
+  border-bottom: 2px solid red;
+  color: red;
+}
+
+/*优惠券列表*/
+.cuponListDetails {
+  display: flex;
+  height: 200rpx;
+  border-radius: 10px;
+  margin: 5px 10px 0px 10px
+}
+
+.cuponListDetails .cupon_view {
+  display: flex;
+  height: 200rpx;
+  width: 130px;
+  margin-left: 10rpx;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.Info {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  display: flex
+}
+
+.Info .cuponInfo {
+  flex: 4;
+  margin: 50rpx 10px 20px 30rpx;
+  font-size: 8px;
+
+}
+
+
+
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  background: #56CCF2;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2F80ED, #56CCF2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /*实现颜色渐变 */
+}
+
+/*前半部分样式*/
+.content1 {
+  position: relative;
+  flex: 1;
+  padding: 5rpx 5rpx;
+
+}
+
+/*后半部分样式*/
+.tip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 10rpx;
+}
+
+/*中间竖直虚线样式*/
+.split-line {
+  position: relative;
+  flex: 0 0 0;
+  margin: 0 10rpx 0 6rpx;
+  border-left: 4rpx dashed #eee;
+}
+
+/*给虚线加两个伪类，基本样式如下*/
+.split-line:before,
+.split-line:after {
+  content: '';
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  background: #eee;
+  left: -18rpx;
+  z-index: 1;
+}
+
+.content1:after,
+.tip:after,
+.split-line:after {
+  border-radius: 16rpx 16rpx 0 0;
+  bottom: 0;
+}
+
+.money {
+  font-size: 80rpx;
+  color: #eee;
+  text-align: center;
+}
+
+.money text {
+  font-size: 50rpx;
+  padding-right: 20rpx;
+}
+
+.title {
+  color: #eee;
+  font-size: 30rpx;
+}
+
+.conditions {
+
+  padding: 10rpx;
+}
+
+.useNow {
+  color: rgba(254, 50, 103, 1);
+  font-size: 30rpx;
+  border-radius: 50rpx;
+  border-style: none;
+}
+
+.co {
+  padding-top: 10rpx;
+}
+
+.co .co_w {
+  width: 64rpx;
+  height: 1rpx;
+  background: #fff;
+  margin-left: 60rpx;
+  margin-bottom: -20rpx;
+}
+
+.co .co_l {
+  width: 64rpx;
+  height: 1rpx;
+  background: #fff;
+  margin-left: 260rpx;
+  margin-top: -15rpx;
+}
+
+.content1:before,
+.tip:before,
+.split-line:before {
+  border-radius: 0 0 16rpx 16rpx;
+  top: 0;
+}
+
+.tip:before,
+.tip:after {
+  content: '';
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  background: #eee;
+  right: -16rpx;
+  z-index: 1;
+}
+
+.content1:before,
+.content1:after {
+  content: '';
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  background: #eee;
+  left: -16rpx;
+  z-index: 1;
+}

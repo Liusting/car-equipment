@@ -1,0 +1,162 @@
+/* pages/commodity_item/commodityItem.wxss */
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+
+.spItem-form-group {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  min-height: 80rpx;
+  justify-content: space-between;
+}
+
+.spItem-form-group1 {
+  background-color: var(--white);
+  padding: 1rpx 30rpx;
+  display: flex;
+  align-items: center;
+  min-height: 80rpx;
+  justify-content: space-between;
+}
+
+.spItem-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+
+.detail {
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 25rpx;
+}
+
+.background-white {
+  background-color: var(--white);
+}
+
+.height15 {
+  height: 15rpx;
+}
+
+.item-view-left {
+  display: flex;
+  align-items: center;
+}
+
+.padding-left15 {
+  padding: 7rpx;
+}
+
+/* 规格弹框样式 */
+.addcart {
+  background-color: #fbbd08;
+  color: white;
+  border-radius: 70rpx;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  width: 155px
+}
+
+.buy {
+  background-color: #fbbd08;
+  color: white;
+  border-radius: 70rpx;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  width: 155px
+}
+
+/*参数弹框样式 */
+.parameter-list {
+  border-bottom: 2rpx solid #bbb9b9b7;
+  margin: 0px 10px 0px 5px;
+  padding: 10px 10px 10px 10px;
+  font-size: 10px;
+  display: flex
+}
+
+.parameter-msg {
+  margin-left: 40rpx;
+  color: gray;
+  width: 200rpx;
+
+}
+
+.parameter-done {
+  background-color: orange;
+  color: white;
+  border-radius: 70rpx;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  width: 310px
+}
+
+/* ************************ */
+/* 立即订购弹框样式 */
+.confirm {
+  background-color: #fbbd08;
+  color: white;
+  border-radius: 70rpx;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  width: 310px
+}
+
+
+.text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.scimg {
+  height: 230rpx;
+}
+
+.cu-tag1 {
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: Helvetica Neue, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+
+.cu-tag1.badge1 {
+
+  position: absolute;
+  right: 1rpx;
+  top: 36%;
+  font-size: 70rpx;
+  height: 70rpx;
+  color: var(--white);
+
+}
+
+
+.cu-tag1.badge2 {
+
+  position: absolute;
+  right: 1rpx;
+  top: 27%;
+  font-size: 70rpx;
+  height: 70rpx;
+  color: var(--white);
+
+}

@@ -1,0 +1,184 @@
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">确认订单</view>
+		</cu-custom>
+	</view>
+</view>
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
+	<view class="padding-xs flex radius bg-white margin-sm" bindtap="bindaddress" hidden="{{flag}}"
+		data-id="{{address_info.id}}">
+		<view class="flex align-center">
+			<view class="text-xxl align-center text-center justify-center round flex bg-orange "
+				style="width:38px;height:38px">
+				<text class="  cuIcon-locationfill text-white"></text>
+			</view>
+		</view>
+		<view class="margin-left" style="width:550rpx">
+			<text class="text-black text-bold">收货人：{{address_info.addresseeName}}</text>
+			<text class="margin-left ">{{address_info.phoneNumber}}</text>
+			<view>
+				<text
+					class="productTitle text-black">收货地址：{{address_info.provinceName}}{{address_info.cityName}}{{address_info.countyName}}{{address_info.addressdetail}}</text>
+			</view>
+		</view>
+		<view class="flex align-center">
+			<text class="{{'cuIcon-right text-gray'}}"></text>
+		</view>
+	</view>
+
+
+	<view class="padding-xs flex bg-white margin-sm" hidden="{{flag1}}">
+		<view class="flex align-center">
+			<view class="text-xxl align-center text-center justify-center round flex bg-orange "
+				style="width:38px;height:38px">
+				<text class="  cuIcon-locationfill text-white"></text>
+			</view>
+		</view>
+		<view class="margin-left" style="width:550rpx">
+			<text class="text-black text-bold">负责人：刘桂廷</text>
+			<text class="margin-left text-bold">13047838940</text>
+			<view>
+				<text class="productTitle text-black">门店地址：广东省佛山市禅城区季华园5路沃尔玛三楼自提点</text>
+			</view>
+		</view>
+	</view>
+	<view class="bg-white padding-xs margin-sm radius">
+		<view class="flex bg-white">
+			<view class="flex align-center text-center justify-center">
+				<image style="  height: 220rpx;width: 220rpx;margin: 10rpx 10rpx;"
+					src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3454967093,1824291965&fm=26&gp=0.jpg"
+					mode="widthFix"></image>
+			</view>
+			<view>
+				<text class='productTitle ' style="margin-top: 10rpx;">德国华麦斯 家用工具箱套装五金工具套装多功能家庭电工木工电讯维修工具组合套装 豪华工具套装(升级加强版)</text>
+				<view class="text-sm margin-top padding-xs text-cut text-gray" style="width:400rpx">
+					规格：经典款
+				</view>
+				<view class="margin-top">
+					<text class="text-price text-red text-lg margin-right">1899</text>
+					<text class="text-sm" style="text-decoration:line-through">￥1799.00</text>
+					<text class="margin-right" style="float:right;">共1件</text>
+				</view>
+			</view>
+		</view>
+
+		<view class="padding cu-bar" bindtap="showModal" data-target="RadioModal"
+		>
+			<view>配送方式</view>
+			<view>{{modeName}}
+				<text class="{{'cuIcon-right text-gray'}}"></text>
+			</view>
+		</view>
+		<view class="padding cu-bar" bindtap="showModal" hidden="{{flag1}}" data-target="timeModal"
+			style="  border-bottom: 1px solid #f1f1f1">
+			<view>自提时间</view>
+			<view>{{dayname}} {{time}}
+				<text class="{{'cuIcon-right text-gray'}}"></text>
+			</view>
+		</view>
+		<view class="padding cu-bar" bindtap="showModal" hidden="{{flag3}}" data-target="timeModal"
+			style="  border-bottom: 1px solid #f1f1f1">
+			<view>收货时间</view>
+			<view>今天 16:00-17:00
+				<text class="{{'cuIcon-right text-gray'}}"></text>
+			</view>
+		</view>
+		<view class="padding flex align-center " >
+			<text>买家留言</text>
+			<input bindinput="bindwaitMsg" class="margin-left" style="width:400rpx" placeholder="其他要求" />
+		</view>
+		<view class="padding flex justify-end align-center text-sm">
+			<text class="text-gray margin-right">共{{goods_count}}件</text>
+			<text>小计：<text class="text-price text-red ">{{goods_price*goods_count}}</text></text>
+		</view>
+	</view>
+	<view class="bg-white padding-xs margin-sm radius">
+		<view class="padding cu-bar" >
+			<view>优惠券（您有0张优惠券可用）</view>
+			<view>
+				<text class="{{'cuIcon-right text-gray'}}"></text>
+			</view>
+		</view>
+		<view class="padding">
+			<text style="border:1px solid pink;border-radius:4px " class="padding-lr-sm padding-tb-xs text-xs text-pink">积分</text>
+			<label class="margin-left">赠送<text class="text-red">15</text>积分</label>
+		</view>
+	</view>
+	<view class="bg-white padding-xs margin-sm radius">
+		<view class="padding cu-bar" >
+			<view>支付方式</view>
+			<view>
+				<text bindtap="showModal" data-target="bottomModal" class="{{'cuIcon-right text-gray'}}"></text>
+			</view>
+		</view>
+	</view>
+	<view class='cu-tabbar-height'></view>
+</scroll-view>
+
+
+<view class="bg-white cu-bar foot flex  justify-end">
+	<view class="margin-right">合计：
+		<text class=" text-price text-red">{{total}}</text>
+	</view>
+	<view class="btn-group margin-right" bindtap="applyOrder">
+		<button class="cu-btn bg-red round shadow-blur" >提交订单</button>
+	</view>
+</view>
+
+<!-- 支付方式选择 -->
+<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal"
+	style='overflow: hidden;'>
+	<view class="cu-dialog background-white">
+		<view class="cu-item shadow">
+			<view class="padding-sm {{payWay == 0?'text-green':''}}" bindtap="selectPay" data-id="{{0}}">微信支付</view>
+			<view class="padding-sm {{payWay == 1?'text-green':''}}" bindtap="selectPay" data-id="{{1}}">货到付款</view>
+			<view class="padding-sm {{payWay == 2?'text-green':''}}" bindtap="selectPay" data-id="{{2}}">储值支付</view>
+			<view class="padding-sm" bindtap="hideModal" data-id="{{3}}">取消</view>
+		</view>
+	</view>
+</view>
+
+<!-- 配送方式选择 -->
+<view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+	<view class="cu-dialog">
+		<radio-group class="block">
+			<view class="cu-list menu text-left">
+				<view class="cu-item" wx:for="{{mode}}" wx:key>
+					<label class="flex justify-between align-center flex-sub" bindtap="radioselect" data-item="{{item}}">
+						<view class="flex-sub">{{item.name}}</view>
+						<radio bindtap="hideModal" checked="{{item.checked}}" class="round"></radio>
+					</label>
+				</view>
+			</view>
+		</radio-group>
+	</view>
+</view>
+
+<view class="cu-modal justify-start bottom-modal {{modalName=='timeModal'?'show':''}}" style='overflow: hidden;'>
+	<view class="cu-dialog" style="margin-top:100px;width:100%">
+		<view class="bg-white justify-between flex  padding-sm" style="  border-bottom: 1px solid #f1f1f1">
+			<text>到店自提时间</text>
+			<text class="cuIcon-close" bindtap="hideModal"></text>
+		</view>
+		<view class="flex">
+			<view style="height:auto;width:100%">
+				<view data-index="{{index}}" bindtap="timeClick" class=" {{currentTab==index?'text-red bg-white':''}}"
+					wx:for="{{timeList}}" wx:key="{{index}}">
+					<view class="padding">{{item.date}} {{index==0?'今天':''}}{{index==1?'明天':''}}{{index==2?'后天':''}}</view>
+				</view>
+			</view>
+			<scroll-view class='bg-white' scroll-y style="width:100%">
+				<view>
+					<view bindtap="hourClick" class="padding-sm flex align-center{{item.isShow?'text-black':'text-gray'}}  "
+						wx:for="{{hourList}}" wx:key="{{index}}" data-index="{{index}}" data-isshow="{{item.isShow}}">
+						<text>{{item.hour}}</text>
+						<text class="margin-left text-green cuIcon-{{hourIndex==index?'check':''}}"></text>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,38 @@
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">返回</view>
+		</cu-custom>
+	</view>
+</view>
+<view class="bg-white" style="height:{{deviceH-CustomBar}}px">
+	<view class="cu-bar search">
+		<view class="search-form round">
+			<text class="cuIcon-search"></text>
+			<input type="text" confirm-type="search" bindconfirm="search" placeholder="搜索商品" value="{{name}}" bindinput="blur"></input>
+      <text wx:if="{{name}}" bindtap='clean' class="cuIcon-roundclosefill"></text>
+		</view>
+	</view>
+
+  <view class='container'>
+  <view class='cu-bar padding'>
+     <view>
+        搜索历史
+     </view>
+     <view class="cuIcon-delete" wx:if="{{list.length!=0}}"  catchtap='remove'></view>
+  </view>
+
+  <view class='list'>
+     <view class="key" wx:if="{{list.length==0}}">暂无搜索记录</view>
+     <view class="key" wx:for="{{list}}" wx:key="" bindtap='searchName' data-value='{{item}}'>{{item}}</view>
+  </view>
+
+   <view  class='search_result' wx:if="{{name}}">
+       <view wx:for="{{resultList}}" wx:key="" bindtap='detail' data-id='{{item.ID}}'>
+          {{item.NAME}}
+       </view>
+        <view class='no_more' wx:if="{{resultList.length==0}}">暂无相关内容</view>
+  </view>
+</view>
+
+</view>

@@ -1,0 +1,46 @@
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">返回</view>
+			<view slot="content">商品评价</view>
+		</cu-custom>
+	</view>
+</view>
+<form class="container" bindsubmit="bindFormSubmit">
+	<view class="flex bg-white padding">
+		<image class="scimg radius" src="https://g-search1.alicdn.com/img/bao/uploaded/i4/i1/1627473180/O1CN01vP6eDn1ZMU34VkZBd_!!0-item_pic.jpg_580x580Q90.jpg_.webp" mode="widthFix"></image>
+		<view class='margin-left-xs'>
+			<text class="shop_name">罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖</text>
+			<text class='shop_type margin-tb-xs'>规格：经典豪华版；10寸；顺丰包邮</text>
+
+		</view>
+	</view>
+	<view class="flex bg-white padding-left align-center text-lg">
+		<text class="margin-right">描述相符</text>
+		<view>
+			<text  wx:for="{{stars}}" wx:key="" class="margin-right-xs cuIcon-{{item.flag==1?'favorfill':'favor'}} text-red" data-index="{{index}}" bindtap='starClick'> </text>
+			<text style="color:gray">{{starDesc}}</text>
+		</view>
+	</view>
+	<view class="padding bg-white" style="width:auto;height:auto;">
+		<textarea  maxlength:100 name="textarea" style="width:auto;line-height:40rpx" placeholder="宝贝满足您的期待吗？说说它的优点和美中不足吧"></textarea>
+	</view>
+
+
+	<view class="padding bg-white margin-top text-lg">
+		<text>店铺评价</text>
+		<view class="flex align-center margin-tb-xl">
+			<view class="margin-right">物流服务</view>
+			<text  wx:for="{{serviceStar}}" wx:key="" class="margin-right-xs cuIcon-{{item.flag==1?'favorfill':'favor'}} text-red" data-index="{{index}}" bindtap='serviceStarClick'> </text>
+			<text style="color:gray">{{starDesc1}}</text>
+		</view>
+		<view class="flex align-center">
+			<view class="margin-right">服务态度</view>
+			<text  wx:for="{{mannerStar}}" wx:key="" class=" margin-right-xs cuIcon-{{item.flag==1?'favorfill':'favor'}} text-red" data-index="{{index}}" bindtap='mannerStarClick'> </text>
+			<text style="color:gray">{{starDesc2}}</text>
+		</view>
+	</view>
+	<view class="confirm-btn">
+		<button class="cu-btn bg-orange round" style="width:400rpx" form-type="submit">确认并发布</button>
+	</view>
+</form>
