@@ -17,6 +17,10 @@
     "pages/me/order/payResult/orderComplete",   
     "pages/me/order/confirmOrder/order",
     "pages/home/goodSearch/goodSearch",
+
+
+
+    
     "pages/me/address/addAddress/address",
     "pages/cart/cart",
     "pages/me/memberMessage/memberMessage",
