@@ -12,28 +12,6 @@ Component({
     nickName: "", //用户昵称
     flag: false,
     flag1: true,
-    //headItems
-    headItems: [{
-        id: 1,
-        name: '余额',
-        number: 9.89
-      },
-      {
-        id: 2,
-        name: '积分',
-        number: 7840
-      },
-      {
-        id: 3,
-        name: '卡',
-        number: 0
-      },
-      {
-        id: 4,
-        name: '券',
-        number: 2
-      }
-    ],
     myTools: [{
         id: 1,
         icon: 'vipcard',
@@ -61,23 +39,16 @@ Component({
       {
         id: 5,
         icon: 'peoplelist ',
-        name: '关于我们',
+        name: '关于普斯',
         color: 'pink'
       }
     ],
-    // orderItems
     orderItems: [{
         typeId: 1,
         icon: 'pay',
         name: '待付款',
         badge: 7
       },
-      // {
-      //   typeId: 2,
-      //   icon: 'pick',
-      //   name: '待分享',
-      //   badge: 7
-      // },
       {
         typeId: 3,
         icon: 'send',
@@ -185,7 +156,7 @@ Component({
           break;
         case 2:
           wx.navigateTo({
-            url: '../me/appraise/appraise',
+            url: '../me/memberMessage/memberMessage',
           });
           break;
         case 3:
@@ -201,7 +172,7 @@ Component({
           break;
         case 5:
           wx.navigateTo({
-            url: '../userMessage/userMessage'
+            url: '../me/aboutOur/index'
           });
           break;
         case 6:

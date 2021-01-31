@@ -14,13 +14,13 @@
 		<view class="text-sm">15分钟内未支付，订单将自动取消</view>
 	</view>
 	<view class="padding flex bg-white " bindtap="test">
-		<view class="text-xxl align-center text-center justify-center round flex bg-orange " style="width:38px;height:38px">
-			<text class="  cuIcon-locationfill text-white"></text>
+		<view class="text-xxl align-center text-center justify-center flex " style="width:38px;height:38px">
+			<text class="text-orange  cuIcon-locationfill"></text>
 		</view>
 		<view class="margin-left">
-			<text class="text-black">{{address_info.addresseeName}}</text><text class="margin-left">{{address_info.phoneNumber}}</text>
+			<text class="text-black">刘桂廷</text><text class="margin-left">18648840747</text>
 			<view>
-				<text class="text-black">{{address_info.provinceName}}{{address_info.cityName}}{{address_info.countyName}}{{address_info.addressdetail}}</text>
+				<text class="text-black">广东省佛山市南海区桂城街道招商置地中心3座11楼</text>
 			</view>
 		</view>
 	</view>
@@ -92,11 +92,10 @@
 			<text class="text-sm text-gray">支付方式：</text>
 			<text class="text-sm text-gray margin-left" >微信支付</text>
 		</view>
-		<view class="grid col-2 text-center text-xl padding-sm ">
-			<text bindtap="chat" style="flex:1;"><text class=" cuIcon-weixin"></text>客服</text>
-			<text bindtap="call" style="flex:1"><text class=" cuIcon-phone"></text>电话</text>
-		</view>
 	</view>
+	<view class="cu-bar foot flex-sub text-center text-xl padding-sm  margin-top-sm bg-orange">
+			<button bindtap="chat" class="flex-sub bg-orange kf-button"><text class=" cuIcon-weixin"></text>客服</button>
+		</view>
 	<view class="cu-tabbar-height"></view>
 </scroll-view>
 

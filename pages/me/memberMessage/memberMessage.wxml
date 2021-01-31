@@ -7,56 +7,97 @@
 		</cu-custom>
 	</view>
 </view>
-<view>
-	<view class="padding margin-sm bg-white" style="border-radius:7px">
-		<view class="flex align-center">
-			<view class="cu-avatar lg round "
-				style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);">
-			</view>
+<scroll-view scroll-y="" style="height:{{deviceH-CustomBar}}px">
 
-			<view class="margin-left flex align-center justify-between" style="width:80%">
-				<view>
-					<text class="text-df padding-xs">李晓芳</text>
-					<view class="flex align-center round bg-blue light margin-top-xs" bindtap="memberMessage">
-						<text class="cuIcon-vip" style="font-size:25rpx"></text>
-						<text class="margin-lr-xs" style="font-size:22rpx">普通会员</text>
+
+
+	<!-- <view class="bg-blue padding">
+		<view class="flex justify-center"><text>当前积分</text></view>
+		<view class="margin-top-sm flex justify-center">
+			<text class="text-sl text-bold">854</text>
+		</view>
+	</view> -->
+
+
+
+
+	<view>
+		<view class="padding margin-sm bg-white" style="border-radius:7px">
+			<view class="flex align-center">
+				<view class="cu-avatar lg round "
+					style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);">
+				</view>
+
+				<view class="margin-left flex align-center justify-between" style="width:80%">
+					<view>
+						<text class="text-df padding-xs">李晓芳</text>
+						<view class="flex align-center round bg-blue light margin-top-xs" bindtap="memberMessage">
+							<text class="cuIcon-vip" style="font-size:25rpx"></text>
+							<text class="margin-lr-xs" style="font-size:22rpx">普通会员</text>
+						</view>
+					</view>
+					<view>
+						当前积分<text class="text-sl margin-left text-bold">854</text>
 					</view>
 				</view>
-				<view>
-					当前积分<text class="text-sl margin-left text-bold">854</text>
+			</view>
+			<view class=" margin-top">
+				<view class="cu-progress round xs">
+					<view class="bg-green" style="width:{{loading?'30%':''}};"></view>
+				</view>
+			</view>
+			<view class="bg-white margin-top">
+				<view class="grid col-4">
+					<view class="text-center">注册会员</view>
+					<view class="text-center">白银会员</view>
+					<view class="text-center">黄金会员</view>
+					<view class="text-center">白金会员</view>
 				</view>
 			</view>
 		</view>
-		<view class=" margin-top">
-			<view class="cu-progress round xs">
-				<view class="bg-green" style="width:{{loading?'30%':''}};"></view>
-			</view>
-		</view>
-		<view class="bg-white margin-top">
-			<view class="grid col-4">
-				<view class="text-center">注册会员</view>
-				<view class="text-center">白银会员</view>
-				<view class="text-center">黄金会员</view>
-				<view class="text-center">白金会员</view>
+
+		<view class="margin-top">
+			<view class="bg-white margin-sm padding-sm" style="border-radius:7px">
+				<view class=" flex align-center justify-start">
+					<text class="text-lg text-black">会员权益</text>
+				</view>
+				<view class="grid col-4 no-border">
+					<view class="padding" wx:for="{{iconList}}" wx:key>
+						<view class="text-center" style="font-size:30px">
+							<view class="cuIcon-{{item.icon}} text-{{item.color}} text-xxl"></view>
+						</view>
+						<view class="text-center">
+							<text class="margin-top" style="color:{{item.color}}">{{item.name}}</text>
+						</view>
+					</view>
+				</view>
 			</view>
 		</view>
 	</view>
 
-	<view class="margin-top">
-		<view class="bg-white margin-sm padding-sm" style="border-radius:7px">
-			<view class=" flex align-center justify-start">
-				<text class="text-lg text-black">会员权益</text>
+
+
+	<view class="bg-red">
+		<view class="bg-white cu-bar  padding-lr-sm">
+			<view class="flex align-center">
+				<text class="text-black ">积分兑换</text>
 			</view>
-			<view class="grid col-4 no-border">
-				<view class="padding" wx:for="{{iconList}}" wx:key>
-					<view class="text-center" style="font-size:30px">
-						<view class="cuIcon-{{item.icon}} text-{{item.color}} text-xxl"></view>
+		</view>
+		<view class="cu-card" wx:for="{{6}}" wx:key style="width: 250rpx;display: inline-block">
+			<view class="cu-item" style="border-radius:7px">
+				<image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg"
+					mode="widthFix"></image>
+
+				<text class="shop_name">小米9手机壳cc9e红米k20Pro青春note7版8保护6x套max3note5防摔mix2s全包屏幕指纹se八5plus九a硅胶note3磨砂</text>
+				<view class="padding-xs flex align-center justify-between">
+					<view>
+						<text class="text-red  text-bold text-price">18888积分</text>
 					</view>
-					<view class="text-center">
-						<text class="margin-top" style="color:{{item.color}}">{{item.name}}</text>
+					<view>
+						<button bindtap="goto" style="float:right;font-style:italic" class="cu-btn bg-red icon">兑换</button>
 					</view>
 				</view>
 			</view>
 		</view>
 	</view>
-</view>
+</scroll-view>

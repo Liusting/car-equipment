@@ -21,7 +21,7 @@
 		<scroll-view scroll-y style="height:{{deviceH-45-64}}px">
 			<view class="search_no" wx:if="{{!orderList.length}}">
 				<view class="noOrder">
-					<image class="scimg" src="/images/person/search_no.png"></image>
+					<image class="scimg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=718008953,3048404571&fm=26&gp=0.jpg"></image>
 				</view>
 				<view class="noOrder">
 					<text>没有可用订单/(ㄒoㄒ)/~~</text>
@@ -30,8 +30,6 @@
 			<view class="cu-card article">
 				<view class="cu-item shadow" wx:for="{{orderList}}" wx:key=" ">
 					<view class="orderListTitle">
-						<view class="cu-avatar sm radius margin-left" style="background-image:url({{item.shopImageUrl}});"></view>
-						<text bindtap="gotoShop" data-shopid="{{item.shopId}}" data-shopname="{{item.shopName}}"  class="text-bold margin-left">{{item.shopName}}<text class="margin-left {{'cuIcon-right text-gray'}}" ></text></text>
 						<text class="orderStatus" wx:if="{{item.trade_status==1}}">等待买家付款</text>
 						<!-- <text class="orderStatus" wx:if="{{item.trade_status==2}}">待分享</text> -->
 						<text class="orderStatus" wx:if="{{item.trade_status==3}}">买家已付款</text>
@@ -97,8 +95,6 @@
 			<view class="cu-card article">
 				<view class="cu-item shadow" wx:for="{{orderList}}" wx:key=" ">
 					<view class="orderListTitle">
-						<view class="cu-avatar sm radius margin-left" style="background-image:url({{item.shopImageUrl}});"></view>
-						<text bindtap="gotoShop" data-shopid="{{item.shopId}}" data-shopname="{{item.shopName}}"  class="text-bold margin-left">{{item.shopName}}<text class="margin-left {{'cuIcon-right text-gray'}}" ></text></text>
 						<text class="orderStatus">{{item.trade_status == currtab?'等待买家付款':''}}</text>
 					</view>
 					<view wx:for="{{item.itemData}}" wx:for-item="items" wx:key>
@@ -128,50 +124,6 @@
 			</view>
 		</scroll-view>
 	</swiper-item>
-	<!-- 待分享 -->
-	<!-- <swiper-item>
-		<scroll-view scroll-y style="height:{{deviceH-45-64}}px">
-			<view class="search_no" wx:if="{{!orderList.length}}">
-				<view class="noOrder">
-					<image class="scimg" src="/images/person/search_no.png"></image>
-				</view>
-				<view class="noOrder">
-					<text>没有可用订单/(ㄒoㄒ)/~~</text>
-				</view>
-			</view>
-
-			<view class="cu-card article">
-				<view class="cu-item shadow" wx:for="{{orderList}}" wx:key=" ">
-					<view class="orderListTitle">
-						<view class="cu-avatar sm radius margin-left" style="background-image:url({{item.shopImageUrl}});"></view>
-						<text bindtap="gotoShop" data-shopid="{{item.shopId}}" data-shopname="{{item.shopName}}"  class="text-bold margin-left">{{item.shopName}}<text class="margin-left {{'cuIcon-right text-gray'}}" ></text></text>
-						<text class="orderStatus">{{item.trade_status == currtab?'待分享':''}}</text>
-					</view>
-					<view wx:for="{{item.itemData}}" wx:for-item="items" wx:key>
-						<view class="orderListDetails" bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}" data-tradeStatus="{{item.trade_status}}">
-							<view class="productImg">
-								<image src="{{items.imageUrl}}" mode="widthFix"></image>
-							</view>
-							<view class="productInfo">
-								<view class="productTitle">{{items.name}}</view>
-								<view class="margin-top-sm text-sm">{{items.typeName}}</view>
-							</view>
-							<view style="height:100%;width:150rpx;" class="flex-sub">
-								<view style="float:right;margin-right:20rpx;" class="text-price">{{items.money}}</view>
-								<view style="float:right;margin-right:20rpx;color:gray;font-size:20rpx;">x{{items.number}}</view>
-							</view>
-						</view>
-					</view>
-					<view class="productCount">
-						<text class="margin-right" style="float:right">实付款:<text class="text-price"></text>{{item.money}}*{{item.number}}</text>
-					</view>
-					<view class="productbtn">
-						<button style="float:right;margin-right:20rpx;" class="cu-btn line-info round" data-id="{{item.id}}" bindtap="cancelOrder">立即分享</button>
-					</view>
-				</view>
-			</view>
-		</scroll-view>
-	</swiper-item> -->
 	<!-- 待发货 -->
 	<swiper-item>
 		<scroll-view scroll-y style="height:{{deviceH-45-64}}px">
@@ -187,9 +139,7 @@
 			<view class="cu-card article">
 				<view class="cu-item shadow" wx:for="{{orderList}}" wx:key=" ">
 					<view class="orderListTitle">
-						<view class="cu-avatar sm radius margin-left" style="background-image:url({{item.shopImageUrl}});"></view>
-						<text bindtap="gotoShop" data-shopid="{{item.shopId}}" data-shopname="{{item.shopName}}"  class="text-bold margin-left">{{item.shopName}}<text class="margin-left {{'cuIcon-right text-gray'}}" ></text></text>
-						<text class="orderStatus">{{item.trade_status == currtab?'买家已付款':''}}</text>
+						<text class="orderStatus">{{item.trade_status == currtab?'等待买家付款':''}}</text>
 					</view>
 					<view wx:for="{{item.itemData}}" wx:for-item="items" wx:key>
 						<view class="orderListDetails" bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}" data-tradeStatus="{{item.trade_status}}">
@@ -233,8 +183,6 @@
 			<view class="cu-card article">
 				<view class="cu-item shadow" wx:for="{{orderList}}" wx:key=" ">
 					<view class="orderListTitle">
-						<view class="cu-avatar sm radius margin-left" style="background-image:url({{item.shopImageUrl}});"></view>
-						<text bindtap="gotoShop" data-shopid="{{item.shopId}}" data-shopname="{{item.shopName}}"  class="text-bold margin-left">{{item.shopName}}<text class="margin-left {{'cuIcon-right text-gray'}}" ></text></text>
 						<text class="orderStatus">{{item.trade_status == currtab?'卖家已发货':''}}</text>
 					</view>
 					<view wx:for="{{item.itemData}}" wx:for-item="items" wx:key>
@@ -279,8 +227,6 @@
 			<view class="cu-card article">
 				<view class="cu-item shadow" wx:for="{{orderList}}" wx:key=" ">
 					<view class="orderListTitle">{{item.shopName}}
-						<view class="cu-avatar sm radius margin-left" style="background-image:url({{item.shopImageUrl}});"></view>
-						<text bindtap="gotoShop"  data-shopid="{{item.shopId}}" data-shopname="{{item.shopName}}" class="text-bold margin-left">{{item.shopName}}<text class="margin-left {{'cuIcon-right text-gray'}}" ></text></text>
 						<text class="orderStatus">{{item.trade_status == currtab?'交易成功':''}}</text>
 					</view>
 					<view wx:for="{{item.itemData}}" wx:for-item="items" wx:key>

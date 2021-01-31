@@ -52,7 +52,7 @@
 			<view class="" wx:for="{{myTools}}" wx:key wx:if="{{index<12}}">
 				<view class="padding-xs margin-top-sm  text-center " bindtap="toTool" data-id="{{item.id}}">
 					<view>
-						<text class=" text-pink"><text style="font-size:30px" class="cuIcon-{{item.icon}}"></text></text>
+						<text class=" text-maincolor"><text style="font-size:30px" class="cuIcon-{{item.icon}}"></text></text>
 					</view>
 					<view class="nav-content-margin">
 						<text class="text-black">{{item.name}}</text>
@@ -62,7 +62,7 @@
 
 			<view class="text-center margin-top-sm padding-xs">
 				<view>
-					<button class="kf_button bg-white text-pink" open-type="contact" session-from="weapp">
+					<button class="kf_button bg-white text-maincolor" open-type="contact" session-from="weapp">
 						<text style="font-size:30px" class="cuIcon-communityfill"></text>
 					</button>
 				</view>
@@ -72,7 +72,7 @@
 			</view>
 			<view class="text-center margin-top-sm padding-xs" bindtap="exit">
 				<view>
-					<text class=" text-pink"><text style="font-size:30px" class="cuIcon-exit"></text></text>
+					<text class="text-maincolor"><text style="font-size:30px" class="cuIcon-exit"></text></text>
 				</view>
 				<view class="nav-content-margin">
 					<text class="text-black">退出登录</text>

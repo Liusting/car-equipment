@@ -20,7 +20,57 @@ Page({
         index: 1
       }
     ],
-    couponList: [],
+    couponList: [{
+      "id": "1",
+      "name": "欢迎新人礼",
+      "startTime": "2020/09/20",
+      "endTime": "2020/09/27",
+      "type": 1,
+      "reduceMoney": 10,
+      "condition": 100,
+      "explain": "1.优惠券领取后7天内使用 2.满100可用",
+        "checked":false
+    }, {
+      "id": "2",
+      "name": "5元无门槛",
+      "startTime": "2020/09/20",
+      "endTime": "2020/09/27",
+      "type": 2,
+      "reduceMoney": 5,
+      "condition": "无使用门槛",
+      "explain": "1.优惠券领取后7天内使用 2.满100可用",
+        "checked":false
+    }, {
+      "id": "3",
+      "name": "寄重货5折优惠",
+      "startTime": "2020/09/20",
+      "endTime": "2020/09/27",
+      "type": 3,
+      "reduceMoney": "5折",
+      "condition": "",
+      "explain": "1.优惠券领取后7天内使用 2.满100可用",
+        "checked":false
+    }, {
+      "id": "4",
+      "name": "店10年周庆",
+      "startTime": "2020/09/20",
+      "endTime": "2020/09/27",
+      "type": 1,
+      "reduceMoney": 100,
+      "condition": 200,
+      "explain": "1.优惠券领取后7天内使用 2.满100可用",
+        "checked":false
+    }, {
+      "id": "5",
+      "name": "回馈老客户6折优惠",
+      "startTime": "2020/09/20",
+      "endTime": "2020/09/27",
+      "type": 3,
+      "reduceMoney": "6折",
+      "condition": "",
+      "explain": "1.优惠券领取后7天内使用 2.满100可用",
+        "checked":false
+    }],
     flag: true,
     modalName: '',
     idIndex: ''
@@ -65,16 +115,7 @@ Page({
    */
   onLoad: function (e) {
     var that = this;
-    wx.request({
-      url: 'http://mock-api.com/PKeZpPz0.mock/couponTest',
-      method: 'get',
-      success: function (res) {
-        that.setData({
-          couponList: res.data
-        })
-        console.log(res);
-      }
-    })
+    
 
     wx.getSystemInfo({
       success: function (res) {

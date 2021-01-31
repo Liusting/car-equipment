@@ -26,11 +26,10 @@
 	<view class="padding bg-white">
 		<view class="flex justify-between align-center text-xl text-black">
 			<text  class=' '>多喝点度的户外的速度保护单独五百动物蛋白和度的好吧</text>
-			<view class="padding-lr-xs text-center" open-type="share">
-				<text style="font-size:25px" class="cuIcon-pick text-red">
+			<button class="padding-lr-xs text-center bg-white kf-button" open-type="share">
+				<text style="font-size:25px" class="cuIcon-forward text-red">
 				</text>
-	
-			</view>
+			</button>
 		</view>
 		<view class="flex align-center justify-between padding-tb-sm">
 			<view class=" text-red">
@@ -111,9 +110,6 @@
 		<text>—— 宝贝详情 ——</text>
 	</view>
 
-	<!-- <view>
-		<video style="height:300px;width:100%" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls show-center-play-btn></video>
-	</view> -->
 	<view wx:for="{{swiperList}}" wx:key="key">
 		<image style="width:100%" src="{{item.url}}" mode="widthFix" />
 	</view>
@@ -209,14 +205,10 @@
 		<view class="action" bindtap="home">
 			<view class="cuIcon-home"></view> 首页
 		</view>
-		<!-- <view class="action" open-type="contact" bindtap="chat">
-			<view class="cuIcon-service text-blue">
-			</view>
-			客服
-		</view> -->
 		<view class="action">
-			<view class="cuIcon-weixin" bindtap="collect">
-			</view>
+			<button open-type="contact" session-from="webapp" class="bg-white kf-button" style=" text-align: unset;padding: 0rpx;line-height: unset;font-size: unset;">
+				<text class="cuIcon-weixin"></text>
+			</button>
 			客服
 		</view>
 		<view class="action">

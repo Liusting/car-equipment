@@ -61,6 +61,11 @@ Page({
       collect: !that.data.collect
     })
   },
+  onShareAppMessage() {
+    return {
+      title: '普斯汽保-您身边值得信赖汽保设备商',
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */

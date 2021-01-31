@@ -9,7 +9,39 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    addressList: [],
+    addressList: [{
+      "phoneNumber": "18648840748",
+      "cityName": "佛山市",
+      "addressdetail": "石湾街道泛家居创意园6B一楼前台12",
+      "addresseeName": "柳南",
+      "id": "073f24db5ba442d7b5a74dd78ef6334a",
+      "provinceName": "广东省",
+      "countyName": "禅城区"
+    }, {
+      "phoneNumber": "13047848152",
+      "cityName": "三亚市",
+      "addressdetail": "新港中路397号",
+      "addresseeName": "张三",
+      "id": "271cf41a604142f3a673c28d02c13094",
+      "provinceName": "海南省",
+      "countyName": "崖州区"
+    }, {
+      "phoneNumber": "18648840748",
+      "cityName": "拉萨市",
+      "addressdetail": "沃尔玛超级超市店铺1244",
+      "addresseeName": "柳南",
+      "id": "c434e3f52c0c4eb3aa24d21e9cbe722f",
+      "provinceName": "西藏自治区",
+      "countyName": "墨竹工卡县"
+    }, {
+      "phoneNumber": "18648840749",
+      "cityName": "佛山市",
+      "addressdetail": "石湾街道泛家居创意园6B一楼前台",
+      "addresseeName": "柳南",
+      "id": "cb7836120acf4dedb28f7ccc9a6974c0",
+      "provinceName": "广东省",
+      "countyName": "禅城区"
+    }],
     type:'',
     idx:''
   },
@@ -20,9 +52,9 @@ Page({
   // 获取微信用户收货地址
   // 修改地址
   editAddress:function(e){
-    let id = e.currentTarget.dataset.id;
+    let item = e.currentTarget.dataset.item;
     wx.navigateTo({
-      url: '../address/editAddress?id=' + id
+      url: '../editAddress/editAddress?item=' + JSON.stringify(item)
     })
   },
   getWeixinAddress:function(e){
@@ -99,20 +131,7 @@ Page({
       type: options.type,
       idx:options.id
     })
-    wx.request({
-      url: app.ipAndPort + '/spAddress/getAddressList',
-      method: 'POST',
-      data: {
-        userId: 3
-      },
-      header: { 'content-type': 'application/x-www-form-urlencoded' },
-      success: function (res) {
-        let resData = res.data;
-        that.setData({
-          addressList: resData
-        })
-      }
-    })
+  
   },
   /**
    * 生命周期函数--监听页面显示
@@ -137,7 +156,7 @@ Page({
 // 点击新增收货地址
   addAddress: function () {
     // debugger;
-    wx.navigateTo({ url: '../address/address' });
+    wx.navigateTo({ url: '../addAddress/address' });
   },
   //点击地址
   addClick: function(e){
@@ -162,22 +181,5 @@ Page({
         type:type
       })
     }
-
-    // console.log(e);
-    //根据传入的类型来判断点击地址出现什么效果 2：从订单页进来  3：从地址管理进来
-    // if(this.data.type == 2){
-    //   var address = e.currentTarget.dataset;
-    //   wx.setStorage({
-    //     key: 'addressId',
-    //     data: address,
-    //     success: function (res) {
-    //       wx.navigateBack({
-    //         delta: 1
-    //       })
-    //     }
-    //   })
-    // }else{
-
-    // }
   }
 })

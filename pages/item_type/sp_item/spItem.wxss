@@ -160,3 +160,7 @@
   color: var(--white);
 
 }
+
+.kf-button::after{
+border:none;
+}

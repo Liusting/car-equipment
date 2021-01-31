@@ -125,3 +125,7 @@
   float: right;
   margin-right: 30rpx;
 }
+
+.kf-button::after{
+  border: none;
+}
