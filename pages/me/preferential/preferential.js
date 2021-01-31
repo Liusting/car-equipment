@@ -1,5 +1,4 @@
 const app = getApp();
-import http from '../../../utils/api'
 Page({
 
   /**
@@ -13,45 +12,69 @@ Page({
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
     swipertab: [{
-        name: '未使用',
+        name: '待使用',
         index: 0
       },
       {
         name: '已使用',
         index: 1
-      },
-      {
-        name: '已过期',
-        index: 2
       }
     ],
-    allOrder: [],
+    couponList: [],
+    flag: true,
+    modalName: '',
+    idIndex: ''
   },
-  // 
+  gotoIndex: function (e) {
+    wx.navigateTo({
+      url: '../../index/index',
+    })
+  },
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
+  // 优惠券兑换
+  exchangeCoupon: function () {
+    wx.navigateTo({
+      url: '../exchangeCoupon/index',
+    })
+  },
+  explain: function (e) {
+    console.log(e.currentTarget.dataset.id);
+    let id = e.currentTarget.dataset.id;
+    let item = this.data.couponList;
+    for (let i = 0; i < item.length; i++) {
+      if(item[i].id == id){
+        item[i].checked = !item[i].checked
+      }
+    }
+    console.log(item);
+    this.setData({
+      couponList:item
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
     var that = this;
-    http.getUserCouponList({
-      data: {
-        user_id: 3
-      },
-      success(res) {
+    wx.request({
+      url: 'http://mock-api.com/PKeZpPz0.mock/couponTest',
+      method: 'get',
+      success: function (res) {
         that.setData({
-          allOrder: res.data.userCouponList
+          couponList: res.data
         })
+        console.log(res);
       }
     })
-    // wx.request({
-    //   url: 'http://mock-api.com/PKeZpPz0.mock/coupon',
-    //   method:'get',
-    //   success:function(res){
-    //     that.setData({
-    //       allOrder:res.data
-    //     })
-    //   }
-    // })
 
     wx.getSystemInfo({
       success: function (res) {
@@ -100,43 +123,43 @@ Page({
     this.setData({
       currtab: e.detail.current
     })
-    this.orderShow()
+    // this.orderShow()
   },
-  orderShow: function () {
-    let that = this
-    switch (this.data.currtab) {
-      case 0:
-        that.allShow()
-        break
-      case 1:
-        that.waitPayShow()
-        break
-      case 2:
-        that.waitSendShow()
-        break
-    }
-  },
-  // 未使用
-  allShow: function () {
-    var that = this;
-    this.setData({
-      allOrder: that.allOrder
-    })
-  },
-  // 已使用
-  waitPayShow: function () {
-    var that = this;
-    this.setData({
-      waitPayOrder: that.waitPayOrder
-    })
-  },
-  // 已过期
-  waitSendShow: function () {
-    var that = this;
-    this.setData({
-      waitSendOrder: that.waitSendOrder
-    })
-  },
+  // orderShow: function () {
+  //   let that = this
+  //   switch (this.data.currtab) {
+  //     case 0:
+  //       that.allShow()
+  //       break
+  //     case 1:
+  //       that.waitPayShow()
+  //       break
+  //     case 2:
+  //       that.waitSendShow()
+  //       break
+  //   }
+  // },
+  // // 未使用
+  // allShow: function () {
+  //   var that = this;
+  //   this.setData({
+  //     allOrder: that.allOrder
+  //   })
+  // },
+  // // 已使用
+  // waitPayShow: function () {
+  //   var that = this;
+  //   this.setData({
+  //     waitPayOrder: that.waitPayOrder
+  //   })
+  // },
+  // // 已过期
+  // waitSendShow: function () {
+  //   var that = this;
+  //   this.setData({
+  //     waitSendOrder: that.waitSendOrder
+  //   })
+  // },
 
   // 点击立即使用
   cupon_use: function (e) {

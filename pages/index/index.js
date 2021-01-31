@@ -10,22 +10,10 @@ Page({
     });
   },
   onLoad: function () {
-    let that = this;
-    http.getCartTotal({
-      data:{
-        userId:3
-      },
-      success(res){
-        that.setData({
-          cartTotal:res.cartTotal
-        })
-      }
-    })
   },
   onShareAppMessage() {
     return {
-      title: 'ColorUI-高颜值的小程序UI组件库',
-      imageUrl: '/images/share.jpg',
+      title: '普斯汽保-您身边值得信赖汽保设备',
       path: '/pages/index/index'
     }
   },

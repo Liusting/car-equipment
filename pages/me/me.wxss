@@ -159,7 +159,8 @@
 .cu-tag1.badge1 {
   background-color: #dd514c;
   position: absolute;
-  top: 300rpx;
+  top: 155rpx;
+  margin-left:4px;
   font-size: 30rpx;
   padding: 5rpx 10rpx;
   height: 35rpx;
@@ -167,19 +168,19 @@
 
 }
 
-.kf_button{
-  background-color: rgba(255, 255, 255, 0);
-  border: 0px;
-  height: 160rpx;
-  right: 0;
-  bottom: 180rpx;
-  position: fixed;
- }
- .kf_button::after{
-  border: 0px;
- }
- .kf_image{
-  z-index: 9999;
-  width: 100rpx;
-  height: 100rpx;
- }
+.kf_button {
+  text-align: unset;
+  padding: 0rpx;
+  line-height: unset;
+  font-size: unset;
+}
+.kf_button::after{
+  border: none;
+}
+/* .kf_button:not([size='mini']) {
+  width: 100%;
+} */
+.nav-content-margin{
+  margin-top:19rpx;
+  font-size: 30rpx;
+}

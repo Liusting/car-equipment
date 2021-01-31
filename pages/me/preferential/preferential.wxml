@@ -1,15 +1,11 @@
-<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-		<cu-custom isBack="{{true}}">
-			<view slot="backText">优惠券</view>
-			<!-- <view slot="content">我的优惠</view> -->
-		</cu-custom>
-	</view>
-</view>
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+	<view slot="backText"></view>
+	<view slot="content" class="text-bold text-black">优惠券</view>
+</cu-custom>
 
 <view class="bg-white cu-tabbar-height">
 	<view class="flex text-center text-lg">
-		<view class="cu-tabbar-height flex justify-center align-center  flex-sub {{currtab == item.index ? 'on' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+		<view class="cu-tabbar-height flex justify-center align-center  flex-sub {{currtab == item.index ? 'text-redOrange on' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
 			{{item.name}}
 		</view>
 	</view>
@@ -17,145 +13,132 @@
 
 
 
-<swiper current="{{currtab}}" class="swiper-box" duration="300" bindchange="tabChange" style="height:{{deviceH-CustomBar}}px">
+<swiper current="{{currtab}}" class="swiper-box" duration="300" bindchange="tabChange" style="height:{{deviceH-CustomBar-55}}px">
 	<!-- 优惠卷未使用 -->
 	<swiper-item>
-		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-CustomBar}}px">
-			<view class="search_no" wx:if="{{!allOrder.length}}">
+		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-CustomBar-55}}px">
+			<!-- <view class="search_no" wx:if="{{!allOrder.length}}">
 				<view class="font_14">
 					<image class="scimg" src="/images/person/search_no.png"></image>
 				</view>
 				<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
+			</view> -->
+			<view class="padding text-gray flex justify-center">
+				{{couponList.length}}张可用优惠券
 			</view>
-
-			<view class="" wx:for="{{allOrder}}" wx:key>
+			<view wx:for="{{couponList}}" wx:key="ffff">
 				<view class="margin-sm">
 					<view class="wrapper">
-						<view class="content1 text-white">
-							<view class="padding-xs text-white">
-								<text class=" padding-xs" style="width:auto"><text class="text-white cuIcon-newshot"></text>折扣券</text>
-							</view>
-							<view class='padding-xs '>
-								<view class="text-df text-bold padding-xs">
+						<view class="content1 ">
+							<view class='padding-sm'>
+								<view class="text-xl text-bold ">
 									{{item.name}}
 								</view>
-								<view class="text-sm padding-xs">
-									适用时间：{{item.valid_start_time}}-{{item.valid_end_time}}
+								<view class="text-sm padding-top-xs text-gray">
+									适用时间：{{item.startTime}}-{{item.endTime}}
 								</view>
-								<view class="text-sm padding-xs">
-									适用门店：全平台适用
+								<view class="text-sm flex justify-between padding-top-xs text-gray">
+									<view>使用说明</view>
+									<view class="flex" bindtap="explain" data-id="{{item.id}}">
+										<view class="cuIcon-{{item.checked?'fold':'unfold'}}"></view>
+									</view>
+								</view>
+								<view class="bg-white text-sm text-gray text-cut" wx:if="{{item.checked}}" style="border-radius:7px;width:246px">
+									<view>{{item.explain}}</view>
 								</view>
 							</view>
 						</view>
 						<view class="split-line"></view>
-						<view class="tip text-white">
+						<view class="tip">
 							<view>
-								<view class="">
-									<text class="text-price text-sl text-bold">{{item.used_amount}}</text>
+								<view class=" justify-end flex">
+									<view class="box">
+										<view class="box-con">
+											<view wx:if="{{item.type==1}}" class="box-text bg-purple">满减券</view>
+											<view wx:if="{{item.type==2}}" class="box-text bg-green">优惠券</view>
+											<view wx:if="{{item.type==3}}" class="box-text bg-cyan">折扣券</view>
+										</view>
+									</view>​
 								</view>
-								<view wx:if="{{item.status==1}}">
-									满{{item.with_amount}}元可用
+								<view class="padding-xs text-center">
+									<view wx:if="{{item.type==1}}" class="text-price text-xxl text-bold text-red">{{item.reduceMoney}}</view>
+									<view wx:if="{{item.type==2}}" class="text-price text-xxl text-bold text-red">{{item.reduceMoney}}</view>
+									<view wx:if="{{item.type==3}}" class="text-xxl text-bold text-red">{{item.reduceMoney}}</view>
+									<view wx:if="{{item.type==1}}" class="text-gray text-sm">满{{item.condition}}元可用</view>
+									<view bindtap="gotoIndex" class="cu-tag bg-redOrange round margin-top-xs">立即使用</view>
 								</view>
-								<view class="conditions">
-									<button bindtap="cupon_use" class="cu-btn bg-white round sm">立即使用</button>
+								<view>
 								</view>
 							</view>
 						</view>
 					</view>
 				</view>
 			</view>
+			<view class="cu-tabbar-height"></view>
 		</scroll-view>
 	</swiper-item>
 	<!-- 已使用 -->
 	<swiper-item>
-		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-45-64}}px">
-			<view class="search_no" wx:if="{{!allOrder.length}}">
-				<view class="font_14">
-					<image class="scimg" src="/images/person/search_no.png"></image>
+		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-CustomBar-55}}px">
+			<!-- <view class="flex justify-center align-center" style="margin-top:200rpx">
+				<view>
+					<image style="height:300rpx;width:300rpx" mode="aspectFit" src="https://m.qpic.cn/psc?/V13054I60qvHvi/IuPP.iXwoDzL23w4nRtQcmRp9UHAwpuXACm4QLYj.A01gNZH9qH6nMA6NH*VkIomC4Pp31LRXVw5QhBFoZMmtg!!/mnull&bo=0QCAANEAgAADCSw!&rf=photolist&t=5"></image>
+					<view class="flex justify-center text-gray margin-top">
+						暂无优惠券
+					</view>
 				</view>
-				<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
-			</view>
+			</view> -->
 
-			<view class="" wx:for="{{allOrder}}" wx:key>
-				<view class="app">
+			<view wx:for="{{couponList}}" wx:key="ffff">
+				<view class="margin-sm">
 					<view class="wrapper">
-						<view class="content1 text-white">
-							<view class="padding-xs text-white">
-								<text class=" padding-xs" style="width:auto"><text class="text-white cuIcon-newshot"></text>折扣券</text>
-							</view>
-							<view class='padding-xs '>
-								<view class="text-df text-bold padding-xs">
+						<view class="content1 ">
+							<view class='padding-sm'>
+								<view class="text-xl text-bold ">
 									{{item.name}}
 								</view>
-								<view class="text-sm padding-xs">
-									适用时间：{{item.from}}-{{item.to}}
+								<view class="text-sm padding-top-xs text-gray">
+									适用时间：{{item.startTime}}-{{item.endTime}}
 								</view>
-								<view class="text-sm padding-xs">
-									适用门店：全平台适用
+								<view class="text-sm flex justify-between padding-top-xs text-gray">
+									<view>使用说明</view>
+									<view class="flex" bindtap="explain" data-id="{{item.id}}">
+										<view class="cuIcon-{{item.checked?'fold':'unfold'}}"></view>
+									</view>
+								</view>
+								<view class="bg-white text-sm text-gray text-cut" wx:if="{{item.checked}}" style="border-radius:7px;width:246px">
+									<view>{{item.explain}}</view>
 								</view>
 							</view>
 						</view>
 						<view class="split-line"></view>
-						<view class="tip text-white">
-							<view class="">
-								<text class="text-price text-sl text-bold">{{item.money}}</text>
-							</view>
-							<view wx:if="{{item.status==1}}">
-								满{{item.total}}元可用
-							</view>
-							<view class="conditions">
-								<button bindtap="cupon_use" class="cu-btn bg-white round sm">立即使用</button>
+						<view class="tip">
+							<view>
+								<view class=" justify-end flex">
+									<view class="box">
+										<view class="box-con">
+											<view wx:if="{{item.type==1}}" class="box-text bg-grey">满减券</view>
+											<view wx:if="{{item.type==2}}" class="box-text bg-grey">优惠券</view>
+											<view wx:if="{{item.type==3}}" class="box-text bg-grey">折扣券</view>
+										</view>
+									</view>​
+								</view>
+								<view class="padding-xs text-center">
+									<view wx:if="{{item.type==1}}" class="text-price text-xxl text-bold text-red">{{item.reduceMoney}}</view>
+									<view wx:if="{{item.type==2}}" class="text-price text-xxl text-bold text-red">{{item.reduceMoney}}</view>
+									<view wx:if="{{item.type==3}}" class="text-xxl text-bold text-red">{{item.reduceMoney}}</view>
+									<view wx:if="{{item.type==1}}" class="text-gray text-sm">满{{item.condition}}元可用</view>
+									<!-- <view bindtap="gotoIndex" class="cu-tag bg-redOrange round margin-top-xs">立即使用</view> -->
+								</view>
+								<view>
+								</view>
 							</view>
 						</view>
 					</view>
 				</view>
 			</view>
-		</scroll-view>
-	</swiper-item>
-	<!-- 已过期 -->
-	<swiper-item>
-		<scroll-view class="hot-box" scroll-y="true" style="height:{{deviceH-45-64}}px">
-			<view class="search_no" wx:if="{{!allOrder.length}}">
-				<view class="font_14">
-					<image class="scimg" src="/images/person/search_no.png"></image>
-				</view>
-				<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
-			</view>
-
-			<view class="" wx:for="{{allOrder}}" wx:key>
-				<view class="app">
-					<view class="wrapper ">
-						<view class="content1 text-white">
-							<view class="padding-xs text-white">
-								<text class=" padding-xs" style="width:auto"><text class="text-white cuIcon-newshot"></text>折扣券</text>
-							</view>
-							<view class='padding-xs '>
-								<view class="text-df text-bold padding-xs">
-									{{item.name}}
-								</view>
-								<view class="text-sm padding-xs">
-									适用时间：{{item.from}}-{{item.to}}
-								</view>
-								<view class="text-sm padding-xs">
-									适用门店：全平台适用
-								</view>
-							</view>
-						</view>
-						<view class="split-line"></view>
-						<view class="tip text-white">
-							<view class="">
-								<text class="text-price text-sl text-bold">{{item.money}}</text>
-							</view>
-							<view wx:if="{{item.status==1}}">
-								满{{item.total}}元可用
-							</view>
-							<view class="conditions">
-								<button bindtap="cupon_use" class="cu-btn bg-white round sm">立即使用</button>
-							</view>
-						</view>
-					</view>
-				</view>
-			</view>
+			<view class="cu-tabbar-height"></view>
 		</scroll-view>
 	</swiper-item>
 </swiper>
+

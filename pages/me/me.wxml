@@ -5,8 +5,6 @@
 		</view>
 	</view>
 </view>
-
-<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
 	<view class=" padding bg-blue" style="height:150rpx;">
 		<view class="flex align-center">
 			<view class="cu-avatar lg round " style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);"></view>
@@ -22,28 +20,7 @@
 			</view>
 		</view>
 	</view>
-	<!-- <view class="userInfo" style="justify-content: center" hidden="{{flag}}">
-		<view class='header'>
-			<button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-				微信授权登录
-			</button>
-		</view>
-	</view> -->
-	<!-- <view class=" bg-white margin-sm padding-sm" style="border-radius:7px;margin-top:-40px">
-		<view class="grid col-4">
-			<view class="" wx:for="{{headItems}}" wx:key wx:if="{{index<12}}">
-				<view class="padding-xs  text-center" data-id="{{item.id}}" bindtap="toMyAccount">
-					<view class="text-lg">
-						<text class="text-xl text-red"><text>{{item.number}}</text></text>
-					</view>
-					<view class="margin-top-xs ">
-						<text>{{item.name}}</text>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view> -->
-
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
 	<view class="margin-sm bg-white" style="border-radius:7px">
 		<view class="padding flex align-center justify-between" style="border-bottom:1px solid #f1f1f1">
 			<text class="text-lg text-black">我的订单</text>
@@ -71,19 +48,38 @@
 
 
 	<view class="bg-white margin-sm" style="border-radius:7px">
-	<view class=" grid col-4   padding-sm">
-		<view class="" wx:for="{{myTools}}" wx:key wx:if="{{index<12}}">
-			<view class="padding-xs margin-top-sm  text-center " bindtap="toTool" data-id="{{item.id}}">
-				<view class="text-lg">
-					<text class=" text-pink"><text style="font-size:30px" class="cuIcon-{{item.icon}}"></text></text>
+		<view class=" grid col-4   padding-sm">
+			<view class="" wx:for="{{myTools}}" wx:key wx:if="{{index<12}}">
+				<view class="padding-xs margin-top-sm  text-center " bindtap="toTool" data-id="{{item.id}}">
+					<view>
+						<text class=" text-pink"><text style="font-size:30px" class="cuIcon-{{item.icon}}"></text></text>
+					</view>
+					<view class="nav-content-margin">
+						<text class="text-black">{{item.name}}</text>
+					</view>
 				</view>
-				<view class="margin-top-sm ">
-					<text class="text-black">{{item.name}}</text>
+			</view>
+
+			<view class="text-center margin-top-sm padding-xs">
+				<view>
+					<button class="kf_button bg-white text-pink" open-type="contact" session-from="weapp">
+						<text style="font-size:30px" class="cuIcon-communityfill"></text>
+					</button>
+				</view>
+				<view class="nav-content-margin">
+					<text class="text-black">联系客服</text>
+				</view>
+			</view>
+			<view class="text-center margin-top-sm padding-xs" bindtap="exit">
+				<view>
+					<text class=" text-pink"><text style="font-size:30px" class="cuIcon-exit"></text></text>
+				</view>
+				<view class="nav-content-margin">
+					<text class="text-black">退出登录</text>
 				</view>
 			</view>
 		</view>
 	</view>
-</view>
 	<view class="flex align-center padding justify-center">
 		<view class="margin-lr-sm text-grey">Powered by bona_marketing v.1.0.0</view>
 	</view>

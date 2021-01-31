@@ -9,7 +9,7 @@
 	</view>
 </view>
 
-<scroll-view class="bg-white" scroll-y wx:if="{{shopcarData==''}}" style="height:{{deviceH-CustomBar}}px">
+<scroll-view class="bg-white" scroll-y wx:if="{{shopcarData==''}}" style="height:{{deviceH-CustomBar-80}}px">
 	<view class="margin-top">
 		<view class="justify-center flex align-center">
 			<image class="scimg" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3474919554,2802119544&fm=15&gp=0.jpg" mode="aspectFill" />
@@ -42,7 +42,7 @@
 	</view>
 	<view class='cu-tabbar-height'></view>
 </scroll-view>
-<scroll-view wx:else scroll-y style="height:{{deviceH-CustomBar-58-80}}px">
+<scroll-view wx:else scroll-y style="height:{{deviceH-CustomBar-55-55}}px">
 	<view class='bg-white padding-xs margin-sm' style="border-radius:7px" wx:for='{{shopcarData}}' wx:key>
 		<view class="flex bg-white" wx:for='{{item.itemdata}}' wx:for-item="items" wx:key bindlongtap="delete" data-id="{{items.id}}" data-index="{{index}}">
 			<view class='flex align-center padding-xs ' style="font-size:40rpx">

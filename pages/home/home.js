@@ -207,7 +207,10 @@ Component({
     },
     // 点击分类
     gotoClassify: function (e) {
-
+      wx.navigateTo({
+        url: '../item_type/sp_item_list/spItemList',
+      })
+      console.log(e.currentTarget.dataset.id)
     },
     //更多疯抢
     moreDiscount: function (e) {

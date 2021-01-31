@@ -63,19 +63,7 @@ Component({
         icon: 'peoplelist ',
         name: '关于我们',
         color: 'pink'
-      },
-        {
-        id: 6,
-        icon: 'communityfill',
-        name: '联系客服',
-        color: 'mauve'
-      },
-      {
-        id: 7,
-        icon: 'exit',
-        name: '退出登录',
-        color: 'brown'
-      },
+      }
     ],
     // orderItems
     orderItems: [{
@@ -221,12 +209,20 @@ Component({
             url: '../accountSecurity/accountSecurity'
           });
           break;
-        case 7:
-          wx.navigateTo({
-            url: '../myCollage/myCollage'
-          });
-          break;
       }
+    },
+    exit:function(){
+      wx.showModal({
+        title:'确定要退出登录？',
+        showCancel:true,
+        content:'退出登录将无法查看内容',
+        success:function(){
+          wx.showToast({
+            title: '退出成功',
+            icon:'success'
+          })
+        }
+      })
     },
     userMessage(){
       wx.navigateTo({
