@@ -19,10 +19,8 @@
   </view>
 </view>
 
-
-<view style="margin-top:{{deviceH-CustomBar-CustomBar-CustomBar}}px;background:red" >
-	<!-- <scroll-view scroll-y>
-		<view class='bg-white padding-xs margin-sm' style="border-radius:7px" wx:for='{{shopcarData}}' wx:key>
+	<scroll-view scroll-y  style="heigth:100%">
+		<view class='bg-pink padding-xs' style="border-radius:7px" wx:for='{{shopcarData}}' wx:key>
 			<view class="flex bg-white" wx:for='{{item.itemdata}}' wx:for-item="items" wx:key bindlongtap="delete"
 				data-id="{{items.id}}" data-index="{{index}}">
 				<view class='flex align-center padding-xs ' style="font-size:40rpx">
@@ -67,11 +65,10 @@
 				</view>
 			</view>
 		</view>
-	</scroll-view> -->
-</view>
+	</scroll-view>
 
-<view class="cu-tabbar-height bg-green" > 
-{{CustomBar}}
+<view class="cu-tabbar-height1 bg-green cart_foot" > 
+结算
 </view>
 
 <!-- <view class='bg-white flex align-center justify-between  '>

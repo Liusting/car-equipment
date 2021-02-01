@@ -65,3 +65,16 @@ bottom:1;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
+.cart_foot{
+  position: fixed;
+  width: 100%;
+  bottom: calc(100rpx+env(safe-area-inset-bottom) / 2);
+  /* margin-bottom: calc(200rpx + env(safe-area-inset-bottom)); */
+  /* height: calc(100rpx + env(safe-area-inset-bottom) / 2);
+	margin-bottom: calc(env(safe-area-inset-bottom) / 2); */
+}
+
+.cu-tabbar-height1 {
+	min-height: 100rpx;
+	height: calc(100rpx + env(safe-area-inset-bottom) / 2);
+}
