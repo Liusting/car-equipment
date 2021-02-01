@@ -18,16 +18,14 @@
     "pages/me/address/addressList/addressList",
     "pages/me/sp_order_list/applyRefund/applyRefund",
     "pages/me/sp_order_list/orderDetail/orderDetail",
-    "pages/me/order/payResult/orderComplete",   
+    "pages/me/order/payResult/orderComplete",
     "pages/me/order/confirmOrder/order",
     "pages/home/goodSearch/goodSearch",
     "pages/me/address/addAddress/address",
     "pages/cart/cart",
     "pages/home/couponCenter/coupon",
-
     "pages/me/sp_order_list/steps/steps",
     "pages/item_type/itemType/itemType",
-  
     "pages/me/me"
   ],
   "window": {

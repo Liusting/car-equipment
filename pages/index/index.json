@@ -1,8 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "HomePage":"/pages/home/home",
-    "ClassificationOfCommodities":"/pages/item_type/itemType/itemType",
+    "HomePage": "/pages/home/home",
+    "ClassificationOfCommodities": "/pages/item_type/itemType/itemType",
     "MyCart": "/pages/cart/cart",
     "MyMessage": "/pages/me/me"
   }

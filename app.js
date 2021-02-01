@@ -1,11 +1,11 @@
 //app.js
 import Store from './utils/store.js';
 import http from './utils/api';
-let store = new Store({
-  state: {
-    msg: '这是一个全局状态'
-  }
-})
+// let Store = new Store({
+//   state: {
+//     msg: '这是一个全局状态'
+//   }
+// })
 
 App({
   // 全局ip+端口
