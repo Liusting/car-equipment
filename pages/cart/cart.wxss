@@ -28,6 +28,25 @@
   overflow: hidden;
 }
 
+
+.foot1 {
+	position: fixed;
+	width: 100%;
+bottom:1;
+	z-index: 1024;
+	box-shadow: 0 -1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.dd{
+	margin-bottom: calc(env(safe-area-inset-bottom) / 2);
+}
+/* .cu-bar1.tabbar1 {
+	padding: 0;
+	height: calc(100rpx + env(safe-area-inset-bottom) / 2);
+
+} */
+
+
 .scimg {
   height: 180rpx;
   width: 180rpx;

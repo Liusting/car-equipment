@@ -31,6 +31,28 @@ Component({
                 "id": "88156285615944f491b0a2f90bba5d75",
                 "check": false
             }, {
+                "number": 99,
+                "typeList": "大方体方形四档套装-旗舰款;10寸",
+                "money": 100,
+                "item_id": "10",
+                "user_id": "3",
+                "type_id": "1",
+                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                "name": "ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家",
+                "id": "88156285615944f491b0a2f90bba5d75",
+                "check": false
+            },{
+                "number": 99,
+                "typeList": "大方体方形四档套装-旗舰款;10寸",
+                "money": 100,
+                "item_id": "10",
+                "user_id": "3",
+                "type_id": "1",
+                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                "name": "ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家",
+                "id": "88156285615944f491b0a2f90bba5d75",
+                "check": false
+            },{
                 "number": 10,
                 "typeList": "经典圆形三档套装;8寸",
                 "money": 110,
@@ -40,28 +62,6 @@ Component({
                 "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
                 "id": "c21d63af1b784f278d32c547283b1822",
-                "check": false
-            }, {
-                "number": 10,
-                "typeList": "经典圆形三档套装;8寸",
-                "money": 110,
-                "item_id": "10",
-                "user_id": "3",
-                "type_id": "3",
-                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3454967093,1824291965&fm=26&gp=0.jpg",
-                "name": "德国华麦斯 家用工具箱套装五金工具套装多功能家庭电工木工电讯维修工具组合套装 豪华工具套装(升级加强版) ",
-                "id": "c21d63af1b784f278d32c547283b182o",
-                "check": false
-            }, {
-                "number": 10,
-                "typeList": "经典圆形三档套装;8寸",
-                "money": 110,
-                "item_id": "10",
-                "user_id": "3",
-                "type_id": "3",
-                "imageUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1436594447,3691516791&fm=26&gp=0.jpg",
-                "name": "自动变速箱加注神器波箱适用加油机5L润滑设备及工具",
-                "id": "c21d63af1b784f278d32c547283b1820",
                 "check": false
             }
             ]

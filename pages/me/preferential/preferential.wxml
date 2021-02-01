@@ -3,7 +3,7 @@
 	<view slot="content" class="text-bold text-black">优惠券</view>
 </cu-custom>
 
-<view class="bg-white cu-tabbar-height">
+<view class="bg-white cu-tabbar-height" style="border-top:1px solid #F7F7F7">
 	<view class="flex text-center text-lg">
 		<view class="cu-tabbar-height flex justify-center align-center  flex-sub {{currtab == item.index ? 'text-redOrange on' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
 			{{item.name}}
@@ -31,7 +31,7 @@
 					<view class="wrapper">
 						<view class="content1 ">
 							<view class='padding-sm'>
-								<view class="text-xl text-bold ">
+								<view class="text-xl text-bold">
 									{{item.name}}
 								</view>
 								<view class="text-sm padding-top-xs text-gray">
@@ -65,7 +65,7 @@
 									<view wx:if="{{item.type==2}}" class="text-price text-xxl text-bold text-red">{{item.reduceMoney}}</view>
 									<view wx:if="{{item.type==3}}" class="text-xxl text-bold text-red">{{item.reduceMoney}}</view>
 									<view wx:if="{{item.type==1}}" class="text-gray text-sm">满{{item.condition}}元可用</view>
-									<view bindtap="gotoIndex" class="cu-tag bg-redOrange round margin-top-xs">立即使用</view>
+									<button bindtap="gotoIndex" class="cu-btn line-red sm round margin-top-xs">立即使用</button>
 								</view>
 								<view>
 								</view>

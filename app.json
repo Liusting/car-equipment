@@ -1,13 +1,16 @@
 {
   "pages": [
-
+    "pages/cart/cart",
+    "pages/test/test",
     "pages/index/index",
     "pages/home/home",
     "pages/me/preferential/preferential",
+    "pages/home/couponCenter/coupon",
     "pages/me/appraise/appraise",
     "pages/me/aboutOur/index",
     "pages/item_type/sp_item_list/spItemList",
     "pages/me/sp_order_list/refund/refund",
+    "pages/me/sp_order_list/orderDetail/orderDetail",
     "pages/me/sp_order_list/spOrderList",
     "pages/home/moreDiscount/moreDiscount",
     "pages/me/memberMessage/memberMessage",
@@ -17,13 +20,11 @@
     "pages/me/address/editAddress/editAddress",
     "pages/me/address/addressList/addressList",
     "pages/me/sp_order_list/applyRefund/applyRefund",
-    "pages/me/sp_order_list/orderDetail/orderDetail",
     "pages/me/order/payResult/orderComplete",
     "pages/me/order/confirmOrder/order",
     "pages/home/goodSearch/goodSearch",
     "pages/me/address/addAddress/address",
-    "pages/cart/cart",
-    "pages/home/couponCenter/coupon",
+
     "pages/me/sp_order_list/steps/steps",
     "pages/item_type/itemType/itemType",
     "pages/me/me"

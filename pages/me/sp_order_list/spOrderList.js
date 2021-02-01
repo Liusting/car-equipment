@@ -45,19 +45,6 @@ Page({
                 "typeName": "经典方形三档套装;8寸",
                 "id": "1",
                 "order_id": "20200522100218863744"
-            }, {
-                "number": 7,
-                "pay_status": "1",
-                "money": 1799.0,
-                "item_id": "1",
-                "type_id": "3",
-                "trade_status": "1",
-                "imageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4/i1/1627473180/O1CN01vP6eDn1ZMU34VkZBd_!!0-item_pic.jpg_580x580Q90.jpg_.webp",
-                "display": "1",
-                "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
-                "typeName": "经典圆形三档套装;8寸",
-                "id": "a2c1d3656fc9486089cef0cd3116049d",
-                "order_id": "20200522100218863744"
             }],
             "shopImageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4//d0/5d/TB1Ade.fpYM8KJjSZFuSuwf7FXa.jpg_140x140Q90.jpg_.webp",
             "trade_status": "1",

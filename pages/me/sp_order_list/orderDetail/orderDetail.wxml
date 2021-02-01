@@ -1,5 +1,6 @@
 <view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
 		<cu-custom isBack="{{true}}">
 			<view slot="backText">订单详情</view>
 			<!-- <view slot="content">订单详情</view> -->
@@ -8,37 +9,41 @@
 </view>
 
 <scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
-	<view class="padding " wx:if="{{trade_status==1}}">
+	<view class="padding " >
 		<view class="text-xxl text-bold">待支付<text class="cuIcon-right"></text></view>
 		<view class="margin-tb-xs">剩余支付时间为<text class="text-blue">04:37</text></view>
 		<view class="text-sm">15分钟内未支付，订单将自动取消</view>
 	</view>
 	<view class="padding flex bg-white " bindtap="test">
-		<view class="text-xxl align-center text-center justify-center flex " style="width:38px;height:38px">
-			<text class="text-orange  cuIcon-locationfill"></text>
-		</view>
-		<view class="margin-left">
-			<text class="text-black">刘桂廷</text><text class="margin-left">18648840747</text>
-			<view>
-				<text class="text-black">广东省佛山市南海区桂城街道招商置地中心3座11楼</text>
+		<view class="align-center flex ">
+			<view class="text-xxl">
+				<text class="text-orange   cuIcon-locationfill"></text>
+			</view>
+			<view class="margin-left">
+				<text class="text-black">刘桂廷</text><text class="margin-left">18648840747</text>
+				<view>
+					<text class="text-black">广东省佛山市南海区桂城街道招商置地中心3座11楼</text>
+				</view>
 			</view>
 		</view>
+
 	</view>
 
 
 	<view class="margin-top bg-white padding-sm">
-		<view  wx:key>
+		<view wx:key>
 			<view class="bg-white flex">
 				<view style="height:200rpx;width:200rpx;">
-					<image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1190508392,2367207931&fm=26&gp=0.jpg" mode="widthFix"></image>
+					<image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1190508392,2367207931&fm=26&gp=0.jpg"
+						mode="widthFix"></image>
 				</view>
 
 				<view class="padding-xs ">
 					<view class="productTitle">德国华麦斯 家用工具箱套装五金工具套装多功能家庭电工木工电讯维修工具组合套装 豪华工具套装(升级加强版)</view>
 					<view class="text-gray margin-top-sm text-sm">经典款</view>
 					<view class="cu-bar">
-						<text class="text-price text-red" >1229</text>
-						<text >x1</text>
+						<text class="text-price text-red">1229</text>
+						<text>x1</text>
 					</view>
 				</view>
 			</view>
@@ -46,23 +51,24 @@
 
 	</view>
 	<view class=" bg-white">
-		<view class="padding-xs">
+		<view class="margin-lr-sm padding-tb-xs">
 			<text class="text-sm text-gray">商品总价</text>
 			<text class="text-sm text-gray text-price" style="float:right">26.00</text>
 		</view>
-		<view class="padding-xs">
+		<view class="margin-lr-sm padding-tb-xs">
 			<text class="text-sm text-gray">运费(快递)</text>
 			<text class="text-sm text-gray text-price" style="float:right">0.00</text>
 		</view>
-		<view class="padding-xs">
-			<text class="text-sm text-gray">优惠券券抵扣</text>
-			<text class="text-sm text-gray" style="float:right">- <text class="text-sm text-gray text-price">0.00</text></text>
+		<view class="margin-lr-sm padding-tb-xs">
+			<text class="text-sm text-gray">优惠券抵扣</text>
+			<text class="text-sm text-gray" style="float:right">- <text
+					class="text-sm text-gray text-price">0.00</text></text>
 		</view>
-		<view class="padding-xs" style="  border-bottom: 1px solid #f1f1f1;">
-			<text>订单总价</text>
+		<view class="margin-lr-sm padding-tb-xs" style="  border-bottom: 1px solid #F7F7F7;">
+			<text class="text-sm text-gray">订单总价</text>
 			<text class="text-price" style="float:right">26.00</text>
 		</view>
-		<view class="padding-xs">
+		<view class="margin-lr-sm padding-tb-xs">
 			<text>需付款</text>
 			<text class="text-price text-red" style="float:right">26.00</text>
 		</view>
@@ -74,38 +80,37 @@
 		</view>
 		<view class="padding-sm">
 			<text class="text-sm text-gray">商城积分：</text>
-			<text class="text-sm text-gray margin-left" >获得100积分</text>
+			<text class="text-sm text-gray margin-left">获得100积分</text>
 		</view>
 		<view class="padding-sm">
 			<text class="text-sm text-gray">订单编号：</text>
-			<text class="text-sm text-gray margin-left" >3463867637862764322</text>
+			<text class="text-sm text-gray margin-left">3463867637862764322</text>
 		</view>
 		<view class="padding-sm">
 			<text class="text-sm text-gray">买家留言：</text>
-			<text class="text-sm text-gray margin-left" >发顺丰快递</text>
+			<text class="text-sm text-gray margin-left">发顺丰快递</text>
 		</view>
 		<view class="padding-sm">
 			<text class="text-sm text-gray">创建时间：</text>
-			<text class="text-sm text-gray margin-left" >2019-10-16 09:52:44</text>
+			<text class="text-sm text-gray margin-left">2019-10-16 09:52:44</text>
 		</view>
-		<view class="padding-sm" >
+		<view class="padding-sm">
 			<text class="text-sm text-gray">支付方式：</text>
-			<text class="text-sm text-gray margin-left" >微信支付</text>
+			<text class="text-sm text-gray margin-left">微信支付</text>
 		</view>
 	</view>
-	<view class="cu-bar foot flex-sub text-center text-xl padding-sm  margin-top-sm bg-orange">
-			<button bindtap="chat" class="flex-sub bg-orange kf-button"><text class=" cuIcon-weixin"></text>客服</button>
-		</view>
 	<view class="cu-tabbar-height"></view>
 </scroll-view>
 
 
 
-<view class="cu-bar foot  bg-white padding-xs" style="border-top: 1px solid #f1f1f1" wx:if="{{trade_status==1}}">
-	<view></view>
-	<view class="productbtn">
-		<button style="float:right;margin-right:20rpx;" class="cu-btn line-red round">付款</button>
-		<button style="float:right;margin-right:20rpx;" class="cu-btn line-info round" data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
+<view class="cu-bar foot  bg-white padding-xs">
+	<view class="flex align-center">
+		<button class="kf-button bg-white"> <text class="cuIcon-weixin text-xl"></text>联系客服</button>
+	</view>
+	<view>
+		<button class="cu-btn line-info " data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
+		<button class="cu-btn line-red margin-left-sm">付款</button>
 	</view>
 </view>
 <view class="cu-bar foot bg-white padding-xs" style="border-top: 1px solid #f1f1f1" wx:if="{{trade_status==2}}">
@@ -129,7 +134,9 @@
 <view class="cu-bar foot bg-white padding-xs" style="border-top: 1px solid #f1f1f1" wx:if="{{trade_status==5}}">
 	<view></view>
 	<view class="productbtn">
-		<button style="float:right;margin-right:20rpx;" bindtap="appraise" data-id="{{items.id}}" class="cu-btn line-red round">评价</button>
-		<button style="float:right;margin-right:20rpx;" class="cu-btn line-info round" data-id="{{items.id}}" bindtap="cancelOrder">申请售后</button>
+		<button style="float:right;margin-right:20rpx;" bindtap="appraise" data-id="{{items.id}}"
+			class="cu-btn line-red round">评价</button>
+		<button style="float:right;margin-right:20rpx;" class="cu-btn line-info round" data-id="{{items.id}}"
+			bindtap="cancelOrder">申请售后</button>
 	</view>
 </view>

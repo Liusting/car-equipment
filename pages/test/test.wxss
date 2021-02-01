@@ -1,0 +1,123 @@
+page {
+  padding-top: 50px;
+  padding-bottom:20rpx;
+}
+.cu-custom{
+  position: absolute;
+  width:100%;
+}
+.head-title{
+  margin: 0 auto;
+}
+.cu-custom .cu-bar{
+  padding-right:inherit;
+  background-image:linear-gradient(45deg, #ff9700, #ed1c24);
+}
+.bg-gradual-green {
+  background-image:linear-gradient(45deg, #ff9700, #ed1c24);
+}
+.text-green, .line-green, .lines-green {
+  color:#e45c5c;
+}
+.box{
+  position:absolute;
+  width:100%;
+}
+.canui-kong{
+  padding-top:100rpx;
+}
+.canui-kong-icon{
+  width:260rpx;
+  height:260rpx;
+  line-height:220rpx;
+  margin:0 auto;
+  border-radius:200rpx;
+  margin-bottom:30rpx;
+}
+.canui-kong-icon text{
+  font-size:160rpx;
+}
+.canui-kong .bg-gradual-green{
+  margin:0 auto;
+}
+
+
+.cu-list.menu-avatar>.cu-item{
+  padding-left:220rpx;
+}
+.goods-list .cu-item .action-checkbox{
+  left:30rpx;
+  position:absolute;
+}
+.cu-list.menu-avatar>.cu-item>.cu-avatar{
+  left:100rpx;
+}
+.goods-list .cu-item .goods-price-btn{
+  position:relative;
+}
+.goods-list .cu-item .text-price{
+  padding-right:260rpx;
+}
+.goods-list .cu-item .action-btn-sum{
+  position:absolute;
+  right:0px;
+  top:0px;
+  text-align:right;
+  border:1px solid #D9D9D9;
+  border-radius:2px;
+}
+.goods-list .cu-item .cu-btn{
+  float:left;
+  width:24px;
+  height:24px;
+  line-height:24px;
+  border-radius:0px;
+  font-size:18px;
+  padding:0px;
+  background-color: #F7F6F6;
+}
+.goods-list .cu-item .ca-sum{
+  float:left;
+  width:32px;
+  height:24px;
+  text-align:center;
+  font-size:12px;
+  line-height:24px;
+  background-color: #fbfbfb;
+  border-left:1px solid #D9D9D9;
+  border-right:1px solid #D9D9D9;
+  min-height:24px;
+}
+.canui-foor-fixed{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height:85rpx;
+}
+.canui-checked{
+  width:75rpx;
+}
+.canui-delete{
+  width:100rpx;
+}
+.canui-delete .cu-btn{
+  background-color:#fff;
+  font-size:35rpx;
+}
+.canui-price{
+  width:400rpx;
+  text-align:right;
+  align-self:stretch;
+  line-height:85rpx;
+  padding-right:20px;
+  font-size:13px;
+}
+.canui-submit{
+  width:200rpx;
+  align-self:stretch;
+  align-items:center;
+  display:flex;
+  text-align:center;
+  justify-content:center;
+  font-size:13px;
+}
