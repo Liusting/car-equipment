@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "MyCart": "/pages/cart/cart"
-  }
+  },
+  "navigationBarTextStyle": "black"
 }

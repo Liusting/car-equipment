@@ -4,6 +4,21 @@
   margin-left: calc(var(--left) * 100rpx - 150rpx);
   z-index: var(--index);
 }
+.on {
+  color: red;
+  font-size: 33rpx;
+}
+
+
+.fixed1 {
+  position: fixed;
+  top: 84px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 1;
+  width: 100%;
+}
+
 
 .spItem-form-group {
   background-color: var(--white);

@@ -2,6 +2,7 @@
 .on {
   border-bottom:2px solid red;
   color: red;
+  font-size: 33rpx;
 }
  
 .navTopList {

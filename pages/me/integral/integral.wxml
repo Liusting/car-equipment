@@ -12,9 +12,9 @@
 	</view>
 </view>
 <view >
-<view class="bg-white" >
-	<view class="flex text-center grid col-3" >
-		<view class="flex justify-center align-center padding flex-sub {{currtab == item.index ? 'text-red' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+<view class="bg-white">
+	<view class=" grid col-3 cu-tabbar-height">
+		<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
 			{{item.name}}
 		</view>
 	</view>

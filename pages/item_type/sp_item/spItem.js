@@ -28,6 +28,20 @@ Page({
         bottom_view_height1: 50,
         bottom_view_height2: 100,
         cartslength: [],
+        currtab: 0,
+        swipertab: [{
+                name: '宝贝详情',
+                index: 0
+            },
+            {
+                name: '产品参数',
+                index: 1
+            },
+            {
+                name: '商品评价',
+                index: 2
+            }
+        ],
         // GMSL 购买数量，初始化为1
         GMSL: 1,
         // money 价格，初始化为0
@@ -53,7 +67,28 @@ Page({
         collect: false,
         // 提示选中什么或者要用户要选择什么
         tipsTitle: "",
-        modalType:""
+        modalType: "",
+        menuTop: ""
+    },
+    /**
+     * @Explain：选项卡点击切换
+     */
+    tabSwitch: function (e) {
+        var that = this
+        if (this.data.currtab === e.target.dataset.current) {
+            return false
+        } else {
+            that.setData({
+                currtab: e.target.dataset.current
+            })
+        }
+    },
+
+    tabChange: function (e) {
+        this.setData({
+            currtab: e.detail.current
+        })
+        // this.orderShow()
     },
     //收藏商品
     collect: function () {
@@ -67,11 +102,38 @@ Page({
             title: '普斯汽保-您身边值得信赖汽保设备商',
         }
     },
+    sssss:function(e){
+        console.log(e.detail.scrollTop)
+        if (this.data.menuFixed === (e.detail.scrollTop > this.data.menuTop)) return;
+        // 当页面滚动距离scrollTop > menuTop菜单栏距离顶部的距离时，菜单栏固定定位
+        this.setData({
+            menuFixed: (e.detail.scrollTop > this.data.menuTop)
+        })
+
+        
+    },
+    // 监听页面滚动距离
+    onPageScroll:function (e) {
+        var scrollTop = e.scrollTop;
+        var isSatisfy = scrollTop >= this.data.navbarInitTop;
+        this.setData({
+          isFixed: isSatisfy
+        });
+    },
     /**
      * 生命周期函数--监听页面显示
      */
     onLoad: function (e) {
-
+        var _this = this;
+        var query = wx.createSelectorQuery()
+        query.select('#affix').boundingClientRect();
+        query.selectViewport().scrollOffset();
+        query.exec(function (res) {
+            console.log(res)
+            _this.setData({
+                menuTop: res[0].top
+            })
+        })
         console.log(e);
         var that = this;
         let itemId = e.itemId;
@@ -94,21 +156,21 @@ Page({
             shopName: '壹品印象旗舰店'
         })
         wx.request({
-            url: app.ipAndPort + '/spCart/getCartDetail',
-            method: 'POST',
-            data: {},
-            header: {
-                'content-type': 'application/x-www-form-urlencoded'
-            },
-            success: function (res) {
-                let resData = res.data;
-                let cartslength = resData.CartDetailList;
-                that.setData({
-                    cartslength: cartslength,
-                    itemId: e.itemId
-                })
-            }
-        }),
+                url: app.ipAndPort + '/spCart/getCartDetail',
+                method: 'POST',
+                data: {},
+                header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                },
+                success: function (res) {
+                    let resData = res.data;
+                    let cartslength = resData.CartDetailList;
+                    that.setData({
+                        cartslength: cartslength,
+                        itemId: e.itemId
+                    })
+                }
+            }),
             //根据商品的id值获取商品信息
             wx.request({
                 url: app.ipAndPort + '/spObject/getSpObject',
@@ -362,7 +424,7 @@ Page({
         console.log(e)
         this.setData({
             modalName: e.currentTarget.dataset.target,
-            modalType:e.currentTarget.dataset.type
+            modalType: e.currentTarget.dataset.type
         })
     },
     hideModal(e) {
@@ -391,8 +453,7 @@ Page({
         let spTypeObjList = this.data.spTypeObjList;
         let spClickMap = this.data.spClickMap;
         for (let i = 0; i < spTypeList.length; i++) {
-            if (spClickMap[spTypeList[i].id] == null) {
-            }
+            if (spClickMap[spTypeList[i].id] == null) {}
             let selectedList = [];
             for (let i = 0; i < spTypeObjList.length; i++) {
                 let dataList = spTypeObjList[i];

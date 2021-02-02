@@ -1,14 +1,14 @@
-<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+<view class="cu-custom {{menuFixed?'bg-white':'bg-blue'}}" style="height:{{CustomBar}}px">
 	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
 		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-		<cu-custom isBack="{{true}}">
+		<cu-custom class="{{menuFixed?'text-black':'text-white'}}" isBack="{{true}}">
 			<view slot="backText">商品详情</view>
 		</cu-custom>
 	</view>
 </view>
 
 
-<scroll-view scroll-y style='height:{{deviceH-CustomBar}}px'>
+<scroll-view scroll-y style='height:{{deviceH-CustomBar}}px' bindscroll="sssss">
 	<view>
 		<view style="position: relative;">
 			<swiper class="flex justify-center" style="height: 450px;" class="" indicator-dots="true" autoplay="true"
@@ -42,7 +42,7 @@
 
 	</view>
 
-	<view class="flex justify-between align-center bg-white padding margin-top">
+	<view class="flex justify-between align-center bg-white padding margin-tb-sm">
 		<view class=" text-red">
 			<view class="cu-tag round ">满200减10劵</view>
 			<view class="cu-tag round ">满400减50劵</view>
@@ -54,7 +54,7 @@
 		</view>
 	</view>
 
-	<view class="bg-white margin-top">
+	<!-- <view class="bg-white margin-top">
 		<view class="flex justify-between align-center padding" style="border-bottom:1px solid #f1f1f1">
 			<text>商品评价(5125)</text>
 			<text>查看更多<text class="cuIcon-right "></text></text>
@@ -69,18 +69,29 @@
 				<text>物美价廉，太赞了，本来以为特别差页，这么好。就是笑了点，不过特别值这个价，开心。。。会推荐给身边需要人买的</text>
 			</view>
 		</view>
+	</view> -->
+
+<view id='affix' class="bg-white">
+	<view class=" grid col-3 cu-tabbar-height">
+		<view  class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+			{{item.name}}
+		</view>
 	</view>
+</view>
+
+
+<view wx:if="{{menuFixed}}"  class="{{menuFixed?'fixed1 cu-tabbar-height bg-white':''}}">
+	<view class=" grid col-3 cu-tabbar-height">
+		<view  class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+			{{item.name}}
+		</view>
+	</view>
+</view>
 
 	<view>
-
-		<view class="detail">
-			<text>—— 宝贝详情 ——</text>
-		</view>
-
 		<view wx:for="{{swiperList}}" wx:key="key">
 			<image style="width:100%" src="{{item.url}}" mode="widthFix" />
 		</view>
-
 	</view>
 
 	<view class="cu-bar tabbar bg-white shadow foot">
