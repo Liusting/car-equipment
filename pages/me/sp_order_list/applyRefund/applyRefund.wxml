@@ -6,14 +6,14 @@
 	</view>
 </view>
 <view class=" bg-white padding-xs">
-	<view wx:for="{{spList.itemData}}" wx:key>
+	<view>
 		<view class="bg-white flex">
 			<view style="height:150rpx;width:150rpx;">
-				<image src="{{item.imageUrl}}" mode="widthFix"></image>
+				<image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg" mode="widthFix"></image>
 			</view>
 			<view class="margin-left-xs ">
-				<view class="productTitle">{{item.itemName}}</view>
-				<view class="text-gray margin-top-sm text-sm">{{item.typeName}}</view>
+				<view class="productTitle">ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家</view>
+				<view class="text-gray margin-top-sm text-sm">经典款</view>
 			</view>
 		</view>
 	</view>
@@ -21,6 +21,9 @@
 
 <form bindsubmit="formSubmit">
 	<view class="bg-white margin-top padding-xs">
+		<view class="margin-tb-sm">
+			<text><text class=" cuIcon-titles text-orange"></text>退款类型</text>
+		</view>
 		<view class="flex">
 			<view name="way" class="padding-sm {{flag?'on':'selectWay'}}" bindtap="selectWay" style="flex:1;line-height:50rpx">
 				<text class="text-bold">仅退款</text>
@@ -36,7 +39,7 @@
 
 	<view class="margin-top-sm padding-xs bg-white">
 		<view>
-			<text>退款原因</text>
+			<text><text class=" cuIcon-titles text-orange"></text>退款类型</text>
 			<text class="margin-left text-red">必选</text>
 		</view>
 		<view class="margin-tb-sm flex justify-between align-center">
@@ -50,12 +53,12 @@
 	</view>
 
 	<view class="padding-xs bg-white margin-top">
-		<text class="margin-tb-sm">退款金额  可修改，最多<text class="margin-left-sm text-price text-red">1299.00</text></text>
+		<text class="margin-tb-sm ">	<text><text class=" cuIcon-titles text-orange"></text>退款金额</text>  可修改，最多<text class="margin-left-sm text-price text-red">1299.00</text></text>
 		<input name="money" class="margin-tb-sm" type="number" style="width:100%" value="{{1299.00}}" placeholder="请输入退款金额" />
 	</view>
 
 	<view class="padding-xs bg-white margin-top">
-		<text class="margin-tb-sm">退款说明</text>
+			<text><text class=" cuIcon-titles text-orange"></text>退款说明</text>
 		<input name="explain" maxlength="200" class="margin-tb-sm" style="width:100%;" placeholder="选填"></input>
 	</view>
 	<view class="cu-bar bg-white margin-top">

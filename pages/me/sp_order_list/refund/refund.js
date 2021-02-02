@@ -35,7 +35,7 @@ Page({
     },
     checkSteps: function (e) {
         wx.navigateTo({
-            url: '../me/steps',
+            url: '../../sp_order_list/steps/steps',
         })
     },
     /**

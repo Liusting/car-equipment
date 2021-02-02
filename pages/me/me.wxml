@@ -20,7 +20,7 @@
 			</view>
 		</view>
 	</view>
-<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
+<scroll-view scroll-y style="height:{{deviceH-CustomBar-75}}px">
 	<view class="margin-sm bg-white" style="border-radius:7px">
 		<view class="padding flex align-center justify-between" style="border-bottom:1px solid #f1f1f1">
 			<text class="text-lg text-black">我的订单</text>

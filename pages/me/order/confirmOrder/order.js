@@ -52,10 +52,6 @@ Page({
             {
                 type: '2',
                 name: '商家配送'
-            },
-            {
-                type: '3',
-                name: '系统配送'
             }
         ],
         item: {
@@ -236,7 +232,7 @@ Page({
     bindaddress: function (e) {
         let id = e.currentTarget.dataset.id;
         wx.navigateTo({
-            url: '../addressList/addressList?type=' + 2 + '&id=' + id
+            url: '../../address/addressList/addressList?type=' + 2 + '&id=' + id
         })
     },
     // 留言
@@ -248,7 +244,7 @@ Page({
     //优惠券
     preferential: function () {
         wx.navigateTo({
-            url: '../preferential/preferential'
+            url: '../../preferential/preferential'
         })
     },
 

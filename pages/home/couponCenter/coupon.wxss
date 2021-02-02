@@ -1,3 +1,6 @@
+page{
+  background-color: white;
+}
 .on {
   border-bottom: 2px solid red;
   color: red;
@@ -20,11 +23,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: #fff;
+  background: white;
 }
 
 .Info {
-  background-color: #fff;
+  background: white;
   border-radius: 10px;
   width: 100%;
   display: flex
@@ -44,14 +47,10 @@
   margin: 0 auto;
   width: 100%;
   display: flex;
-  background: #56CCF2;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2F80ED, #56CCF2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  /*实现颜色渐变 */
+  background: #FFAFBD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffc3a0, #FFAFBD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffc3a0, #FFAFBD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 /*前半部分样式*/
@@ -76,7 +75,7 @@
   position: relative;
   flex: 0 0 0;
   margin: 0 10rpx 0 6rpx;
-  border-left: 4rpx dashed #eee;
+  border-left: 4rpx dashed white
 }
 
 /*给虚线加两个伪类，基本样式如下*/
@@ -86,7 +85,7 @@
   position: absolute;
   width: 32rpx;
   height: 16rpx;
-  background: #eee;
+  background: white;
   left: -18rpx;
   z-index: 1;
 }
@@ -133,7 +132,7 @@
 .co .co_w {
   width: 64rpx;
   height: 1rpx;
-  background: #fff;
+  background: white;
   margin-left: 60rpx;
   margin-bottom: -20rpx;
 }
@@ -141,7 +140,7 @@
 .co .co_l {
   width: 64rpx;
   height: 1rpx;
-  background: #fff;
+  background: white;
   margin-left: 260rpx;
   margin-top: -15rpx;
 }
@@ -159,7 +158,7 @@
   position: absolute;
   width: 32rpx;
   height: 16rpx;
-  background: #eee;
+  background: white;
   right: -16rpx;
   z-index: 1;
 }
@@ -170,7 +169,7 @@
   position: absolute;
   width: 32rpx;
   height: 16rpx;
-  background: #eee;
+  background: white;
   left: -16rpx;
   z-index: 1;
 }

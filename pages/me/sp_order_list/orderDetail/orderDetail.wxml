@@ -9,12 +9,12 @@
 </view>
 
 <scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
-	<view class="padding " >
+	<view  class="padding-sm">
 		<view class="text-xxl text-bold">待支付<text class="cuIcon-right"></text></view>
 		<view class="margin-tb-xs">剩余支付时间为<text class="text-blue">04:37</text></view>
 		<view class="text-sm">15分钟内未支付，订单将自动取消</view>
 	</view>
-	<view class="padding flex bg-white " bindtap="test">
+	<view class="padding-sm margin-top flex bg-white " bindtap="test">
 		<view class="align-center flex ">
 			<view class="text-xxl">
 				<text class="text-orange   cuIcon-locationfill"></text>
@@ -74,7 +74,7 @@
 		</view>
 	</view>
 
-	<view class="margin-top bg-white">
+	<view class="margin-tb-sm bg-white">
 		<view class="padding-sm">
 			<text><text class=" cuIcon-titles text-orange"></text>订单信息</text>
 		</view>
@@ -104,13 +104,13 @@
 
 
 
-<view class="cu-bar foot  bg-white padding-xs">
+<view class="cu-bar foot tabbar  bg-white padding-xs">
 	<view class="flex align-center">
-		<button class="kf-button bg-white"> <text class="cuIcon-weixin text-xl"></text>联系客服</button>
+		<button open-type="contact" class="kf-button bg-white"> <text class="cuIcon-weixin">联系客服</text></button>
 	</view>
 	<view>
-		<button class="cu-btn line-info " data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
-		<button class="cu-btn line-red margin-left-sm">付款</button>
+		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
+		<button class="cu-btn line-red margin-right-sm">付款</button>
 	</view>
 </view>
 <view class="cu-bar foot bg-white padding-xs" style="border-top: 1px solid #f1f1f1" wx:if="{{trade_status==2}}">

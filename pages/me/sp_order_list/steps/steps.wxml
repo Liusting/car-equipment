@@ -1,13 +1,12 @@
 <view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
   <view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
     <cu-custom isBack="{{true}}">
-      <view slot="backText">返回</view>
-      <view slot="content">售后进度</view>
+      <view slot="backText">售后进度</view>
     </cu-custom>
   </view>
 </view>
 
-<scroll-view scroll-y style="height:{{deviceH-64}}px">
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
   <view class="bg-white padding">
     <view class="cu-steps">
       <view class="cu-item {{index>num?'':'text-blue'}}" wx:for="{{numList}}" wx:key>
@@ -15,13 +14,13 @@
       </view>
     </view>
   </view>
-  <view class="margin-top bg-white padding-sm">
-    <view class="padding-xs">
-      <text class="margin-left text-bold">商品信息</text>
+  <view class="margin-top bg-white">
+     <view class="padding-sm">
+      <text><text class=" cuIcon-titles text-orange"></text>商品信息</text>
     </view>
-    <view class="bg-white flex" wx:for="{{1}}" wx:key>
+    <view class="bg-white padding-xs flex" wx:for="{{1}}" wx:key>
       <view style="height:200rpx;width:200rpx;">
-        <image src="../../images/demo.jpg" mode="widthFix"></image>
+        <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg" mode="widthFix"></image>
       </view>
       <view class="padding-xs ">
         <view class="productTitle">红木家具非洲进口中式餐桌圆凳直径1.5米带钢化玻璃防热搞1.1米梨花木耐用原产地质量100%保证</view>
@@ -38,49 +37,20 @@
       <text class="text-sm text-gray">商品总价</text>
       <text class="text-sm text-gray text-price" style="float:right">60000</text>
     </view>
-    <view class="padding-xs">
-      <text class="text-sm text-gray">折扣价</text>
-      <text class="text-sm text-gray text-price" style="float:right">6折</text>
-    </view>
-    <view class="padding-xs">
-      <text class="text-sm text-gray">团购价</text>
-      <text class="text-sm text-gray text-price" style="float:right">1000</text>
-    </view>
+
+
     <view class="padding-xs">
       <text class="text-sm text-gray">运费(快递)</text>
       <text class="text-sm text-gray text-price" style="float:right">0.00</text>
     </view>
     <view class="padding-xs">
-      <text class="text-sm text-gray">券抵扣</text>
+      <text class="text-sm text-gray">优惠券抵扣</text>
       <text class="text-sm text-gray" style="float:right">- <text class="text-sm text-gray text-price">1000</text></text>
     </view>
-    <view class="padding-xs">
-      <text class="text-sm text-gray">满立减折扣</text>
-      <text class="text-sm text-gray" style="float:right">- <text class="text-sm text-gray text-price">5000</text></text>
-    </view>
-    <view class="padding-xs">
-      <text class="text-sm text-gray">会员折扣</text>
-      <text class="text-sm text-gray" style="float:right">- <text class="text-sm text-gray text-price">0.00</text></text>
-    </view>
-    <view class="padding-xs">
-      <text class="text-sm text-gray">积分折扣</text>
-      <text class="text-sm text-gray" style="float:right">- <text class="text-sm text-gray text-price">0.00</text></text>
-    </view>
-    <view class="padding-xs" style="  border-bottom: 1px solid #f1f1f1;">
+
+    <view class="padding-xs" style="  border-top: 1px solid #f1f1f1;">
       <text>订单总价</text>
       <text class="text-price" style="float:right">30000</text>
-    </view>
-    <view class="padding-xs">
-      <text>已付定金</text>
-      <text class="text-price text-red" style="float:right">10000</text>
-    </view>
-    <view class="padding-xs">
-      <text>尾款1</text>
-      <text class="text-price text-red" style="float:right">10000</text>
-    </view>
-    <view class="padding-xs">
-      <text>剩余尾款</text>
-      <text class="text-price text-red" style="float:right">10000</text>
     </view>
   </view>
 

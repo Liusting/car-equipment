@@ -1,15 +1,19 @@
 {
   "pages": [
-
     "pages/index/index",
+    "pages/me/vipCard/vipCard",
     "pages/home/home",
     "pages/cart/cart",
     "pages/test/test",
+    "pages/Login/index",
     "pages/me/preferential/preferential",
     "pages/home/couponCenter/coupon",
     "pages/me/appraise/appraise",
+    "pages/me/integral/integral",
     "pages/me/aboutOur/index",
     "pages/item_type/sp_item_list/spItemList",
+    "pages/me/sp_order_list/applyRefund/applyRefund",
+    "pages/me/sp_order_list/steps/steps",
     "pages/me/sp_order_list/refund/refund",
     "pages/me/sp_order_list/orderDetail/orderDetail",
     "pages/me/sp_order_list/spOrderList",
@@ -20,15 +24,13 @@
     "pages/me/sp_order_list/expressInformation/expressInformation",
     "pages/me/address/editAddress/editAddress",
     "pages/me/address/addressList/addressList",
-    "pages/me/sp_order_list/applyRefund/applyRefund",
-    "pages/me/order/payResult/orderComplete",
     "pages/me/order/confirmOrder/order",
+    "pages/me/order/payResult/orderComplete",
     "pages/home/goodSearch/goodSearch",
     "pages/me/address/addAddress/address",
-
-    "pages/me/sp_order_list/steps/steps",
     "pages/item_type/itemType/itemType",
     "pages/me/me"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

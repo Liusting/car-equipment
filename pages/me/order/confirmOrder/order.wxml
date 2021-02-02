@@ -97,7 +97,7 @@
 	<view class="bg-white padding-xs margin-sm radius">
 		<view class="padding cu-bar" >
 			<view>优惠券（您有0张优惠券可用）</view>
-			<view>
+			<view bindtap="preferential">
 				<text class="{{'cuIcon-right text-gray'}}"></text>
 			</view>
 		</view>

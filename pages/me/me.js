@@ -151,12 +151,12 @@ Component({
             switch (id) {
                 case 1:
                     wx.navigateTo({
-                        url: '../goodsCollection/goodsCollectionList',
+                        url: '../me/vipCard/vipCard',
                     });
                     break;
                 case 2:
                     wx.navigateTo({
-                        url: '../me/memberMessage/memberMessage',
+                        url: '../me/integral/integral',
                     });
                     break;
                 case 3:

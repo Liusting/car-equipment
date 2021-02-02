@@ -7,14 +7,14 @@
 </view>
 
 <scroll-view class="hot-box bg-white" scroll-y="true" style="height:{{deviceH-CustomBar}}px">
-	<view class="search_no" wx:if="{{!allOrder.length}}">
+	<!-- <view class="search_no" wx:if="{{!allOrder.length}}">
 		<view class="font_14">
 			<image class="scimg" src="/images/person/search_no.png"></image>
 		</view>
 		<text>没有可用优惠券/(ㄒoㄒ)/~~</text>
-	</view>
+	</view> -->
 
-	<view class="" wx:for="{{allOrder}}" wx:key>
+	<view class="" wx:for="{{10}}">
 		<view class="margin-sm">
 			<view class="wrapper">
 				<view class="content1 text-white">
@@ -23,24 +23,24 @@
 					</view>
 					<view class='padding-xs '>
 						<view class="text-df text-bold padding-xs">
-							{{item.name}}
+							满100减5
 						</view>
 						<view class="text-sm padding-xs">
-							适用时间：{{item.valid_start_time}}-{{item.valid_end_time}}
+							适用时间：2020.11.20-2021.11.19
 						</view>
 						<view class="text-sm padding-xs">
-							适用门店：全平台适用
+							使用说明:只适合起重器使用
 						</view>
 					</view>
 				</view>
 				<view class="split-line"></view>
-				<view class="tip text-white">
+				<view class="tip text-center text-white">
 					<view>
 						<view class="">
-							<text class="text-price text-sl text-bold">{{item.used_amount}}</text>
+							<text class="text-price text-sl text-bold">5</text>
 						</view>
 						<view wx:if="{{item.status==1}}">
-							满{{item.with_amount}}元可用
+							满100元可用
 						</view>
 						<view class="conditions">
 							<button bindtap="getCoupon" class="cu-btn bg-white round sm">立即领取</button>

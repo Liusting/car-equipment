@@ -11,13 +11,6 @@
 
 
 
-	<!-- <view class="bg-blue padding">
-		<view class="flex justify-center"><text>当前积分</text></view>
-		<view class="margin-top-sm flex justify-center">
-			<text class="text-sl text-bold">854</text>
-		</view>
-	</view> -->
-
 
 
 
@@ -77,27 +70,5 @@
 
 
 
-	<view class="bg-red">
-		<view class="bg-white cu-bar  padding-lr-sm">
-			<view class="flex align-center">
-				<text class="text-black ">积分兑换</text>
-			</view>
-		</view>
-		<view class="cu-card" wx:for="{{6}}" wx:key style="width: 250rpx;display: inline-block">
-			<view class="cu-item" style="border-radius:7px">
-				<image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg"
-					mode="widthFix"></image>
 
-				<text class="shop_name">小米9手机壳cc9e红米k20Pro青春note7版8保护6x套max3note5防摔mix2s全包屏幕指纹se八5plus九a硅胶note3磨砂</text>
-				<view class="padding-xs flex align-center justify-between">
-					<view>
-						<text class="text-red  text-bold text-price">18888积分</text>
-					</view>
-					<view>
-						<button bindtap="goto" style="float:right;font-style:italic" class="cu-btn bg-red icon">兑换</button>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
 </scroll-view>

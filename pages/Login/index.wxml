@@ -1,0 +1,17 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+	<view slot="backText"></view>
+	<view slot="content" class="text-bold text-black">会员登录</view>
+</cu-custom>
+<view class="padding flex justify-center" style="height:{{deviceH-CustomBar}}px">
+	<view>
+		<view class="flex justify-center">
+			<image mode="aspectFit" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1972285251,14468825&fm=26&gp=0.jpg"></image>
+		</view>
+		<view class=" flex justify-center text-xl">
+			<text class="text-black">普斯汽保</text>
+		</view>
+		<view class="flex flex-sub margin-top">
+			<button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" class="cu-btn round flex-sub lg bg-green">微信授权登录</button>
+		</view>
+	</view>
+</view>
