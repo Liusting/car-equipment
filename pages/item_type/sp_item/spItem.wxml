@@ -1,8 +1,8 @@
 <view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
 		<cu-custom isBack="{{true}}">
 			<view slot="backText">商品详情</view>
-			<!-- <view slot="content">商品详情</view> -->
 		</cu-custom>
 	</view>
 </view>
@@ -11,13 +11,12 @@
 <scroll-view scroll-y style='height:{{deviceH-CustomBar}}px'>
 	<view>
 		<view style="position: relative;">
-			<swiper class="flex justify-center" style="height: 450px;" class="" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-				<!-- <swiper-item>
-			<video style="width:100%" id="myVideo" src='blob:https://item.taobao.com/bfc2187d-2479-4e89-84e0-d7d24a7ae55b' bindtap="bofang" controls='true'></video>
-		</swiper-item> -->
+			<swiper class="flex justify-center" style="height: 450px;" class="" indicator-dots="true" autoplay="true"
+				interval="5000" duration="1000">
 				<block wx:for="{{swiperList}}" wx:key="index">
 					<swiper-item>
-						<image style="width: 100%;height: 100%;" src="{{item.url}}" data-index='{{index}}' bindtap='previewImg' data-previewurl='{{item.url}}' data-currenturl='{{item.url}}' />
+						<image style="width: 100%;height: 100%;" src="{{item.url}}" data-index='{{index}}' bindtap='previewImg'
+							data-previewurl='{{item.url}}' data-currenturl='{{item.url}}' />
 					</swiper-item>
 				</block>
 			</swiper>
@@ -25,7 +24,7 @@
 	</view>
 	<view class="padding bg-white">
 		<view class="flex justify-between align-center text-xl text-black">
-			<text  class=' '>多喝点度的户外的速度保护单独五百动物蛋白和度的好吧</text>
+			<text class=' '>多喝点度的户外的速度保护单独五百动物蛋白和度的好吧</text>
 			<button class="padding-lr-xs text-center bg-white kf-button" open-type="share">
 				<text style="font-size:25px" class="cuIcon-forward text-red">
 				</text>
@@ -35,57 +34,35 @@
 			<view class=" text-red">
 				<view class="text-xxl">
 					<text class="text-bold text-price ">95.90-410.20</text>
-						<text class="text-sm text-gray margin-left-xs text-price" style="text-decoration:line-through">15.80</text>
+					<text class="text-sm text-gray margin-left-xs text-price" style="text-decoration:line-through">15.80</text>
 				</view>
 			</view>
 			<view>已售12000件</view>
 		</view>
-	
+
 	</view>
 
 	<view class="flex justify-between align-center bg-white padding margin-top">
-			<view class=" text-red">
-				<view class="cu-tag round ">满200减10劵</view>
-				<view class="cu-tag round ">满400减50劵</view>
-				<view class="cu-tag round ">满500减100劵</view>
-			</view>
-			<view class='text-black' bindtap="coupon">
-				领劵
-				<text class="cuIcon-right"></text>
-			</view>
+		<view class=" text-red">
+			<view class="cu-tag round ">满200减10劵</view>
+			<view class="cu-tag round ">满400减50劵</view>
+			<view class="cu-tag round ">满500减100劵</view>
 		</view>
-	<!-- 
-    <view class="cu-form-group margin-top">
-      <view class="title">
-        <text class='text-grey' decode="{{true}}">发货&nbsp;&nbsp;</text>
-        <text class="cuIcon-locationfill text-orange">{{goodsDetailList[0].place}}</text>
-        <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;快递:免运费</text>
-      </view>
-      <view class='text-grey'>月销:2222</view>
-    </view> -->
-
-	<!-- 分割 -->
-	<!-- <view style="height: 20rpx; background-color:#f1f1f1;"></view> -->
-
-	<!-- <view class="spItem-form-group margin-top" bindtap="showModal" data-target="bottomModal">
-		<view class="title text-grey">规格</view>
-
-		<text class="cuIcon-right text-orange"></text>
+		<view class='text-black' bindtap="coupon">
+			领劵
+			<text class="cuIcon-right"></text>
+		</view>
 	</view>
-
-	<view class="spItem-form-group " bindtap="showModal" data-target="GroupViewModal">
-		<view class="title text-grey">参数</view>
-		<text class="cuIcon-right text-orange"></text>
-	</view> -->
 
 	<view class="bg-white margin-top">
 		<view class="flex justify-between align-center padding" style="border-bottom:1px solid #f1f1f1">
 			<text>商品评价(5125)</text>
-			<text>查看更多<text  class="cuIcon-right "></text></text>
+			<text>查看更多<text class="cuIcon-right "></text></text>
 		</view>
 		<view class="padding">
 			<view class="flex align-center">
-				<view class="cu-avatar sm round " style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+				<view class="cu-avatar sm round "
+					style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
 				<text class="margin-left-xs">笨笨糖</text>
 			</view>
 			<view class="text margin-top-xs">
@@ -94,119 +71,25 @@
 		</view>
 	</view>
 
+	<view>
 
-	<view wx:if="{{groupViewOpen}}">
-		<view wx:for="{{groupValList}}" wx:key>
-			<view class="cu-form-group">
-				<view class="title">产品参数</view>
-				<text>{{item.list}}</text>
-			</view>
+		<view class="detail">
+			<text>—— 宝贝详情 ——</text>
 		</view>
-	</view>
 
-
-
-	<view class="detail">
-		<text>—— 宝贝详情 ——</text>
-	</view>
-
-	<view wx:for="{{swiperList}}" wx:key="key">
-		<image style="width:100%" src="{{item.url}}" mode="widthFix" />
-	</view>
-
-
-
-
-	<!-- 选择规格弹框 -->
-	<!-- 底部固定的按钮区域 -->
-
-
-	<!-- 选择底部滑窗 -->
-	<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal" style='overflow: hidden;text-align: left;'>
-		<view class="cu-dialog background-white" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
-			<!-- 顶部固定卡片区域 -->
-			<view class="cu-card article npl-intro {{isCard?'no-card':''}}">
-				<view class="cu-item shadow">
-					<view class="title">
-						<view class='height15'></view>
-					</view>
-					<view class="content">
-						<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-						<view class="desc text-left">
-							<view class="text-xxl">
-								<text class="text-red text-price">{{money}}</text>
-							</view>
-							<view class="text-sm">
-								<text class="text-grey">库存19624件</text>
-							</view>
-							<view class="text-sm">
-								<text class="text-black">{{tipsTitle}}</text>
-							</view>
-						</view>
-					</view>
-				</view>
-			</view>
-
-			<!-- 中部滑窗内部可滚动区域 -->
-			<scroll-view scroll-y catchtap style="height:calc( 100vh - {{CustomBar}}px - {{card_view_height}}px - 75px);">
-
-
-				<view wx:for="{{spTypeObjListLet}}" wx:key wx:for-item="typeValue" wx:for-index="typeIndex">
-					<view class="bg-white">
-						<view class="action">
-							<text class="cuIcon-title text-blue"></text>{{typeValue.typeName}}
-						</view>
-					</view>
-					<view class='padding-sm flex flex-wrap'>
-						<view class="padding-xs" wx:for="{{typeValue.list}}" wx:key wx:for-item="objectValue">
-							<view class="cu-tag line-{{clickMap[typeValue.typeId]==objectValue.name?'yellow':(objectValue.state?'black':'gray')}}" bindtap="objClick" data-objName="{{objectValue.name}}" data-typeId="{{typeValue.typeId}}" data-state="{{objectValue.state}}">
-								{{objectValue.name}}
-							</view>
-						</view>
-					</view>
-				</view>
-
-				<view class="cu-form-group">
-					<view class="title">购买数量</view>
-
-					<view class="cu-capsule">
-						<view class="cu-tag bg-grey" bindtap="GMSLMoveOrAdd" data-target="move">
-							<text class="cuIcon-move"></text>
-						</view>
-						<view class="cu-tag line-grey">
-							{{GMSL}}
-						</view>
-						<view class="cu-tag bg-grey" bindtap="GMSLMoveOrAdd" data-target="add">
-							<text class="cuIcon-add"></text>
-						</view>
-					</view>
-
-				</view>
-
-				<view style="height{{bottom_view_height1}}rpx">
-				</view>
-			</scroll-view>
-
-			<!-- 底部固定的按钮区域 -->
-			<view class="cu-bar tabbar bg-white shadow foot grid col-2 padding-sm text-center bottom_view_height1">
-				<view class="padding-xs">
-					<!-- <button class="cu-btn bg-grey lg">加入购物车</button> -->
-					<button class="addcart" bindtap="jrgwcClick">加入购物车</button>
-				</view>
-				<view class="padding-xs">
-					<!-- <button class="cu-btn bg-grey lg">立即购买</button> -->
-					<button class="buy" bindtap="buy">立即购买</button>
-				</view>
-			</view>
+		<view wx:for="{{swiperList}}" wx:key="key">
+			<image style="width:100%" src="{{item.url}}" mode="widthFix" />
 		</view>
+
 	</view>
 
-	<view class="cu-bar tabbar bg-white shadow foot bottom_view_height2">
+	<view class="cu-bar tabbar bg-white shadow foot">
 		<view class="action" bindtap="home">
 			<view class="cuIcon-home"></view> 首页
 		</view>
 		<view class="action">
-			<button open-type="contact" session-from="webapp" class="bg-white kf-button" style=" text-align: unset;padding: 0rpx;line-height: unset;font-size: unset;">
+			<button open-type="contact" session-from="webapp" class="bg-white kf-button"
+				style=" text-align: unset;padding: 0rpx;line-height: unset;font-size: unset;">
 				<text class="cuIcon-weixin"></text>
 			</button>
 			客服
@@ -217,81 +100,25 @@
 			购物车
 		</view>
 		<view class="bg-orange  submit text-white">
-			<view bindtap="showModal" data-target="bottomModal1">
-				<view >加入购物车</view>
+			<view bindtap="showModal" data-target="bottomModal" data-type="cart">
+				<view>加入购物车</view>
 			</view>
 		</view>
 		<view class="bg-red submit">
-			<view>
-				<view >立即购买</view>
+			<view bindtap="showModal" data-target="bottomModal" data-type="buy">
+				<view>立即购买</view>
 			</view>
 		</view>
 	</view>
+	<view class="cu-tabbar-height"></view>
 </scroll-view>
 
 
 
-
-<!-- 选择底部滑窗 -->
-<view class="cu-modal justify-start bottom-modal {{modalName=='GroupViewModal'?'show':''}}" style='overflow: hidden;text-align: left;' bindtap="hideModal">
-	<view class="cu-dialog background-white" style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
-		<!-- 顶部固定卡片区域 -->
-		<view class="cu-card article npl-intro {{isCard?'no-card':''}}">
-			<view class="cu-item shadow">
-				<view class="title">
-					<view class='height15'></view>
-				</view>
-				<view class="content">
-					<view class="desc text-center" style="font-size:13px">
-						<text>产品参数</text>
-					</view>
-				</view>
-			</view>
-		</view>
-
-		<!-- 中部滑窗内部可滚动区域 -->
-		<scroll-view scroll-y catchtap style="height:calc( 100vh - {{CustomBar}}px - {{card_view_height}}px - 75px);">
-			<view>
-				<view class="parameter-list">
-					<view style="width:100rpx">网络类型</view>
-					<text class="parameter-msg">4G+全网通</text>
-				</view>
-
-				<view class="parameter-list">
-					<view style="width:100rpx">品牌</view>
-					<text class="parameter-msg">Xiaomi/小米</text>
-				</view>
-
-				<view class="parameter-list">
-					<view style="width:100rpx">售后服务</view>
-					<text class="parameter-msg">全国联保</text>
-				</view>
-
-			</view>
-
-			<view style="height:{{bottom_view_height1}}rpx">
-			</view>
-		</scroll-view>
-		<!-- 底部固定的按钮区域 -->
-
-		<view class="cu-bar tabbar bg-white shadow foot grid col-2 padding-sm text-center bottom_view_height1">
-			<button class="confirm">完成</button>
-		</view>
-	</view>
-</view>
-
-
-
-
-<!-- 点击立即订购弹框 -->
-<!-- 底部固定的按钮区域 -->
-<view style="height:{{bottom_view_height2}}rpx">
-</view>
-
-<!-- 选择底部滑窗 -->
-<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal1'?'show':''}}" bindtap="hideModal" style='overflow: hidden;text-align: left;'>
+<!-- 加入购物车/立即购买 -->
+<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal"
+	style='overflow: hidden;text-align: left;'>
 	<view class="cu-dialog background-white" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
-		<!-- 顶部固定卡片区域 -->
 		<view class="cu-card article npl-intro {{isCard?'no-card':''}}">
 			<view class="cu-item shadow">
 				<view class="title">
@@ -314,10 +141,8 @@
 			</view>
 		</view>
 
-		<!-- 中部滑窗内部可滚动区域 -->
+
 		<scroll-view scroll-y catchtap style="height:calc( 100vh - {{CustomBar}}px - {{card_view_height}}px - 75px);">
-
-
 			<view wx:for="{{spTypeObjListLet}}" wx:key wx:for-item="typeValue" wx:for-index="typeIndex">
 				<view class="bg-white">
 					<view class="action">
@@ -326,7 +151,10 @@
 				</view>
 				<view class='padding-sm flex flex-wrap'>
 					<view class="padding-xs" wx:for="{{typeValue.list}}" wx:key wx:for-item="objectValue">
-						<view class="cu-tag line-{{clickMap[typeValue.typeId]==objectValue.name?'yellow':(objectValue.state?'black':'gray')}}" bindtap="objClick" data-objName="{{objectValue.name}}" data-typeId="{{typeValue.typeId}}" data-state="{{objectValue.state}}">
+						<view
+							class="cu-tag line-{{clickMap[typeValue.typeId]==objectValue.name?'yellow':(objectValue.state?'black':'gray')}}"
+							bindtap="objClick" data-objName="{{objectValue.name}}" data-typeId="{{typeValue.typeId}}"
+							data-state="{{objectValue.state}}">
 							{{objectValue.name}}
 						</view>
 					</view>
@@ -335,83 +163,31 @@
 
 			<view class="cu-form-group">
 				<view class="title">购买数量</view>
+				<view class="flex align-center" style="border:1px solid #eee">
 
-				<view class="cu-capsule">
-					<view class="cu-tag bg-grey" bindtap="GMSLMoveOrAdd" data-target="move">
+					<view class="padding-sm {{items.number == '1' ? 'text-grey':'text-gray'}}" style="border-right:1px solid #eee"
+						data-index='{{item.shopId}}' data-types='minus' data-id="{{items.id}}" bindtap="GMSLMoveOrAdd"
+						data-target="move">
 						<text class="cuIcon-move"></text>
 					</view>
-					<view class="cu-tag line-grey">
-						{{GMSL}}
-					</view>
-					<view class="cu-tag bg-grey" bindtap="GMSLMoveOrAdd" data-target="add">
+
+
+					<view class="text-center" style="width:60px;" bindtap="showModal" data-id="{{items.id}}"
+						data-target="nameModal" data-number="{{items.number}}"> {{GMSL}} </view>
+
+
+					<view class="padding-sm" style="border-left:1px solid #eee" data-index='{{item.shopId}}' data-types='add'
+						bindtap="GMSLMoveOrAdd" data-target="add" data-id="{{items.id}}">
 						<text class="cuIcon-add"></text>
 					</view>
 				</view>
-
 			</view>
-
-			<view style="height:{{bottom_view_height1}}rpx">
+			<view class="cu-bar bg-red tabbar foot justify-center align-center" wx:if="{{modalType=='cart'}}">
+				<text>确定</text>
 			</view>
-		</scroll-view>
-
-		<!-- 底部固定的按钮区域 -->
-		<view class="cu-bar tabbar bg-white shadow foot grid col-2 padding-sm text-center bottom_view_height1">
-			<!-- <view class="padding-xs flex justify-center"> -->
-			<!-- <button class="cu-btn bg-grey lg">立即购买</button> -->
-			<button class="confirm" bindtap="buy">确定</button>
-			<!-- </view> -->
-		</view>
-	</view>
-</view>
-
-<!-- 拼单弹框 -->
-<view class="cu-modal {{modalName=='collageModal'?'show':''}}">
-	<view class="cu-dialog">
-		<view class="padding" style="line-height:50rpx">
-			<view class="text-xl">参与笨笨糖的拼单</view>
-			<view>仅剩1个名额，23：13：28后结束</view>
-			<view class="flex justify-center margin-tb-sm">
-				<view class="cu-avatar round lg" style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);">
-				</view>
-				<view class="cu-avatar round lg margin-left-sm">
-					<text class="cuIcon-question"></text>
-				</view>
-			</view>
-			<view class="flex flex-direction">
-				<button class="cu-btn bg-red lg ">立即拼单</button>
-			</view>
-		</view>
-	</view>
-	<view class="cu-tag1  badge1 " bindtap="hideModal">
-		<image style="width: 75rpx;height: 75rpx;" src="https://img.alicdn.com/imgextra/i4/1073981443/O1CN01XuixxR1MWw7zprABv_!!1073981443.png_160x160.jpg?t=1591234761000"></image>
-	</view>
-</view>
-
-<!-- 全部拼单弹框 -->
-<view class="cu-modal {{modalName=='collageListModal'?'show':''}}">
-	<view class="cu-dialog">
-		<view style="line-height:50rpx">
-			<view class="text-xl padding-tb-sm" style="border-bottom:1px solid red">正在拼单列表</view>
-		</view>
-		<scroll-view scroll-y style="height:600rpx">
-			<view wx:for="{{10}}">
-				<view class="padding-sm flex justify-between">
-					<view class="flex align-center">
-						<view class="cu-avatar round lg" style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);">
-						</view>
-						<view class="margin-left">
-							<view>笨笨糖 还差1人</view>
-							<view>剩余23：52：12</view>
-						</view>
-					</view>
-					<view class="flex align-center">
-						<button class="cu-btn bg-red radius" bindtap="showModal" data-target="collageModal">拼单</button>
-					</view>
-				</view>
+			<view bindtap="buy" class="cu-bar tabbar bg-red foot justify-center align-center" wx:if="{{modalType=='buy'}}">
+				<text>立即购买</text>
 			</view>
 		</scroll-view>
-	</view>
-	<view class="cu-tag1  badge2 " bindtap="hideModal">
-		<image style="width: 75rpx;height: 75rpx;" src="https://img.alicdn.com/imgextra/i4/1073981443/O1CN01XuixxR1MWw7zprABv_!!1073981443.png_160x160.jpg?t=1591234761000"></image>
 	</view>
 </view>

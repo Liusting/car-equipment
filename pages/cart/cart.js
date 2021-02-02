@@ -18,7 +18,6 @@ Component({
         itemNumber: 0,
         pageBackgroundColor: 'gray',
         shopcarData: [{
-
             "itemdata": [{
                 "number": 99,
                 "typeList": "大方体方形四档套装-旗舰款;10寸",
@@ -63,6 +62,39 @@ Component({
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
                 "id": "c21d63af1b784f278d32c547283b1822",
                 "check": false
+            },{
+                "number": 10,
+                "typeList": "经典圆形三档套装;8寸",
+                "money": 110,
+                "item_id": "10",
+                "user_id": "3",
+                "type_id": "3",
+                "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
+                "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
+                "id": "c21d63af1b784f278d32c547283b1822",
+                "check": false
+            },{
+                "number": 10,
+                "typeList": "经典圆形三档套装;8寸",
+                "money": 110,
+                "item_id": "10",
+                "user_id": "3",
+                "type_id": "3",
+                "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
+                "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
+                "id": "c21d63af1b784f278d32c547283b1822",
+                "check": false
+            },{
+                "number": 10,
+                "typeList": "经典圆形三档套装;8寸",
+                "money": 110,
+                "item_id": "10",
+                "user_id": "3",
+                "type_id": "3",
+                "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
+                "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
+                "id": "c21d63af1b784f278d32c547283b1822",
+                "check": false
             }
             ]
         }], //购物车商品列表
@@ -93,7 +125,8 @@ Component({
             number: '12',
             integral: '14000',
         }],
-        totalNumber: 0
+        totalNumber: 0,
+        hfShow: false
     },
     // tab切换的时候马上响应数据
     ready: function () {

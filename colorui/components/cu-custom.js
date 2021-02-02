@@ -27,6 +27,10 @@ Component({
             type: [Boolean, String],
             default: false
         },
+        isHome: {
+            type: [Boolean, String],
+            default: false
+        },
         bgImage: {
             type: String,
             default: ''

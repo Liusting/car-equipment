@@ -1,11 +1,16 @@
-<cu-custom isBack="{{true}}" bgColor="bg-white">
-	<view slot="backText"></view>
-	<view slot="content" class="text-bold text-black">优惠券</view>
-</cu-custom>
+<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+		<cu-custom isBack="{{true}}">
+			<view slot="backText">优惠券</view>
+		</cu-custom>
+	</view>
+</view>
 
-<view class="bg-white cu-tabbar-height" style="border-top:1px solid #F7F7F7">
+
+<view class="bg-white nav" >
 	<view class="flex text-center text-lg">
-		<view class="cu-tabbar-height flex justify-center align-center  flex-sub {{currtab == item.index ? 'text-redOrange on' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+		<view class="flex justify-center align-center padding-sm flex-sub {{currtab == item.index ? 'text-redOrange on' : ''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
 			{{item.name}}
 		</view>
 	</view>

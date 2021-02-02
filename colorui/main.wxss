@@ -1985,6 +1985,58 @@ button.icon.lg {
 	font-size: 34rpx;
 }
 
+
+.cu-custom .cu-bar .border-home {
+	position: relative;
+	border-radius: 1000rpx;
+	height: 30px;
+	width: 30px;
+}
+
+.cu-custom .cu-bar .border-home::after {
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	pointer-events: none;
+	box-sizing: border-box;
+	border: 1rpx solid var(--white);
+	opacity: 0.5;
+}
+
+.cu-custom .cu-bar .border-home::before {
+	content: " ";
+	width: 1rpx;
+	height: 110%;
+	position: absolute;
+	top: 22.5%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	pointer-events: none;
+	box-sizing: border-box;
+	opacity: 0.6;
+	background-color: var(--white);
+}
+
+.cu-custom .cu-bar .border-home text {
+	display: block;
+	flex: 1;
+	margin: auto !important;
+	text-align: center;
+	font-size: 34rpx;
+}
+
+
+
+
 /* ==================
          导航栏
  ==================== */

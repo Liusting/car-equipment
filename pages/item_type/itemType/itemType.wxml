@@ -8,7 +8,7 @@
 
 
 
-<view class="VerticalBox">
+<view class="VerticalBox" style="height:{{deviceH-CustomBar}}px">
 	<!-- 左边滚动导航栏 -->
 	<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation style="height:{{deviceH-CustomBar}}px">
 		<view class="cu-item {{index==TabCur?'text-orange cur ':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">

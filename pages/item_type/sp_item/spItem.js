@@ -53,6 +53,7 @@ Page({
         collect: false,
         // 提示选中什么或者要用户要选择什么
         tipsTitle: "",
+        modalType:""
     },
     //收藏商品
     collect: function () {
@@ -348,12 +349,6 @@ Page({
         // 刷新提示显示
         this.showTipsTitle();
     },
-    //联系客服
-    chat: function (e) {
-        wx.navigateTo({
-            url: '../sp_order_list/chat',
-        })
-    },
     //领券
     coupon: function () {
         let shopId = this.data.shopId;
@@ -364,12 +359,13 @@ Page({
     },
     // showModal和hideModal 是显示和隐藏的方法
     showModal(e) {
+        console.log(e)
         this.setData({
-            modalName: e.currentTarget.dataset.target
+            modalName: e.currentTarget.dataset.target,
+            modalType:e.currentTarget.dataset.type
         })
     },
     hideModal(e) {
-
         this.setData({
             modalName: null
         })
@@ -413,7 +409,6 @@ Page({
                 }
             }
             if (selectedList != null) {
-                // console.log(selectedList);
                 this.setData({
 
                     money: selectedList[0].objMoney
@@ -421,12 +416,7 @@ Page({
             }
         }
     },
-    //  参数点击显示隐藏方法
-    showGroupViewClick: function (e) {
-        // console.log(e);
-        let that = this;
-        let groupViewOpen = !this.data.groupViewOpen;
-    },
+
     //立即购买
     buy: function () {
         wx.navigateTo({
@@ -484,18 +474,15 @@ Page({
     },
     //点击购物车
     cart: function () {
-
         wx.reLaunch({
             url: '/pages/index/index',
         })
-
         // wx.navigateTo({
         //   url: '../index/index?name=' + 'MyCart'
         // })
     },
     // 店铺
     home: function () {
-
         let shopId = this.data.shopId;
         let shopName = this.data.shopName;
         // console.log(shopId+'---'+shopName)

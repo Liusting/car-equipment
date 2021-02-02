@@ -1,7 +1,7 @@
 <view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
 	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
 		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-		<cu-custom isCustom="{{true}}">
+		<cu-custom isHome="{{true}}">
 			<view slot="content">支付结果</view>
 		</cu-custom>
 	</view>
@@ -29,8 +29,8 @@
 			</view>
 			<view class="margin-top flex justify-center">
 				<button class="cu-btn line-gray margin-right">取消订单</button>
-				<button class="cu-btn bg-green margin-right">订单详情</button>
-				<button class="cu-btn bg-orange ">再来一单</button>
+				<button class="cu-btn bg-green margin-right"><navigator url = "/pages/me/sp_order_list/orderDetail/orderDetail">订单详情</navigator></button>
+				<button class="cu-btn bg-orange "><navigator url = "/pages/index/index" open-type = "redirect">再来一单</navigator></button>
 			</view>
 		</view>
 	</view>
@@ -47,7 +47,7 @@
 			<view style="background:#f1f1f1" class="cu-card" bindtap="itemDetail" data-shopId='{{item.shop_id}}' data-shopName='{{item.shopName}}' data-id="{{item.ID}}">
 				<view class="cu-item shadow">
 					<image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3454967093,1824291965&fm=26&gp=0.jpg" mode='widthFix'></image>
-					<view class="shop_name">{{item.NAME}}</view>
+					<view class="shop_name">小米9手机壳cc9e红米k20Pro青春note7版8保护6x套max3note5防摔mix2s全包屏幕指纹se八5plus九a硅胶note3磨砂</view>
 					<view class="padding flex align-center justify-between">
 						<view>
 							<text class="text-price text-red text-xl">27</text>
