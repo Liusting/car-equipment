@@ -10,82 +10,92 @@ Page({
             name: '全部',
             index: 0
         },
-            {
-                name: '待付款',
-                index: 1
-            },
-            {
-                name: '待发货',
-                index: 3
-            },
-            {
-                name: '待收货',
-                index: 4
-            },
-            {
-                name: '待评价',
-                index: 5
-            },
+        {
+            name: '待付款',
+            index: 1
+        },
+        {
+            name: '待发货',
+            index: 2
+        },
+        {
+            name: '待收货',
+            index: 3
+        },
+        {
+            name: '待评价',
+            index: 4
+        },
         ],
         orderList: [{
-            "itemData": [{
-                "number": 1,
-                "pay_status": "1",
-                "money": 1899.0,
-                "item_id": "1",
-                "type_id": "2555",
-                "trade_status": "1",
-                "imageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4/i1/1627473180/O1CN01vP6eDn1ZMU34VkZBd_!!0-item_pic.jpg_580x580Q90.jpg_.webp",
-                "display": "1",
-                "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
-                "typeName": "经典方形三档套装;8寸",
-                "id": "1",
-                "order_id": "20200522100218863744"
-            }],
-            "shopImageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4//d0/5d/TB1Ade.fpYM8KJjSZFuSuwf7FXa.jpg_140x140Q90.jpg_.webp",
+            "number": 1,
+            "pay_status": "1",
+            "money": 1899.0,
+            "item_id": "1",
+            "type_id": "2555",
             "trade_status": "1",
-            "shopName": "小米旗舰店",
-            "shopId": "1",
+            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+            "display": "1",
+            "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
+            "typeName": "经典方形三档套装;8寸",
+            "id": "1",
             "order_id": "20200522100218863744"
+
         }, {
-            "itemData": [{
-                "number": 1,
-                "pay_status": "1",
-                "money": 1299.0,
-                "item_id": "1",
-                "type_id": "2555",
-                "trade_status": "1",
-                "imageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4/i1/1627473180/O1CN01vP6eDn1ZMU34VkZBd_!!0-item_pic.jpg_580x580Q90.jpg_.webp",
-                "display": "1",
-                "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
-                "typeName": "经典方形三档套装;8寸",
-                "id": "2",
-                "order_id": "20200522100218863720"
-            }],
-            "shopImageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4//d0/5d/TB1Ade.fpYM8KJjSZFuSuwf7FXa.jpg_140x140Q90.jpg_.webp",
-            "trade_status": "1",
-            "shopName": "小米旗舰店",
-            "shopId": "1",
-            "order_id": "20200522100218863720"
+
+            "number": 5,
+            "pay_status": "1",
+            "money": 1699.0,
+            "item_id": "4",
+            "type_id": "1",
+            "trade_status": "2",
+            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+            "display": "1",
+            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+            "typeName": "大方体方形四档套装-旗舰款;10寸",
+            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+            "order_id": "20200522100218863742"
         }, {
-            "itemData": [{
-                "number": 5,
-                "pay_status": "1",
-                "money": 1699.0,
-                "item_id": "4",
-                "type_id": "1",
-                "trade_status": "1",
-                "imageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4/i3/34871/O1CN01bThoL31lqxp42NgFQ_!!34871-0-easyhome.jpg_580x580Q90.jpg_.webp",
-                "display": "1",
-                "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
-                "typeName": "大方体方形四档套装-旗舰款;10寸",
-                "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
-                "order_id": "20200522100218863742"
-            }],
-            "shopImageUrl": "https://g-search1.alicdn.com/img/bao/uploaded/i4//17/67/TB1dGpYpQUmBKNjSZFOSuub2XXa.jpg_140x140Q90.jpg_.webp",
-            "trade_status": "1",
-            "shopName": "格力旗舰店",
-            "shopId": "4",
+
+            "number": 5,
+            "pay_status": "1",
+            "money": 1699.0,
+            "item_id": "4",
+            "type_id": "1",
+            "trade_status": "3",
+            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+            "display": "1",
+            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+            "typeName": "大方体方形四档套装-旗舰款;10寸",
+            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+            "order_id": "20200522100218863742"
+        }, {
+
+            "number": 5,
+            "pay_status": "1",
+            "money": 1699.0,
+            "item_id": "4",
+            "type_id": "1",
+            "trade_status": "4",
+            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+            "display": "1",
+            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+            "typeName": "大方体方形四档套装-旗舰款;10寸",
+            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+            "order_id": "20200522100218863742"
+        }, {
+
+            "number": 5,
+            "pay_status": "1",
+            "money": 1699.0,
+            "item_id": "4",
+            "type_id": "1",
+            "trade_status": "5",
+            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+            "display": "1",
+            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+            "typeName": "大方体方形四档套装-旗舰款;10寸",
+            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
             "order_id": "20200522100218863742"
         }],
         deviceW: '', //屏幕宽度
@@ -132,15 +142,7 @@ Page({
     //查看物流
     expressDetail: function (e) {
         wx.navigateTo({
-            url: './expressInformation/expressInformation',
-        })
-    },
-    //点击店铺跳到店铺首页
-    gotoShop: function (e) {
-        var shopId = e.currentTarget.dataset.shopid
-        var shopname = e.currentTarget.dataset.shopname
-        wx.navigateTo({
-            url: '../shop/shop?shopId=' + shopId + '&shopName=' + shopname
+            url: '../sp_order_list/expressInformation/expressInformation',
         })
     },
     //退货/退款
@@ -149,7 +151,7 @@ Page({
         let shop_id = e.currentTarget.dataset.shopid;
         let tradestatus = e.currentTarget.dataset.tradestatus;
         wx.navigateTo({
-            url: '../sp_order_list/applyRefund?id=' + id + '&shop_id=' + shop_id + '&trade_status=' + tradestatus
+            url: '../sp_order_list/applyRefund/applyRefund'
         })
     },
     // 订单详情页
@@ -159,7 +161,7 @@ Page({
         let tradestatus = e.currentTarget.dataset.tradestatus;
         console.log(e);
         wx.navigateTo({
-            url: '../sp_order_list/orderDetail/orderDetail'
+            url: '../sp_order_list/orderDetail/orderDetail?tradestatus=' + tradestatus
         })
     },
     /**
@@ -182,28 +184,18 @@ Page({
         this.setData({
             currtab: e
         })
-        this.orderListShow();
+        this.orderjj();
     },
-    orderListShow: function () {
-        var that = this;
-        // wx.request({
-        //   url: app.ipAndPort + '/spOrder/getOrderList',
-        //   method: 'POST',
-        //   data: {
-        //     trade_status: this.data.currtab
-        //   },
-        //   header: {
-        //     'content-type': 'application/x-www-form-urlencoded'
-        //   },
-        //   success: function (res) {
-        //     let orderList = res.data;
-        //     console.log(res.data);
-        //     that.setData({
-        //       orderList: orderList
-        //     })
-        //   }
-        // })
+    orderjj() {
+        wx.request({
+            url: 'http://mock-api.com/PKeZpPz0.mock/orderList',
+            method: 'GET',
+            success: function (res) {
+                console.log(res);
+            }
+        })
     },
+
     // 点击立即评价
     appraise: function (e) {
         console.log(e);
@@ -252,6 +244,39 @@ Page({
         wx.showModal({
             title: '温馨提示',
             content: '您确认收到宝贝了吗？',
+            success(res) {
+                if (res.confirm) {
+                    wx.request({
+                        url: app.ipAndPort + '/spOrder/confirmReceive',
+                        method: 'POST',
+                        data: {
+                            id: e.currentTarget.dataset.id,
+                            trade_status: that.data.currtab
+                        },
+                        header: {
+                            'content-type': 'application/x-www-form-urlencoded'
+                        },
+                        success: function (res) {
+                            if (res.code == 1) {
+                                that.orderListShow();
+                                wx.showToast({
+                                    title: '收货成功',
+                                    icon: 'success',
+                                    duration: 2000,
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    },
+    deleteOrder: function (e) {
+        console.log(e);
+        var that = this;
+        wx.showModal({
+            title: '温馨提示',
+            content: '您确认删除此订单吗？',
             success(res) {
                 if (res.confirm) {
                     wx.request({

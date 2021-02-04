@@ -18,30 +18,30 @@ Component({
             name: '我的会员卡',
             color: 'red'
         },
-            {
-                id: 2,
-                icon: 'shopfill',
-                name: '我的积分',
-                color: 'orange'
-            },
-            {
-                id: 3,
-                icon: 'ticket',
-                name: '我的优惠券',
-                color: 'yellow'
-            },
-            {
-                id: 4,
-                icon: 'locationfill ',
-                name: '收货人信息',
-                color: 'bule'
-            },
-            {
-                id: 5,
-                icon: 'peoplelist ',
-                name: '关于普斯',
-                color: 'pink'
-            }
+        {
+            id: 2,
+            icon: 'shopfill',
+            name: '我的积分',
+            color: 'orange'
+        },
+        {
+            id: 3,
+            icon: 'ticket',
+            name: '我的优惠券',
+            color: 'yellow'
+        },
+        {
+            id: 4,
+            icon: 'locationfill ',
+            name: '收货人信息',
+            color: 'bule'
+        },
+        {
+            id: 5,
+            icon: 'peoplelist ',
+            name: '关于普斯',
+            color: 'pink'
+        }
         ],
         orderItems: [{
             typeId: 1,
@@ -49,30 +49,30 @@ Component({
             name: '待付款',
             badge: 7
         },
-            {
-                typeId: 3,
-                icon: 'send',
-                name: '待发货',
-                badge: 0
-            },
-            {
-                typeId: 4,
-                icon: 'deliver',
-                name: '待收货',
-                badge: 120
-            },
-            {
-                typeId: 5,
-                icon: 'comment',
-                name: '待评价',
-                badge: 2
-            },
-            {
-                typeId: 6,
-                icon: 'refund',
-                name: '退款/售后',
-                badge: 1
-            },
+        {
+            typeId: 2,
+            icon: 'send',
+            name: '待发货',
+            badge: 0
+        },
+        {
+            typeId: 3,
+            icon: 'deliver',
+            name: '待收货',
+            badge: 120
+        },
+        {
+            typeId: 4,
+            icon: 'comment',
+            name: '待评价',
+            badge: 2
+        },
+        {
+            typeId: 5,
+            icon: 'refund',
+            name: '退款/售后',
+            badge: 1
+        },
         ],
     },
     // tab切换的时候马上响应数据
@@ -215,11 +215,11 @@ Component({
                         url: '../me/sp_order_list/spOrderList?typeId=' + typeId //将要跳转id的值传参数过去
                     });
                     break;
-                // case 2:
-                //   wx.navigateTo({
-                //     url: './me/sp_order_list/spOrderList?typeId=' + typeId//将要跳转id的值传参数过去
-                //   });
-                //   break;
+                case 2:
+                    wx.navigateTo({
+                        url: '../me/sp_order_list/spOrderList?typeId=' + typeId //将要跳转id的值传参数过去
+                    });
+                    break;
                 case 3:
                     wx.navigateTo({
                         url: '../me/sp_order_list/spOrderList?typeId=' + typeId //将要跳转id的值传参数过去
@@ -231,11 +231,6 @@ Component({
                     });
                     break;
                 case 5:
-                    wx.navigateTo({
-                        url: '../me/sp_order_list/spOrderList?typeId=' + typeId //将要跳转id的值传参数过去
-                    });
-                    break;
-                case 6:
                     wx.navigateTo({
                         url: '../me/sp_order_list/refund/refund',
                     });

@@ -31,7 +31,7 @@ Page({
     },
     onLoad: function (e) {
         this.setData({
-            trade_status: e.trade_status
+            trade_status: e.tradestatus
         })
         console.log(e);
         var that = this;
