@@ -7,15 +7,12 @@
 	</view>
 </view>
 <scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
-	<view class="padding-xs flex radius bg-white margin-sm" bindtap="bindaddress" hidden="{{flag}}"
+	<view class="padding-xs flex align-center radius bg-white margin-sm" bindtap="bindaddress" hidden="{{flag}}"
 		data-id="{{address_info.id}}">
-		<view class="flex align-center">
-			<view class="text-xxl align-center text-center justify-center round flex bg-orange "
-				style="width:38px;height:38px">
-				<text class="  cuIcon-locationfill text-white"></text>
+		<view class="cu-avatar round bg-orange">
+				<text class="cuIcon-location"></text>
 			</view>
-		</view>
-		<view class="margin-left" style="width:550rpx">
+		<view class="margin-left" style="width:80%">
 			<text class="text-black text-bold">收货人：{{address_info.addresseeName}}</text>
 			<text class="margin-left ">{{address_info.phoneNumber}}</text>
 			<view>
@@ -94,10 +91,10 @@
 			<text>小计：<text class="text-price text-red ">{{goods_price*goods_count}}</text></text>
 		</view>
 	</view>
-	<view class="bg-white padding-xs margin-sm radius">
+	<view class="bg-white padding-xs margin-sm radius" bindtap="preferential">
 		<view class="padding cu-bar" >
 			<view>优惠券（您有0张优惠券可用）</view>
-			<view bindtap="preferential">
+			<view >
 				<text class="{{'cuIcon-right text-gray'}}"></text>
 			</view>
 		</view>
@@ -106,11 +103,11 @@
 			<label class="margin-left">赠送<text class="text-red">15</text>积分</label>
 		</view>
 	</view>
-	<view class="bg-white padding-xs margin-sm radius">
+	<view class="bg-white padding-xs margin-sm radius" bindtap="showModal">
 		<view class="padding cu-bar" >
 			<view>支付方式</view>
-			<view>
-				<text bindtap="showModal" data-target="bottomModal" class="{{'cuIcon-right text-gray'}}"></text>
+			<view>微信支付
+				<text  data-target="bottomModal" class="{{'cuIcon-right text-gray'}}"></text>
 			</view>
 		</view>
 	</view>

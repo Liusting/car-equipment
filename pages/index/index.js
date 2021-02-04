@@ -1,7 +1,7 @@
 
 Page({
     data: {
-        PageCur: 'MyCart',
+        PageCur: 'HomePage',
         cartTotal: ''
     },
     NavChange(e) {

@@ -9,7 +9,7 @@
 <form class="container" bindsubmit="bindFormSubmit">
 	<view class="flex bg-white padding">
 		<image class="scimg radius" src="https://g-search1.alicdn.com/img/bao/uploaded/i4/i1/1627473180/O1CN01vP6eDn1ZMU34VkZBd_!!0-item_pic.jpg_580x580Q90.jpg_.webp" mode="widthFix"></image>
-		<view class='margin-left-xs'>
+		<view class='margin-left-sm'>
 			<text class="shop_name">罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖</text>
 			<text class='shop_type margin-tb-xs'>规格：经典豪华版；10寸；顺丰包邮</text>
 

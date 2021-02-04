@@ -4,7 +4,11 @@
   color: red;
   font-size: 33rpx;
 }
- 
+ .nva{
+   position: fixed;
+   z-index: 99;
+   width: 100%;
+ }
 .navTopList {
   display: flex;
   width: 100%;

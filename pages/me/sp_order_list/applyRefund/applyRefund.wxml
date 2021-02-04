@@ -85,8 +85,7 @@
 	</view>
 
 
-	<view class="margin-top flex flex-direction">
-		<!-- <button class="cu-btn lg bg-red" form-type="sumbit">确认提交</button> -->
+	<view class="cu-bar tabbar foot bg-red justify-center">
 		<button class="cu-btn lg bg-red" form-type="submit">确认提交</button>
 	</view>
 

@@ -22,9 +22,9 @@
 	</view>
 <scroll-view scroll-y style="height:{{deviceH-CustomBar-75}}px">
 	<view class="margin-sm bg-white" style="border-radius:7px">
-		<view class="padding flex align-center justify-between" style="border-bottom:1px solid #f1f1f1">
+		<view class="padding flex align-center justify-between" style="border-bottom:1px solid #f7f7f7" catchtap="toOrder" data-typeid="{{0}}">
 			<text class="text-lg text-black">我的订单</text>
-			<text class="text-gary" catchtap="toOrder" data-typeid="{{0}}"><text class="{{'cuIcon-right '}}"></text> </text>
+			<text class="text-gary"><text class="{{'cuIcon-right '}}"></text> </text>
 		</view>
 		<view class="bg-white " style="border-radius:7px">
 			<view class="flex text-center">
