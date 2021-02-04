@@ -4,6 +4,7 @@
   margin-left: calc(var(--left) * 100rpx - 150rpx);
   z-index: var(--index);
 }
+
 .on {
   color: red;
   font-size: 33rpx;
@@ -19,6 +20,9 @@
   width: 100%;
 }
 
+.line {
+  border-top: 1px solid #F7F7F7;
+}
 
 .spItem-form-group {
   background-color: var(--white);
@@ -176,6 +180,6 @@
 
 }
 
-.kf-button::after{
-border:none;
+.kf-button::after {
+  border: none;
 }

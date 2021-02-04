@@ -5,18 +5,18 @@ Page({
         swiperList: [{
             id: 0,
             type: 'image',
-            url: 'https://img.alicdn.com/imgextra/i3/1610923841/O1CN01857XuM1eFDsVldL1G_!!1610923841.jpg'
+            url: 'https://img.alicdn.com/imgextra/i3/2397812748/O1CN01JswdmF1WAd02QMdEE_!!2397812748.png_430x430q90.jpg'
         }, {
 
-            url: 'https://img.alicdn.com/imgextra/i3/1610923841/O1CN01WEr62o1eFDsTT6pQG_!!1610923841.jpg',
+            url: 'https://img.alicdn.com/imgextra/i3/2397812748/O1CN01JswdmF1WAd02QMdEE_!!2397812748.png_430x430q90.jpg',
         }, {
             id: 2,
             type: 'image',
-            url: 'https://img.alicdn.com/imgextra/i1/1610923841/O1CN01Bkzqi71eFDsVlbjD1_!!1610923841.jpg'
+            url: 'https://img.alicdn.com/imgextra/i2/2397812748/O1CN01Wz7eg01WAd03AUd2y_!!2397812748.png_430x430q90.jpg'
         }, {
             id: 3,
             type: 'image',
-            url: 'https://img.alicdn.com/imgextra/i2/1610923841/O1CN01Hz66p61eFDsXKnNsM_!!1610923841.jpg'
+            url: 'https://img.alicdn.com/imgextra/i2/2397812748/O1CN01z17EwX1WAczqJ2vQo_!!2397812748.png_430x430q90.jpg'
         }],
         deviceW: '', //屏幕宽度
         deviceH: '', //屏幕高度
@@ -40,6 +40,25 @@ Page({
             {
                 name: '商品评价',
                 index: 2
+            }
+        ],
+        params:[
+            {
+                id:1,
+                name:'品牌',
+                des:'科林起重机'
+            }, {
+                id:2,
+                name:'起重',
+                des:'100kg'
+            }, {
+                id:3,
+                name:'生产地',
+                des:'山东莱芜'
+            }, {
+                id:4,
+                name:'质保',
+                des:'一年'
             }
         ],
         // GMSL 购买数量，初始化为1
@@ -82,21 +101,9 @@ Page({
                 currtab: e.target.dataset.current
             })
         }
+        console.log(e.target.dataset.current)
     },
 
-    tabChange: function (e) {
-        this.setData({
-            currtab: e.detail.current
-        })
-        // this.orderShow()
-    },
-    //收藏商品
-    collect: function () {
-        var that = this;
-        this.setData({
-            collect: !that.data.collect
-        })
-    },
     onShareAppMessage() {
         return {
             title: '普斯汽保-您身边值得信赖汽保设备商',
@@ -524,13 +531,15 @@ Page({
     },
     //点击图片预览
     previewImg: function (e) {
-        // console.log(e.currentTarget.dataset.index)
         var index = e.currentTarget.dataset.index;
-        var currentUrl = e.currentTarget.dataset.currenturl
-        var previewUrls = e.currentTarget.dataset.previewurl
+        var list = this.data.swiperList;
+        var listNew = [];
+        for(let i in list){
+            listNew.push(list[i].url)
+        }
         wx.previewImage({
-            current: currentUrl, //必须是http图片，本地图片无效
-            urls: [this.data.swiperList[index].url] //必须是http图片，本地图片无效
+            current: list[index].url, //必须是http图片，本地图片无效
+            urls: listNew, //必须是http图片，本地图片无效
         })
     },
     //点击购物车
@@ -541,15 +550,6 @@ Page({
         // wx.navigateTo({
         //   url: '../index/index?name=' + 'MyCart'
         // })
-    },
-    // 店铺
-    home: function () {
-        let shopId = this.data.shopId;
-        let shopName = this.data.shopName;
-        // console.log(shopId+'---'+shopName)
-        wx.navigateTo({
-            url: '../shop/shop?shopId=' + shopId + '&shopName=' + shopName
-        })
     },
     // 加入购物车点击方法
     jrgwcClick: function () {
