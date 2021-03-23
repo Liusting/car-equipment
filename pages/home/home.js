@@ -35,10 +35,6 @@ Component({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    countDownHour: 0, //倒计时 -时
-    countDownMinute: 0, //倒计时 -分
-    countDownSecond: 0, //倒计时-秒
-    clock: '',
     imgList: [{
         url: 'http://img5.imgtn.bdimg.com/it/u=1581224632,3970953275&fm=26&gp=0.jpg'
       },
@@ -106,14 +102,6 @@ Component({
 
   ready: function () {
     var that = this;
-    http.getRecommendList({
-      data:{},
-      success(res){
-        that.setData({
-          newList:res.data.recommendList
-        })
-      }
-    })
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -122,57 +110,6 @@ Component({
         })
       }
     });
-    //设置倒计时时间，1s变换一次
-    var interval = setInterval(function () {
-      var d = new Date(); //获取系统日期和时间
-      var nowHour = d.getHours(); //小时
-      var nowMinutes = d.getMinutes(); //分
-      var nowSeconds = d.getSeconds(); //秒
-
-      // 显示在倒计时中的小时位
-      var hour = 24 - nowHour;
-
-      // 显示在倒计时中的分钟位
-      var minutes = 60 - nowMinutes;
-
-      // 显示在倒计时中的秒数
-      var seconds = 60 - nowSeconds;
-
-
-      //当小时、分钟、秒都为0时，活动结束，倒计时显示为00:00:00
-      if (hour == 0 && minutes == 0 && seconds == 0) {
-
-        clearInterval(interval);
-        wx.showToast({
-          title: '活动已结束',
-        });
-        console.log(totalSecond);
-
-        this.setData({
-          countDownHour: '00',
-          countDownMinute: '00',
-          countDownSecond: '00',
-        });
-      }
-
-
-      //当小时位、分钟位、秒位小于10时，用字符串拼接的方式显示，例如：06:08:02
-
-      if (hour < 10) {
-        hour = "0" + hour;
-      }
-      if (minutes < 10) {
-        minutes = "0" + minutes;
-      }
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
-      this.setData({
-        countDownHour: hour,
-        countDownMinute: minutes,
-        countDownSecond: seconds,
-      });
-    }.bind(this), 1000);
   },
   onLoad: function () {
 
@@ -191,10 +128,6 @@ Component({
     },
     //点击去查看商品详情
     itemDetail:function(e){
-      console.log(e);
-      var itemId = e.currentTarget.dataset.id; //获取商品的id值
-      var shopId = e.currentTarget.dataset.shopid
-      var shopname = e.currentTarget.dataset.shopname
       wx.navigateTo({
         url: '../item_type/sp_item/spItem'
       });
@@ -219,8 +152,5 @@ Component({
       })
     },
     customMethod: function () {},
-    onLoad: function () {
-
-    }
   }
 })

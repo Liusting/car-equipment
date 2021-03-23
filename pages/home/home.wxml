@@ -12,7 +12,6 @@
 			<view class="search-form round" bindtap="searchGood">
 				<text class="cuIcon-search"></text>
 				<text class="margin-left-xs text-gray">搜索商品名称</text>
-				<!-- <input type="text" placeholder="搜索" bindconfirm="homeSearch" confirm-type="search"></input> -->
 			</view>
 		</view>
 	</view>
@@ -37,7 +36,8 @@
 		</view>
 	</view>
 
-	<view class=" margin-xs" style="border-radius:7px;background: #FF416C;background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);background: linear-gradient(to right,#FF4B2B, #FF416C);">
+	<view class="margin-xs"
+		style="border-radius:7px;background: #FF416C;background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);background: linear-gradient(to right,#FF4B2B, #FF416C);">
 		<view class="cu-bar padding-lr-sm">
 			<view class="flex align-center">
 				<text class="text-black ">优惠专区</text>

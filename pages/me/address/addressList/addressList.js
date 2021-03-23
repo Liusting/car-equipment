@@ -1,4 +1,5 @@
 var app = getApp();
+import address from '../../../../utils/api'
 Page({
     /**
      * 页面的初始数据
@@ -118,6 +119,16 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        address.address.address.addressList({
+            data:{
+                page:1,
+                pageSize:10,
+                userId:3
+            }
+        })
+
+
+
         var that = this;
         wx.getSystemInfo({
             success: function (res) {
@@ -137,21 +148,21 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        var that = this;
-        wx.request({
-            url: app.ipAndPort + '/spAddress/getAddressList',
-            method: 'POST',
-            data: {
-                userId: 3
-            },
-            header: {'content-type': 'application/x-www-form-urlencoded'},
-            success: function (res) {
-                let resData = res.data;
-                that.setData({
-                    addressList: resData
-                })
-            }
-        })
+        // var that = this;
+        // wx.request({
+        //     url: app.ipAndPort + '/spAddress/getAddressList',
+        //     method: 'POST',
+        //     data: {
+        //         userId: 3
+        //     },
+        //     header: {'content-type': 'application/x-www-form-urlencoded'},
+        //     success: function (res) {
+        //         let resData = res.data;
+        //         that.setData({
+        //             addressList: resData
+        //         })
+        //     }
+        // })
     },
 // 点击新增收货地址
     addAddress: function () {

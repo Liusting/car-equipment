@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/item_type/itemType/itemType",
-    "pages/item_type/sp_item/spItem",
+ 
     "pages/index/index",
     "pages/me/vipCard/vipCard",
     "pages/me/order/confirmOrder/order",
     "pages/home/home",
     "pages/cart/cart",
+    "pages/me/address/addressList/addressList",
     "pages/test/test",
-
+    "pages/item_type/itemType/itemType",
+    "pages/item_type/sp_item/spItem",
     "pages/Login/index",
     "pages/me/sp_order_list/spOrderList",
     "pages/me/preferential/preferential",
@@ -21,19 +22,15 @@
     "pages/me/sp_order_list/steps/steps",
     "pages/me/sp_order_list/refund/refund",
     "pages/me/sp_order_list/orderDetail/orderDetail",
-   
     "pages/home/moreDiscount/moreDiscount",
     "pages/me/memberMessage/memberMessage",
     "pages/me/userMessage/userMessage",
-
     "pages/me/sp_order_list/expressInformation/expressInformation",
     "pages/me/address/editAddress/editAddress",
-    "pages/me/address/addressList/addressList",
 
     "pages/me/order/payResult/orderComplete",
     "pages/home/goodSearch/goodSearch",
     "pages/me/address/addAddress/address",
-   
     "pages/me/me"
 
   ],

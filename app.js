@@ -9,7 +9,7 @@ import http from './utils/api';
 
 App({
   // 全局ip+端口
-  ipAndPort: 'http://localhost:8088',
+  ipAndPort: 'http://localhost:8066',
   // ipAndPort: 'http://192.168.30.19:8081',
   bezier: function (points, times) {
     // 0、以3个控制点为例，点A,B,C,AB上设置点D,BC上设置点E,DE连线上设置点F,则最终的贝塞尔曲线是点F的坐标轨迹。

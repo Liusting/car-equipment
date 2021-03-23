@@ -84,4 +84,5 @@
 		<view class="margin-lr-sm text-grey">Powered by bona_marketing v.1.0.0</view>
 	</view>
 	<view class="cu-tabbar-height"></view>
+	
 </scroll-view>

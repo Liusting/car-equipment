@@ -27,7 +27,7 @@ Component({
                 "type_id": "1",
                 "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
                 "name": "ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家",
-                "id": "88156285615944f491b0a2f90bba5d75",
+                "id": "88156285615944f491b0a2f90bba5d74",
                 "check": false
             }, {
                 "number": 99,
@@ -49,7 +49,18 @@ Component({
                 "type_id": "1",
                 "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
                 "name": "ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家",
-                "id": "88156285615944f491b0a2f90bba5d75",
+                "id": "88156285615944f491b0a2f90bba5d73",
+                "check": false
+            },{
+                "number": 10,
+                "typeList": "经典圆形三档套装;8寸",
+                "money": 110,
+                "item_id": "10",
+                "user_id": "3",
+                "type_id": "3",
+                "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
+                "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
+                "id": "c21d63af1b784f278d32c547283b1821",
                 "check": false
             },{
                 "number": 10,
@@ -71,7 +82,7 @@ Component({
                 "type_id": "3",
                 "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
-                "id": "c21d63af1b784f278d32c547283b1822",
+                "id": "c21d63af1b784f278d32c547283b1823",
                 "check": false
             },{
                 "number": 10,
@@ -82,18 +93,7 @@ Component({
                 "type_id": "3",
                 "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
-                "id": "c21d63af1b784f278d32c547283b1822",
-                "check": false
-            },{
-                "number": 10,
-                "typeList": "经典圆形三档套装;8寸",
-                "money": 110,
-                "item_id": "10",
-                "user_id": "3",
-                "type_id": "3",
-                "imageUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg",
-                "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
-                "id": "c21d63af1b784f278d32c547283b1822",
+                "id": "c21d63af1b784f278d32c547283b1824",
                 "check": false
             }
             ]
@@ -104,27 +104,6 @@ Component({
         StatusBar: app.globalData.StatusBar,
         CustomBar: app.globalData.CustomBar,
         Custom: app.globalData.Custom,
-        shopData: [{
-            imageUrl: 'https://a3.vimage1.com/upload/merchandise/pdcvis/2017/08/03/8/4fb444e7-3417-4f4a-b5a1-7f1d884c610f_218x274_70.jpg',
-            name: '苹果手机',
-            number: '12',
-            integral: '14000',
-        }, {
-            imageUrl: 'https://m.360buyimg.com/n12/jfs/t11317/108/1080677336/325163/f4c2a03a/59fd8b17Nbe2fcca3.jpg!q70.jpg',
-            name: '华为手机',
-            number: '12',
-            integral: '14000',
-        }, {
-            imageUrl: 'https://a3.vimage1.com/upload/merchandise/pdcvis/2017/08/03/8/4fb444e7-3417-4f4a-b5a1-7f1d884c610f_218x274_70.jpg',
-            name: '小米手机',
-            number: '12',
-            integral: '14000',
-        }, {
-            imageUrl: 'https://m.360buyimg.com/n12/jfs/t11317/108/1080677336/325163/f4c2a03a/59fd8b17Nbe2fcca3.jpg!q70.jpg',
-            name: '小米手机',
-            number: '12',
-            integral: '14000',
-        }],
         totalNumber: 0,
         hfShow: false
     },
@@ -219,14 +198,6 @@ Component({
             wx.navigateTo({
                 url: '../item_type/sp_item/spItem'
             });
-        },
-        //点击进店跳到店铺首页
-        gotoShop: function (e) {
-            var shopId = e.currentTarget.dataset.shopid
-            var shopname = e.currentTarget.dataset.shopname
-            wx.navigateTo({
-                url: '../shop/shop?shopId=' + shopId + '&shopName=' + shopname
-            })
         },
         // 自定义页面刷新
         refresh: function () {
@@ -532,8 +503,6 @@ Component({
         //点击结算
         goclearingTap: function (e) {
             var that = this;
-            // console.log('看看打印了什么' + this.data.selarr)
-
             if (this.data.selarr.length == 0) {
                 wx.showToast({
                     title: '还没选择商品呢亲~',
@@ -556,16 +525,8 @@ Component({
                 })
             }
         },
-        //点击去逛逛
-        goshop: function () {
-            wx.reLaunch({
-                url: '../home/home'
-            })
-        },
 
         onLoad: function () {
-
-
             var that = this;
             wx.request({
                 url: app.ipAndPort + '/spCart/getCartDetail',

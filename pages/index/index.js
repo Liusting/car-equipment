@@ -5,15 +5,16 @@ Page({
         cartTotal: ''
     },
     NavChange(e) {
+        console.log(e);
         this.setData({
             PageCur: e.currentTarget.dataset.cur,
         });
     },
     onLoad: function () {
-
+        // console.log(PageCur);
     },
     onShow: function (options) {
-        console.log(options);
+        // console.log(options);
     },
     onShareAppMessage() {
         return {
