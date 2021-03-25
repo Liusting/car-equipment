@@ -12,6 +12,9 @@
 </view>
 
 <scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
+	<!-- <view class="flex justify-center padding">
+  <image src="../images/cart.png" mode='aspectFit'></image>
+</view> -->
 	<view class='margin-lr-sm bg-white margin-tb-xs' style="border-radius:7px" wx:for='{{shopcarData}}'>
 		<view class="flex align-center {{index==0?'':'line'}}" wx:for='{{item.itemdata}}' wx:for-item="items" wx:key
 			bindlongtap="delete" data-id="{{items.id}}" data-index="{{index}}">

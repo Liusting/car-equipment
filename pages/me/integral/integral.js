@@ -11,17 +11,17 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    currtab:0,
+    currtab:1,
     swipertab: [{
         name: '积分兑换',
         index: 0
       },
       {
-        name: '积分支出',
+        name: '积分收入',
         index: 1
       },
       {
-        name: '积分收入',
+        name: '积分支出',
         index: 2
       }
     ],
@@ -31,7 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
+    var that = this;
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
