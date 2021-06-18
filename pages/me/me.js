@@ -15,25 +15,25 @@ Component({
         myTools: [{
             id: 1,
             icon: 'vipcard',
-            name: '我的会员卡',
+            name: '会员卡',
             color: 'red'
         },
         {
             id: 2,
             icon: 'shopfill',
-            name: '我的积分',
+            name: '积分商城',
             color: 'orange'
         },
         {
             id: 3,
             icon: 'ticket',
-            name: '我的优惠券',
+            name: '优惠券',
             color: 'yellow'
         },
         {
             id: 4,
             icon: 'locationfill ',
-            name: '收货人信息',
+            name: '收货地址',
             color: 'bule'
         },
         {
