@@ -6,8 +6,7 @@
 		</view>
 	</view>
 </view>
-<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
-	<view class="bg-blue">
+<view class="bg-blue">
 		<view class="cu-bar solid-bottom">
 			<view class="search-form round" bindtap="searchGood">
 				<text class="cuIcon-search"></text>
@@ -15,6 +14,8 @@
 			</view>
 		</view>
 	</view>
+<scroll-view scroll-y style="height:{{deviceH-CustomBar-50}}px">
+
 
 	<view>
 		<swiper class="screen-swiper round-dot  " indicator-dots="true" circular="true" autoplay="true" interval="5000"
