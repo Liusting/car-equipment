@@ -70,20 +70,24 @@
 
 
 	<view class="margin-top bg-white padding-sm margin-sm" style="border-radius:7px">
-		<view wx:key>
-			<view class="bg-white flex">
-				<view style="height:200rpx;width:200rpx;">
-					<image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1190508392,2367207931&fm=26&gp=0.jpg"
-						mode="widthFix"></image>
-				</view>
-
-				<view class="padding-xs ">
-					<view class="productTitle">德国华麦斯 家用工具箱套装五金工具套装多功能家庭电工木工电讯维修工具组合套装 豪华工具套装(升级加强版)</view>
-					<view class="text-gray margin-top-sm text-sm">经典款</view>
-					<view class="cu-bar">
-						<text class="text-price text-red">1229</text>
-						<text>x1</text>
+		<view wx:for="{{spList}}" wx:key=" ">
+			<view wx:for="{{item.children}}" wx:for-item="items" wx:key>
+				<view class="orderListDetails" bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}"
+					data-tradeStatus="{{item.trade_status}}">
+					<view class="productImg">
+						<image src="{{items.imageUrl}}" mode="widthFix"></image>
 					</view>
+					<view class="productInfo ">
+						<view class="productTitle">{{items.name}}</view>
+						<view class="margin-tb-sm text-sm">{{items.typeName}}</view>
+						<view>
+						</view>
+						<view style="height:100%;width:150rpx;">
+							<text style="margin-right:20rpx;" class="text-price">{{items.money}}</text>
+							<text style="margin-right:20rpx;color:gray;font-size:20rpx;">x{{items.number}}</text>
+						</view>
+					</view>
+
 				</view>
 			</view>
 		</view>
@@ -144,17 +148,18 @@
 
 <view class="cu-bar foot tabbar  bg-white padding-xs">
 	<view class="flex align-center">
-		<button open-type="contact" class="kf-button bg-white"> <text class="cuIcon-weixin">联系客服</text></button>
+		<button open-type="contact" class="kf-button bg-white"> <text class="cuIcon-weixin text-green text-xl"></text><text
+				class="margin-left-xs text-lg">联系客服</text></button>
 	</view>
 	<view wx:if="{{trade_status==1}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
+		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="closeOrder">取消订单 </button>
 		<button class="cu-btn line-red margin-right-sm">立即支付</button>
 	</view>
 	<view wx:if="{{trade_status==2}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="cancelOrder">提醒发货</button>
+		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="remind">提醒发货</button>
 	</view>
 	<view wx:if="{{trade_status==3}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="cancelOrder">确认收货</button>
+		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="confirmGet">确认收货</button>
 		<button class="cu-btn line-red margin-right-sm">查看物流</button>
 	</view>
 	<view wx:if="{{trade_status==4}}">

@@ -18,7 +18,7 @@
 	<view class="cu-tabbar-height"></view>
 
 
-	<view class="" wx:for="{{orderList}}" wx:key="">
+	<view class="" wx:for="{{orderList}}" wx:key="index">
 		<view class="bg-white margin-sm" style="border-radius:7px">
 			<view class="flex align-center justify-between padding-sm">
 				<view>
@@ -34,7 +34,29 @@
 
 			<view class="margin-lr-sm padding-tb-sm" wx:key
 				style="border-top:1px solid #F7F7F7;border-bottom:1px solid #F7F7F7">
-				<view class="flex" bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}"
+
+				<view wx:for="{{item.children}}" wx:for-item="items" wx:key>
+					<view bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}"
+						data-tradeStatus="{{item.trade_status}}">
+						<view class="flex margin-bottom-sm">
+							<view class="productImg">
+								<image src="{{items.imageUrl}}" mode="widthFix"></image>
+							</view>
+							<view class="margin-lr-sm">
+								<view class="productTitle">{{items.name}}
+								{{items.length}}
+								</view>
+								<view class="margin-top-sm text-sm">{{items.typeName}}</view>
+								<view class="flex-sub margin-top-sm">
+									<text class="text-price text-black">{{items.money}}</text>
+									<text class="margin-left text-gray">x{{items.number}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+
+				<!-- <view class="flex" bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}"
 					data-tradeStatus="{{item.trade_status}}">
 					<view class="productImg">
 						<image src="{{item.imageUrl}}" mode="widthFix"></image>
@@ -47,7 +69,7 @@
 							<text class="margin-left text-gray">x{{item.number}}</text>
 						</view>
 					</view>
-				</view>
+				</view> -->
 			</view>
 
 			<view class="flex justify-end margin-lr-sm padding-tb-sm">
@@ -62,8 +84,7 @@
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==2}}">
-				<button bindtap="expressDetail" class="cu-btn line-info" data-id="{{item.id}}"
-					bindtap="remind">提醒发货</button>
+				<button bindtap="expressDetail" class="cu-btn line-info" data-id="{{item.id}}" bindtap="remind">提醒发货</button>
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==3}}">

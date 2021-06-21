@@ -12,8 +12,40 @@ Page({
         CustomBar: app.globalData.CustomBar,
         Custom: app.globalData.Custom,
         address_info: [],
-        spList: [],
-        trade_status: ''
+        spList: [{
+            "trade_status": "1",
+            "children": [{
+                    "number": 1,
+                    "pay_status": "1",
+                    "money": 1899.0,
+                    "item_id": "1",
+                    "type_id": "2555",
+                    "trade_status": "1",
+                    "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                    "display": "1",
+                    "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
+                    "typeName": "经典方形三档套装;8寸",
+                    "id": "1",
+                    "order_id": "20200522100218863744"
+                },
+                {
+                    "number": 1,
+                    "pay_status": "1",
+                    "money": 1899.0,
+                    "item_id": "1",
+                    "type_id": "2555",
+                    "trade_status": "1",
+                    "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                    "display": "1",
+                    "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
+                    "typeName": "经典方形三档套装;8寸",
+                    "id": "1",
+                    "order_id": "20200522100218863744"
+                }
+            ]
+        }
+        ],
+        trade_status: '1'
     },
     // 
     /**
@@ -21,12 +53,46 @@ Page({
      */
     onShow: function (e) {
     },
-    //点击店铺跳到店铺首页
-    gotoShop: function (e) {
-        var shopId = e.currentTarget.dataset.shopid
-        var shopname = e.currentTarget.dataset.shopname
-        wx.navigateTo({
-            url: '../shop/shop?shopId=' + shopId + '&shopName=' + shopname
+
+    // 确认收货
+    confirmGet: function (e) {
+        console.log(e);
+        var that = this;
+        wx.showModal({
+            title: '温馨提示',
+            content: '您确认收到宝贝了吗？',
+            success(res) {
+                if (res.confirm) {
+                    wx.request({
+                        url: app.ipAndPort + '/spOrder/confirmReceive',
+                        method: 'POST',
+                        data: {
+                            id: e.currentTarget.dataset.id,
+                            trade_status: that.data.currtab
+                        },
+                        header: {
+                            'content-type': 'application/x-www-form-urlencoded'
+                        },
+                        success: function (res) {
+                            if (res.code == 1) {
+                                that.orderListShow();
+                                wx.showToast({
+                                    title: '收货成功',
+                                    icon: 'success',
+                                    duration: 2000,
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    },
+    //提醒卖家发货
+    remind: function () {
+        wx.showToast({
+            title: '主人~提醒成功',
+            icon: 'success'
         })
     },
     onLoad: function (e) {
@@ -37,19 +103,19 @@ Page({
         var that = this;
         let id = e.id;
         let shop_id = e.shop_id;
-        http.orderDetail({
-            data: {
-                id: id,
-                shop_id: shop_id
-            },
-            success(res) {
-                console.log(res);
-                that.setData({
-                    address_info: res.orderDetail.addressDetail,
-                    spList: res.orderDetail.detailList,
-                })
-            }
-        })
+        // http.orderDetail({
+        //     data: {
+        //         id: id,
+        //         shop_id: shop_id
+        //     },
+        //     success(res) {
+        //         console.log(res);
+        //         that.setData({
+        //             address_info: res.orderDetail.addressDetail,
+        //             spList: res.orderDetail.detailList,
+        //         })
+        //     }
+        // })
 
         wx.getSystemInfo({
             success: function (res) {
@@ -67,24 +133,7 @@ Page({
     onReady: function () {
 
     },
-    //联系卖家
-    chat: function (e) {
-        wx.navigateTo({
-            url: '../sp_order_list/chat',
-        })
-    },
-    //拨打电话
-    call: function (e) {
-        wx.makePhoneCall({
-            phoneNumber: '13047838940',
-        })
-    },
-//点击店铺
-    shop: function () {
-        wx.navigateTo({
-            url: '../shop/shop'
-        })
-    },
+
     // 取消订单
     closeOrder: function (e) {
         var that = this;

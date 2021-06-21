@@ -184,6 +184,3 @@
   margin-top:19rpx;
   font-size: 30rpx;
 }
-.text-maincolor{
-  color:#FF841B;
-}

@@ -88,12 +88,9 @@
 }
  
 .orderListDetails .productInfo {
-  flex: 4;
-  margin-top: 5rpx;
  height: 100%;
  padding-left: 15rpx;
  padding-right: 15rpx;
- padding-top: 10rpx;
 }
  
 .orderListDetails .productInfo .productTitle {

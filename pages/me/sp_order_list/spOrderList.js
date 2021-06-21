@@ -7,96 +7,125 @@ Page({
     data: {
         currtab: '',
         swipertab: [{
-            name: '全部',
-            index: 0
-        },
-        {
-            name: '待付款',
-            index: 1
-        },
-        {
-            name: '待发货',
-            index: 2
-        },
-        {
-            name: '待收货',
-            index: 3
-        },
-        {
-            name: '待评价',
-            index: 4
-        },
+                name: '全部',
+                index: 0
+            },
+            {
+                name: '待付款',
+                index: 1
+            },
+            {
+                name: '待发货',
+                index: 2
+            },
+            {
+                name: '待收货',
+                index: 3
+            },
+            {
+                name: '待评价',
+                index: 4
+            },
         ],
         orderList: [{
-            "number": 1,
-            "pay_status": "1",
-            "money": 1899.0,
-            "item_id": "1",
-            "type_id": "2555",
             "trade_status": "1",
-            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
-            "display": "1",
-            "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
-            "typeName": "经典方形三档套装;8寸",
-            "id": "1",
-            "order_id": "20200522100218863744"
+            "children": [{
+                    "number": 1,
+                    "pay_status": "1",
+                    "money": 1899.0,
+                    "item_id": "1",
+                    "type_id": "2555",
+                    "trade_status": "1",
+                    "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                    "display": "1",
+                    "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
+                    "typeName": "经典方形三档套装;8寸",
+                    "id": "1",
+                    "order_id": "20200522100218863744"
+                },
+                {
+                    "number": 1,
+                    "pay_status": "1",
+                    "money": 1899.0,
+                    "item_id": "1",
+                    "type_id": "2555",
+                    "trade_status": "1",
+                    "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                    "display": "1",
+                    "name": "罗浮威尔通体大理石瓷砖800x800简约现代灰色客厅防滑耐磨地板砖",
+                    "typeName": "经典方形三档套装;8寸",
+                    "id": "1",
+                    "order_id": "20200522100218863744"
+                }
+            ]
+
 
         }, {
-
-            "number": 5,
-            "pay_status": "1",
-            "money": 1699.0,
-            "item_id": "4",
-            "type_id": "1",
             "trade_status": "2",
-            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
-            "display": "1",
-            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
-            "typeName": "大方体方形四档套装-旗舰款;10寸",
-            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
-            "order_id": "20200522100218863742"
-        }, {
+            "children": [{
+                "number": 5,
+                "pay_status": "1",
+                "money": 1699.0,
+                "item_id": "4",
+                "type_id": "1",
+                "trade_status": "2",
+                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                "display": "1",
+                "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+                "typeName": "大方体方形四档套装-旗舰款;10寸",
+                "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+                "order_id": "20200522100218863742"
+            }]
 
-            "number": 5,
-            "pay_status": "1",
-            "money": 1699.0,
-            "item_id": "4",
-            "type_id": "1",
+        }, {
             "trade_status": "3",
-            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
-            "display": "1",
-            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
-            "typeName": "大方体方形四档套装-旗舰款;10寸",
-            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
-            "order_id": "20200522100218863742"
+            "children": [{
+                "number": 5,
+                "pay_status": "1",
+                "money": 1699.0,
+                "item_id": "4",
+                "type_id": "1",
+                "trade_status": "2",
+                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                "display": "1",
+                "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+                "typeName": "大方体方形四档套装-旗舰款;10寸",
+                "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+                "order_id": "20200522100218863742"
+            }]
         }, {
-
-            "number": 5,
-            "pay_status": "1",
-            "money": 1699.0,
-            "item_id": "4",
-            "type_id": "1",
             "trade_status": "4",
-            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
-            "display": "1",
-            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
-            "typeName": "大方体方形四档套装-旗舰款;10寸",
-            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
-            "order_id": "20200522100218863742"
+            "children": [{
+                "number": 5,
+                "pay_status": "1",
+                "money": 1699.0,
+                "item_id": "4",
+                "type_id": "1",
+                "trade_status": "2",
+                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                "display": "1",
+                "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+                "typeName": "大方体方形四档套装-旗舰款;10寸",
+                "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+                "order_id": "20200522100218863742"
+            }]
         }, {
 
-            "number": 5,
-            "pay_status": "1",
-            "money": 1699.0,
-            "item_id": "4",
-            "type_id": "1",
             "trade_status": "5",
-            "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
-            "display": "1",
-            "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
-            "typeName": "大方体方形四档套装-旗舰款;10寸",
-            "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
-            "order_id": "20200522100218863742"
+            "children": [{
+                "number": 5,
+                "pay_status": "1",
+                "money": 1699.0,
+                "item_id": "4",
+                "type_id": "1",
+                "trade_status": "2",
+                "imageUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg",
+                "display": "1",
+                "name": "龙鼎天著木门定制烤漆环保静音门家用室内门LA-014",
+                "typeName": "大方体方形四档套装-旗舰款;10寸",
+                "id": "d1f33a1519a04993a56cbc2c2f3c3c5b",
+                "order_id": "20200522100218863742"
+            }]
         }],
         deviceW: '', //屏幕宽度
         deviceH: '', //屏幕高度
@@ -107,13 +136,10 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onShow: function (e) {
-    },
+    onShow: function (e) {},
     onLoad: function (e) {
         var that = this;
-        wx.showLoading({
-            title: '正在加载模块',
-        })
+
         setTimeout(function () {
             wx.hideLoading()
         }, 2000)
@@ -211,6 +237,15 @@ Page({
             content: '确定取消订单吗？',
             success(res) {
                 if (res.confirm) {
+                    setTimeout(function () {
+                        wx.showToast({
+                            title: '取消订单成功',
+                            icon: 'success',
+                            duration: 1000,
+                        })
+                    }, 1000)
+
+
                     wx.request({
                         url: app.ipAndPort + '/spOrder/canCelList',
                         method: 'POST',

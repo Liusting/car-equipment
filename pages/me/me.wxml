@@ -6,9 +6,8 @@
 	</view>
 </view>
 	<view class=" padding bg-blue" style="height:150rpx;">
-		<view class="flex align-center">
+		<view class="flex align-center" wx:if="{{isLogin==true}}">
 			<view class="cu-avatar lg round " style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);"></view>
-
 			<view class="margin-left flex align-center justify-between" style="width:80%">
 				<view>
 					<text bindtap="userMessage" class="text-df padding-xs">李晓芳 <text class="cuIcon-write"></text> </text>
@@ -19,11 +18,19 @@
 				</view>
 			</view>
 		</view>
+		<view class="flex align-center" wx:if="{{isLogin==false}}">
+			<view class="cu-avatar lg round " style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3297084658,4192480605&fm=26&gp=0.jpg);"></view>
+			<view class="margin-left flex align-center justify-between" style="width:80%">
+				<view bindtap="login">
+					立即登录
+				</view>
+			</view>
+		</view>
 	</view>
 <scroll-view scroll-y style="height:{{deviceH-CustomBar-75}}px">
 	<view class="margin-sm bg-white" style="border-radius:7px">
 		<view class="padding flex align-center justify-between" style="border-bottom:1px solid #f7f7f7" catchtap="toOrder" data-typeid="{{0}}">
-			<text class="text-lg text-black">我的订单</text>
+			<text class="text-lg text-black text-bold">我的订单</text>
 			<text class="text-gary"><text class="{{'cuIcon-right '}}"></text> </text>
 		</view>
 		<view class="bg-white " style="border-radius:7px">
@@ -48,6 +55,9 @@
 
 
 	<view class="bg-white margin-sm" style="border-radius:7px">
+		<view class="padding-top padding-left">
+			<text class="text-lg text-black text-bold">我的服务</text>
+		</view>
 		<view class=" grid col-4   padding-sm">
 			<view class="" wx:for="{{myTools}}" wx:key wx:if="{{index<12}}">
 				<view class="padding-xs margin-top-sm  text-center " bindtap="toTool" data-id="{{item.id}}">
@@ -62,7 +72,7 @@
 
 			<view class="text-center margin-top-sm padding-xs">
 				<view>
-					<button class="kf_button bg-white text-maincolor" open-type="contact" session-from="weapp">
+					<button class="kf_button bg-white " open-type="contact" session-from="weapp">
 						<text style="font-size:30px" class="cuIcon-communityfill"></text>
 					</button>
 				</view>
@@ -70,9 +80,9 @@
 					<text class="text-black">联系客服</text>
 				</view>
 			</view>
-			<view class="text-center margin-top-sm padding-xs" bindtap="exit">
+			<view class="text-center margin-top-sm padding-xs" bindtap="exit" wx:if="{{isLogin==true}}">
 				<view>
-					<text class="text-maincolor"><text style="font-size:30px" class="cuIcon-exit"></text></text>
+					<text><text style="font-size:30px" class="cuIcon-exit"></text></text>
 				</view>
 				<view class="nav-content-margin">
 					<text class="text-black">退出登录</text>

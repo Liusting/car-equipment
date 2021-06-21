@@ -13,67 +13,68 @@ Component({
         flag: false,
         flag1: true,
         myTools: [{
-            id: 1,
-            icon: 'vipcard',
-            name: '会员卡',
-            color: 'red'
-        },
-        {
-            id: 2,
-            icon: 'shopfill',
-            name: '积分商城',
-            color: 'orange'
-        },
-        {
-            id: 3,
-            icon: 'ticket',
-            name: '优惠券',
-            color: 'yellow'
-        },
-        {
-            id: 4,
-            icon: 'locationfill ',
-            name: '收货地址',
-            color: 'bule'
-        },
-        {
-            id: 5,
-            icon: 'peoplelist ',
-            name: '关于普斯',
-            color: 'pink'
-        }
+                id: 1,
+                icon: 'vipcard',
+                name: '会员卡',
+
+            },
+            {
+                id: 2,
+                icon: 'shopfill',
+                name: '积分商城',
+
+            },
+            {
+                id: 3,
+                icon: 'ticket',
+                name: '优惠券',
+
+            },
+            {
+                id: 4,
+                icon: 'locationfill ',
+                name: '收货地址',
+
+            }
+            // {
+            //     id: 5,
+            //     icon: 'peoplelist ',
+            //     name: '关于普斯',
+
+            // }
         ],
         orderItems: [{
-            typeId: 1,
-            icon: 'pay',
-            name: '待付款',
-            badge: 7
-        },
-        {
-            typeId: 2,
-            icon: 'send',
-            name: '待发货',
-            badge: 0
-        },
-        {
-            typeId: 3,
-            icon: 'deliver',
-            name: '待收货',
-            badge: 120
-        },
-        {
-            typeId: 4,
-            icon: 'comment',
-            name: '待评价',
-            badge: 2
-        },
-        {
-            typeId: 5,
-            icon: 'refund',
-            name: '退款/售后',
-            badge: 1
-        },
+                typeId: 1,
+                icon: 'pay',
+                name: '待付款',
+                badge: 7
+            },
+            {
+                typeId: 2,
+                icon: 'send',
+                name: '待发货',
+                badge: 0
+            },
+            {
+                typeId: 3,
+                icon: 'deliver',
+                name: '已发货',
+                badge: 120
+            },
+            {
+                typeId: 4,
+                icon: 'comment',
+                name: '待评价',
+                badge: 2
+            },
+            {
+                typeId: 5,
+                icon: 'refund',
+                name: '退款/售后',
+                badge: 1
+            },
         ],
+        isLogin: false
     },
     // tab切换的时候马上响应数据
     ready: function () {
@@ -90,6 +91,12 @@ Component({
         this.bindGetUserInfo();
     },
     methods: {
+        login() {
+            console.log(11)
+            this.setData({
+                isLogin: true
+            })
+        },
         bindGetUserInfo: function (e) {
             var that = this;
             // 判断是否授权
@@ -183,10 +190,13 @@ Component({
             }
         },
         exit: function () {
+            this.setData({
+                isLogin: false
+            })
             wx.showModal({
-                title: '确定要退出登录？',
+                title: '温馨提示',
                 showCancel: true,
-                content: '退出登录将无法查看内容',
+                content: '确定要退出登录吗？',
                 success: function () {
                     wx.showToast({
                         title: '退出成功',
