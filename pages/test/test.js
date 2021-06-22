@@ -12,12 +12,34 @@ Page({
 	getDbRecord(){
 		//初始化数据库
 		const db = wx.cloud.database();
-		db.collection('todos').doc('28ee4e3e60d1f84a24504f4669f446ca').get().then(res =>{
+		db.collection('todos').get().then(res =>{
 			console.log(res)
 		}).catch(function (err) {
 			console.log(err);
 		})
 
+	},
+	addDbRecord(){
+		const db = wx.cloud.database();
+		db.collection('todos').add({
+			// data 字段表示需新增的 JSON 数据
+			data: {
+				// _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+				description: "learn cloud database",
+				due: new Date("2018-09-01"),
+				tags: [
+					"cloud",
+					"database"
+				],
+				// 为待办事项添加一个地理位置（113°E，23°N）
+				location: new db.Geo.Point(113, 23),
+				done: false
+			},
+			success: function(res) {
+				// res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+				console.log(res)
+			}
+		})
 	},
 	uploadImage(){
 		wx.chooseImage({

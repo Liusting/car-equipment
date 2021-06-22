@@ -10,3 +10,6 @@
 <view>
 <button class="cu-btn round bg-orange" bindtap="getDbRecord">获取记录</button>
 </view>
+<view>
+<button class="cu-btn round bg-orange" bindtap="addDbRecord">增加记录</button>
+</view>
