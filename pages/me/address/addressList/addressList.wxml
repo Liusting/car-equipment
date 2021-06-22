@@ -1,10 +1,8 @@
-<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-		<cu-custom isBack="{{true}}">
+
+		<cu-custom isBack="{{true}}" bgColor="bg-white">
 			<view slot="backText">{{type==2?'选择收货地址':'管理地址'}}</view>
 		</cu-custom>
-	</view>
-</view>
+
 
 
 
@@ -18,7 +16,7 @@
 	<view wx:for="{{addressList}}" wx:key bindtap='addClick' data-id='{{item.id}}' data-item='{{item}}'>
 		<view class="cu-bar flex bg-white " style="border-bottom:1px solid #f1f1f1">
 			<view wx:if="{{type==2}}" style="width:10px" class="cuIcon-{{idx==item.id?'check':''}} margin-left-xs text-green "></view>
-			<view class="padding-sm">
+			<view class="margin-sm">
 				<view class="flex align-center text-lg">
 					<text class="text-black text-bold">{{item.addresseeName}}</text>
 					<text class="text-black text-bold">，{{item.phoneNumber}}</text>
@@ -37,6 +35,6 @@
 	<view class="cu-tabbar-height">
 	</view>
 </scroll-view>
-<view class="cu-bar tabbar foot bg-cyan justify-center" bindtap="addAddress">
-	<text class="text-white">新增收货地址</text>
+<view class="cu-bar tabbar foot  bg-white padding" bindtap="addAddress">
+	<button class="text-white bg-cyan cu-btn flex-sub round margin-lr lg">新增收货地址</button>
 </view>

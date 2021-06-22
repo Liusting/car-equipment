@@ -1,25 +1,27 @@
-<view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
-		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-		<cu-custom isBack="{{true}}">
-			<view slot="backText">我的积分</view>
-		</cu-custom>
-	</view>
-</view>
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+	<view slot="backText">我的积分</view>
+</cu-custom>
 
 
-<view class="bg-blue cu-tabbar-height">
-	<view class="flex align-start">
-		<view class="margin-left flex align-center justify-between">
-			<view>
-				亲爱的用户，您当前可用积分为：<text class="text-sl margin-left text-bold">854</text>
+<view class="bg-white flex  align-center padding-sm" style="height:180rpx;">
+	<view class="flex  justify-between align-center" style="width:100vw">
+		<view class="flex align-center">
+			<view class="cu-avatar xl round"
+				style="background-image:url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3107083461,4268460867&fm=26&gp=0.jpg)">
 			</view>
+			<view class="margin-left-sm text-xl">
+				Liusting.
+			</view>
+		</view>
+		<view class="">
+			<view>可用积分</view>
+			<text class="text-bold text-black" style="font-size:60rpx">854</text>
 		</view>
 	</view>
 </view>
 
 <view class="bg-white">
-	<view class=" grid col-3 cu-tabbar-height">
+	<view class=" grid col-3"  style="height:120rpx">
 		<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key
 			bindtap="tabSwitch" data-current="{{item.index}}">
 			{{item.name}}
@@ -27,11 +29,11 @@
 	</view>
 </view>
 
-<swiper current="{{currtab}}" class="swiper-box bg-white" duration="300" bindchange="tabChange">
+<swiper current="{{currtab}}" class="swiper-box" duration="300" bindchange="tabChange" style="height:{{deviceH-CustomBar-90-60}}px">
 
 	<!-- 优惠卷未使用 -->
 	<swiper-item>
-		<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
+		<scroll-view scroll-y  style="height:{{deviceH-CustomBar-90-60}}px">
 			<view class="cu-list grid col-2">
 				<view wx:for="{{8}}" wx:key="ssss">
 					<view style="background:#f1f1f1" class="cu-card" bindtap="itemDetail" data-shopId='{{item.shop_id}}'
@@ -57,9 +59,9 @@
 	</swiper-item>
 	<!-- 已使用 -->
 	<swiper-item>
-		<scroll-view style="height:{{deviceH-CustomBar}}px" scroll-y>
-			<view wx:for="{{5}}">
-				<view class="cu-bar padding-tb-sm bg-white padding-lr-lg">
+		<scroll-view class="margin-top-sm"  style="height:{{deviceH-CustomBar-90-60}}px" scroll-y>
+			<view wx:for="{{20}}" class="">
+				<view class="cu-bar padding-tb-sm bg-white padding-lr-lg ">
 					<view class="">
 						<span class="text-lg text-black">消费购物</span>
 						<view class="text-sm">2021.03.21 11：30：22</view>
@@ -71,8 +73,8 @@
 	</swiper-item>
 
 	<swiper-item>
-		<scroll-view style="height:{{deviceH-CustomBar}}px" scroll-y>
-			<view wx:for="{{5}}">
+		<scroll-view class="margin-top-sm"  style="height:{{deviceH-CustomBar-90-60}}px" scroll-y>
+			<view wx:for="{{20}}">
 				<view class="cu-bar padding-tb-sm bg-white padding-lr-lg">
 					<view class="">
 						<span class="text-lg text-black">积分兑换</span>

@@ -1,4 +1,6 @@
-/* pages/me/integral/integral.wxss */
+@import "../../../colorui/main.wxss";
+@import "../../../colorui/main.wxss";
+
 .shop_name{
   font-size: 27rpx;  
   line-height: 40rpx;  
@@ -11,6 +13,7 @@
   overflow:hidden;
   padding: 5rpx;
   color: black;
+  
 }
 .on {
   border-bottom: 2px solid red;

@@ -11,7 +11,7 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    currtab:1,
+    currtab:0,
     swipertab: [{
         name: '积分兑换',
         index: 0

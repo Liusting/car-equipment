@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "管理地址"
+  "navigationBarTitleText": "管理地址",
+  "navigationBarTextStyle": "black"
 }
