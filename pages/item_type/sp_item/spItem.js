@@ -87,7 +87,8 @@ Page({
         // 提示选中什么或者要用户要选择什么
         tipsTitle: "",
         modalType: "",
-        menuTop: ""
+        menuTop: "",
+        kk:0
     },
     /**
      * @Explain：选项卡点击切换
@@ -110,11 +111,15 @@ Page({
         }
     },
     sssss:function(e){
-        console.log(e.detail.scrollTop)
+        let kk = this.data.kk;
+        // console.log(kk)
+        console.log(e.detail.scrollTop/300)
+        let jj = e.detail.scrollTop/300;
         if (this.data.menuFixed === (e.detail.scrollTop > this.data.menuTop)) return;
         // 当页面滚动距离scrollTop > menuTop菜单栏距离顶部的距离时，菜单栏固定定位
         this.setData({
-            menuFixed: (e.detail.scrollTop > this.data.menuTop)
+            menuFixed: (e.detail.scrollTop > this.data.menuTop),
+            kk:jj
         })
 
         

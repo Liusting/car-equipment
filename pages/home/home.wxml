@@ -81,8 +81,8 @@
 				data-shopName='{{item.shopName}}' data-id="{{item.ID}}">
 				<view class="cu-item shadow">
 					<image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3454967093,1824291965&fm=26&gp=0.jpg"
-						mode='heightFix'></image>
-					<view class="shop_name">小米9手机壳cc9e红米k20Pro青春note7版8保护6x套max3note5防摔mix2s全包屏幕指纹se八5plus九a硅胶note3磨砂</view>
+						mode='widthFix'></image>
+					<view class="shop_name margin-lr-sm">小米9手机壳cc9e红米k20Pro青春note7版8保护6x套max3note5防摔mix2s全包屏幕指纹se八5plus九a硅胶note3磨砂</view>
 					<view class="padding flex align-center justify-between">
 						<view>
 							<text class="text-xl text-price text-red">99.99</text>
@@ -94,10 +94,6 @@
 			</view>
 		</view>
 	</view>
-	<view class="flex align-center padding justify-center">
-		<view class=' bg-grey' style="width: 200rpx;height: 1rpx;"></view>
-		<view class="margin-lr-sm text-grey">我是有底线的</view>
-		<view class=' bg-grey' style="width: 200rpx;height: 1rpx;"></view>
-	</view>
+	<view class="cu-load {{!isLoad?'loading':'over'}}"></view>
 	<view class='cu-tabbar-height'></view>
 </scroll-view>

@@ -11,6 +11,12 @@ Page({
         });
     },
     onLoad: function () {
+        wx.cloud.callFunction({
+            name:'test',
+
+        }).then(res =>{
+            console.log(res)
+        })
     },
     onShow: function (options) {
         // console.log(options);

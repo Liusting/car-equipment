@@ -1,70 +1,12 @@
-<view class="cu-custom" style="height:{{CustomBar}}px;">
-    <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-        <view class="head-title">购物车</view>
-    </view>
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+	<view slot="backText"></view>
+	<view slot="content" class="text-bold text-black">会员登录</view>
+</cu-custom>
+ 
+<view class="bg-white padding" bindtap="uploadImage">
+    <text class="cuIcon-camera cu-tag line-blue"></text>
 </view>
- 
-<view class="box"  style="top:{{CustomBar}}px;">
-    <!-- <view class="canui-kong">
-        <view class="bg-gradual-orange padding radius text-center shadow-blur canui-kong-icon">
-            <text class="icon-cart"></text>
-        </view>
- 
-        <view class="text-lg padding text-center">
-            <text class="text-grey"> 购物车竟然是空的 </text>
-        </view>
- 
-        <view class="padding flex flex-wrap justify-between align-center">
-            <button class='cu-btn bg-gradual-green shadow-blur round'>去逛逛</button>
-        </view>
- 
-    </view> -->
- 
-    <view class="cu-list menu menu-avatar goods-list" >
- 
-        <view class="cu-item">
-            <view class='action-checkbox'>
-                <checkbox class='round orange' checked></checkbox>
-            </view>
-            <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"></view>
-            <view class='content'>
-                <view> 喵星人互动群 </view>
-                <view class='goods-price-btn'>
-                    <view class='text-red text-sm text-price'>100.00</view>
-                    <view class='action-btn-sum'>
-                        <button class='cu-btn'>-</button>
-                        <input class='ca-sum' name='input' value="1"></input>
-                        <button class='cu-btn'>+</button>
-                    </view>
-                </view>
-            </view>
-        </view>
- 
-        <view class="cu-item">
-            <view class='action-checkbox'>
-                <checkbox class='round orange' checked></checkbox>
-            </view>
-            <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"></view>
-            <view class='content'>
-                <view> 喵星人互动群 </view>
-                <view class='goods-price-btn'>
-                    <view class='text-red text-sm text-price'>100.00</view>
-                    <view class='action-btn-sum'>
-                        <button class='cu-btn'>-</button>
-                        <input class='ca-sum' name='input' value="1"></input>
-                        <button class='cu-btn'>+</button>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </view>
- 
- 
-    <view class="cu-bar bg-white solid-bottom canui-foor-fixed" >
-        <view class="action canui-checked"> <checkbox class='round orange' checked></checkbox> </view>
-        <view class="action canui-delete"> <button class='cu-btn icon-delete'></button> </view>
-        <view class='submit canui-price'>合计 <text class="text-red text-price">200.00</text></view>
-        <view class='bg-red submit canui-submit'>结算(2)</view>
-    </view>
- 
+
+<view>
+<button class="cu-btn round bg-orange" bindtap="getDbRecord">获取记录</button>
 </view>

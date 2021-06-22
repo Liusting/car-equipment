@@ -97,11 +97,12 @@ App({
         }
       }
     })
-    // if (wx.cloud) {
-    //   wx.cloud.init({
-    //     traceUser: true
-    //   })
-    // }
+    //全局初始化云函数
+    if (wx.cloud) {
+      wx.cloud.init({
+        traceUser: true
+      })
+    }
 
     wx.getSystemInfo({
       success: e => {

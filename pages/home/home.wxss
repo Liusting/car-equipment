@@ -7,7 +7,7 @@
 }
 
 .shop_name{
-  font-size: 30rpx;
+  font-size: 26rpx;
   line-height: 40rpx;
   display: block;
   max-height: 80rpx;
@@ -16,7 +16,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 5rpx;
+
   color: black;
 }
 .shopback{

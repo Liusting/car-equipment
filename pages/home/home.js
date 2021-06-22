@@ -97,7 +97,8 @@ Component({
       color: 'mauve',
       name: '限时折扣'
     }
-  ]
+  ],
+  isLoad:false
   },
 
   ready: function () {
