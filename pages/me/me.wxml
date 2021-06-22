@@ -1,29 +1,30 @@
 <view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+	<view class="cu-bar fixed " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
 		<view class="margin-left text-xl text-white">
 			<text>个人中心</text>
 		</view>
 	</view>
 </view>
-	<view class=" padding bg-blue" style="height:150rpx;">
-		<view class="flex align-center" wx:if="{{isLogin==true}}">
-			<view class="cu-avatar lg round " style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);"></view>
+	<view class=" padding bg-blue" >
+		<view class="flex align-center" wx:if="{{hasUserInfo}}">
+			<view bindtap="userMessage" class="cu-avatar lg round " style="background-image:url({{userInfo.avatarUrl}});"></view>
 			<view class="margin-left flex align-center justify-between" style="width:80%">
 				<view>
-					<text bindtap="userMessage" class="text-df padding-xs">李晓芳 <text class="cuIcon-write"></text> </text>
-					<view class="flex align-center round bg-blue padding-lr-xs light margin-top-xs" bindtap="memberMessage">
-						<text class="cuIcon-vip" style="font-size:25rpx"></text>
-						<text class="margin-lr-xs" style="font-size:22rpx">普通会员</text>
+					<text  class="text-lg padding-xs">{{userInfo.nickName}} </text>
+					<view class="flex align-center cu-tag round bg-black margin-top-sm" bindtap="memberMessage">
+						<text class="cuIcon-vip"></text>
+						<text class="margin-lr-xs" >普通会员<text class="cuIcon-right"></text></text>
 					</view>
 				</view>
 			</view>
+	
 		</view>
-		<view class="flex align-center" wx:if="{{isLogin==false}}">
+		<view class="flex align-center" wx:if="{{!hasUserInfo}}">
 			<view class="cu-avatar lg round " style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3297084658,4192480605&fm=26&gp=0.jpg);"></view>
 			<view class="margin-left flex align-center justify-between" style="width:80%">
-				<view bindtap="login">
+				<button  class="cu-btn bg-blue"  bindtap="getUserInfo" >
 					立即登录
-				</view>
+				</button>
 			</view>
 		</view>
 	</view>
@@ -80,7 +81,7 @@
 					<text class="text-black">联系客服</text>
 				</view>
 			</view>
-			<view class="text-center margin-top-sm padding-xs" bindtap="exit" wx:if="{{isLogin==true}}">
+			<view class="text-center margin-top-sm padding-xs" bindtap="exit" wx:if="{{hasUserInfo}}">
 				<view>
 					<text><text style="font-size:30px" class="cuIcon-exit"></text></text>
 				</view>

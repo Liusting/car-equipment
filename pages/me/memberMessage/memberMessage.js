@@ -43,7 +43,7 @@ Page({
                 icon: 'presentfill',
                 color: 'purple',
                 name: '生日好礼'
-            }]
+            }],userInfo:''
     },
     onLoad() {
         let that = this;
@@ -51,7 +51,8 @@ Page({
             success: function (res) {
                 that.setData({
                     deviceW: res.windowWidth,//当前屏幕宽度
-                    deviceH: res.windowHeight//当前屏幕高度
+                    deviceH: res.windowHeight,//当前屏幕高度
+                    userInfo:app.globalData.userInfo
                 })
             }
         });

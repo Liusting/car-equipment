@@ -9,7 +9,7 @@
 
   <view class="bg-white padding flex justify-between align-center" style="border-bottom:1px solid #f1f1f1">
     <text class="text-black ">头像</text>
-    <view class="cu-avatar lg round " style="background-image:url({{avatarUrl}});"></view>
+    <view class="cu-avatar lg round " style="background-image:url({{userInfo.avatarUrl}});"></view>
   </view>
 
   <view class="bg-white padding flex justify-between align-center" style="border-bottom:1px solid #f1f1f1">
@@ -22,7 +22,7 @@
   <view class=" padding flex justify-between align-center" style="border-bottom:1px solid #f1f1f1">
     <text class="text-black ">姓名</text>
     <text 
-    bindtap="showModal" data-target="nameModal" data-typeid="{{0}}">{{nickName?nickName:'请填写'}}<text class="{{'cuIcon-right text-gray'}}" ></text></text>
+    bindtap="showModal" data-target="nameModal" data-typeid="{{0}}">{{userInfo.nickName?userInfo.nickName:'请填写'}}<text class="{{'cuIcon-right text-gray'}}" ></text></text>
   </view>
   
 <!-- 手机号 -->

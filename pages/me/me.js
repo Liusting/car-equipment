@@ -7,7 +7,6 @@ Component({
         StatusBar: app.globalData.StatusBar,
         CustomBar: app.globalData.CustomBar,
         Custom: app.globalData.Custom,
-        // canIUse: wx.canIUse('button.open-type.getUserInfo'),
         avatarUrl: "", //用户头像
         nickName: "", //用户昵称
         flag: false,
@@ -74,7 +73,8 @@ Component({
                 badge: 1
             },
         ],
-        isLogin: false
+        hasUserInfo: app.globalData.hasUserInfo,
+        userInfo: app.globalData.userInfo
     },
     // tab切换的时候马上响应数据
     ready: function () {
@@ -88,38 +88,70 @@ Component({
             }
         });
 
-        this.bindGetUserInfo();
     },
     methods: {
-        login() {
-            console.log(11)
-            this.setData({
-                isLogin: true
+        wxGetUserProfile: function () {
+            return new Promise((resolve, reject) => {
+                wx.getUserProfile({
+                    lang: 'zh_CN',
+                    desc: '用户登录',
+                    success: (res) => {
+                        resolve(res)
+                    },
+                    // 失败回调
+                    fail: (err) => {
+                        reject(err)
+                    }
+                })
             })
         },
-        bindGetUserInfo: function (e) {
-            var that = this;
-            // 判断是否授权
-            wx.getSetting({
-                success: function (res) {
-                    if (res.authSetting['scope.userInfo']) {
-                        // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-                        wx.getUserInfo({
-                            success: function (res) {
-                                var userInfo = res.userInfo
-                                var nickName = userInfo.nickName; //获取微信用户昵称
-                                var avatarUrl = userInfo.avatarUrl; //获取微信用户头像存放的Url 
-                                that.setData({
-                                    avatarUrl: avatarUrl,
-                                    nickName: nickName,
-                                    flag: true,
-                                    flag1: false
-                                })
-                            }
+
+        wxSilentLogin: function () {
+            return new Promise((resolve, reject) => {
+                wx.login({
+                    success(res) {
+                        resolve(res.code)
+                    },
+                    fail(err) {
+                        reject(err)
+                    }
+                })
+            })
+        },
+        getUserInfo: function () {
+            let _this = this;
+            let p1 = this.wxSilentLogin()
+            let p2 = this.wxGetUserProfile()
+            Promise.all([p1, p2]).then((res) => {
+                let code = res[0]
+                let iv = res[1].iv
+                let encryptedData = res[1].encryptedData
+                // 请求服务器
+                wx.request({
+                    url: 'http://localhost:8086/getCovidMsg/getUserInfoMsg',
+                    method: 'post',
+                    data: {
+
+                        encryptedData: encryptedData,
+                        code: code,
+                        iv: iv
+                    },
+                    header: {
+                        'content-type': 'application/json' // 默认值
+                    },
+                    success(res) {
+                        app.globalData.userInfo = res.data;
+                        app.globalData.hasUserInfo = true;
+                        _this.setData({
+                            hasUserInfo:!_this.data.hasUserInfo,
+                            userInfo: res.data
                         })
                     }
-                }
+                })
+            }).catch((err) => {
+                console.log(err)
             })
+
         },
         messageList: function () {
             wx.navigateTo({

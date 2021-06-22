@@ -17,18 +17,16 @@
 	<view>
 		<view class="padding margin-sm bg-white" style="border-radius:7px">
 			<view class="flex align-center">
-				<view class="cu-avatar lg round "
-					style="background-image:url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3246287556,1532663924&fm=26&gp=0.jpg);">
-				</view>
+				<view class="cu-avatar lg round " style="background-image:url({{userInfo.avatarUrl}});"></view>
 
 				<view class="margin-left flex align-center justify-between" style="width:80%">
 					<view>
-						<text class="text-df padding-xs">李晓芳</text>
-						<view class="flex align-center round bg-blue light margin-top-xs" bindtap="memberMessage">
-							<text class="cuIcon-vip" style="font-size:25rpx"></text>
-							<text class="margin-lr-xs" style="font-size:22rpx">普通会员</text>
-						</view>
+					<text  class="text-lg padding-xs">{{userInfo.nickName}} </text>
+					<view class="flex align-center cu-tag round bg-black margin-top-sm" bindtap="memberMessage">
+						<text class="cuIcon-vip"></text>
+						<text class="margin-lr-xs" >普通会员<text class="cuIcon-right"></text></text>
 					</view>
+				</view>
 					<view>
 						当前积分<text class="text-sl margin-left text-bold">854</text>
 					</view>
