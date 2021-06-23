@@ -138,6 +138,15 @@ Page({
    */
   onShow: function (e) {},
   onLoad: function (e) {
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          deviceW: res.windowWidth, //当前屏幕宽度
+          deviceH: res.windowHeight //当前屏幕高度
+        })
+      }
+    });
     //     id: "20200522100218863743"
     // shop_id: "5"
     // trade_status: "3"
@@ -145,7 +154,7 @@ Page({
     this.setData({
       trade_status: e.trade_status
     })
-    var that = this;
+   
     let id = e.id;
     let shop_id = e.shop_id;
     http.orderDetail({
@@ -173,14 +182,7 @@ Page({
       }
     })
 
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          deviceW: res.windowWidth, //当前屏幕宽度
-          deviceH: res.windowHeight //当前屏幕高度
-        })
-      }
-    });
+  
 
   },
   /**

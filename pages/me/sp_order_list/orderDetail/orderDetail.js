@@ -13,7 +13,7 @@ Page({
         Custom: app.globalData.Custom,
         address_info: [],
         spList: [{
-            "trade_status": "1",
+            "trade_status": "3",
             "children": [{
                     "number": 1,
                     "pay_status": "1",
@@ -45,7 +45,7 @@ Page({
             ]
         }
         ],
-        trade_status: '1'
+        trade_status: '3'
     },
     // 
     /**

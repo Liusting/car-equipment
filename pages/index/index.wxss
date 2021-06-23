@@ -31,8 +31,8 @@
 .cu-tag1.badge1 {
   background-color: #dd514c;
   position: absolute;
-  right: 48rpx;
-bottom: 55rpx;
+  right: 50rpx;
+bottom: 50rpx;
   font-size: 30rpx;
   padding: 5rpx 10rpx;
   height: 35rpx;

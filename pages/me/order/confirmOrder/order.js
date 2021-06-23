@@ -33,7 +33,7 @@ Page({
         order_message: '', //订单留言
         cart_ids: [], // 购物车商品id
         addressId: '', //地址id
-        modeName: '快递',
+        modeName: '快递配送',
         name: '',
         show: true,
         flag: false,
@@ -41,10 +41,10 @@ Page({
         flag2: 0,
         flag3: true,
         mode: [{
-            type: '0',
-            name: '快递',
-            checked: 'true'
-        },
+                type: '0',
+                name: '快递配送',
+                checked: 'true'
+            },
             {
                 type: '1',
                 name: '门店自提'
@@ -66,10 +66,10 @@ Page({
         yyDay: 3,
         //预约时间段
         hourList: [{
-            hour: "08:00-10:00",
-            n: 8,
-            isShow: true
-        },
+                hour: "08:00-10:00",
+                n: 8,
+                isShow: true
+            },
 
             {
                 hour: "10:00-12:00",
@@ -411,6 +411,15 @@ Page({
     onLoad: function (options) {
         var type = options.type; //用来判断是购物车下单还是详情页下单
         var that = this;
+        wx.getSystemInfo({
+            success: function (res) {
+                console.log(res)
+                that.setData({
+                    deviceW: res.windowWidth, //当前屏幕宽度
+                    deviceH: res.windowHeight //当前屏幕高度
+                })
+            }
+        })
         let _date = new Date();
         let format = "MM-dd"
         utils.Format(format, _date); //将当前日期格式化
@@ -584,15 +593,7 @@ Page({
         setTimeout(function () {
             wx.hideLoading()
         }, 8000)
-        wx.getSystemInfo({
-            success: function (res) {
-                // console.log(res)
-                that.setData({
-                    deviceW: res.windowWidth, //当前屏幕宽度
-                    deviceH: res.windowHeight //当前屏幕高度
-                })
-            }
-        })
+   
         that.setData({
             type: type
         })

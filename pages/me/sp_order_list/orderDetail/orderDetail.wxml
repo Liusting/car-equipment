@@ -1,7 +1,7 @@
-<view class="cu-custom bg-white" style="height:{{CustomBar}}px">
-	<view class="cu-bar  fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
-		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-		<cu-custom class="text-black" isBack="{{true}}">
+<view class="cu-custom bg-red" style="height:{{CustomBar}}px">
+	<view class="cu-bar  fixed"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+		<cu-custom class="text-white" isBack="{{true}}">
 			<view slot="backText">订单详情</view>
 			<!-- <view slot="content">订单详情</view> -->
 		</cu-custom>
@@ -26,7 +26,7 @@
 			<view class="text-sl">
 				<text class="cuIcon-deliver"></text>
 			</view>
-			<text class="margin-left-xs">待收货</text>
+			<text class="margin-left-xs">已发货</text>
 		</view>
 		<view class="flex justify-center align-center" wx:if="{{trade_status==4||trade_status==5}}">
 			<view class="text-sl">
@@ -42,9 +42,9 @@
 				<text class="cuIcon-location"></text>
 			</view>
 			<view class="margin-left-sm">
-				<text class="text-black">刘桂廷</text><text class="margin-left">18648840747</text>
-				<view>
-					<text class="text-black">广东省佛山市南海置地中心3座11楼</text>
+				<text class="text-black">刘桂廷</text><text class="margin-left">186****0747</text>
+				<view class="margin-top-xs">
+					<text class="text-gray">广东省佛山市南海置地中心3座11楼</text>
 				</view>
 			</view>
 		</view>
@@ -59,7 +59,7 @@
 				</view>
 				<view class="margin-left">
 					<text class="text-blue">到达【佛山平洲营业部】</text>
-					<view>
+					<view class="margin-top-xs">
 						<text class="text-gray">2020-02-04 05:28:22</text>
 					</view>
 				</view>
@@ -91,26 +91,27 @@
 				</view>
 			</view>
 		</view>
-		<view class="margin-lr-sm padding-tb-xs">
+		<view class="margin-lr-sm padding-tb-xs flex justify-between">
 			<text class="text-sm text-gray">商品总价</text>
-			<text class="text-sm text-gray text-price" style="float:right">26.00</text>
+			<text class="text-sm text-gray text-price">26.00</text>
 		</view>
-		<view class="margin-lr-sm padding-tb-xs">
+		<view class="margin-lr-sm padding-tb-xs flex justify-between">
 			<text class="text-sm text-gray">运费(快递)</text>
-			<text class="text-sm text-gray text-price" style="float:right">0.00</text>
-		</view>
-		<view class="margin-lr-sm padding-tb-xs">
-			<text class="text-sm text-gray">优惠券抵扣</text>
-			<text class="text-sm text-gray" style="float:right">- <text
+			<text class="text-sm text-gray" >+ <text
 					class="text-sm text-gray text-price">0.00</text></text>
 		</view>
-		<view class="margin-lr-sm padding-tb-xs" style="  border-bottom: 1px solid #F7F7F7;">
-			<text class="text-sm text-gray">订单总价</text>
-			<text class="text-price" style="float:right">26.00</text>
+		<view class="margin-lr-sm padding-tb-xs flex justify-between">
+			<text class="text-sm text-gray">优惠券抵扣</text>
+			<text class="text-sm text-gray" >- <text
+					class="text-sm text-gray text-price">0.00</text></text>
 		</view>
-		<view class="margin-lr-sm padding-tb-xs">
+		<view class="margin-lr-sm padding-tb-xs flex justify-between" style="  border-bottom: 1px solid #F7F7F7;">
+			<text class="text-sm text-gray">订单总价</text>
+			<text class="text-price" >26.00</text>
+		</view>
+		<view class="margin-lr-sm padding-tb-xs flex justify-between">
 			<text>需付款</text>
-			<text class="text-price text-red" style="float:right">26.00</text>
+			<text class="text-price text-red text-lg" >26.00</text>
 		</view>
 	</view>
 
@@ -121,24 +122,20 @@
 			<text><text class=" cuIcon-titles text-orange"></text>订单信息</text>
 		</view>
 		<view class="padding-sm">
-			<text class="text-sm text-gray">商城积分：</text>
-			<text class="text-sm text-gray margin-left">获得100积分</text>
+			<text class="text-sm text-gray">商城积分</text>
+			<text class="text-black margin-left-xs">获得100积分</text>
 		</view>
 		<view class="padding-sm">
-			<text class="text-sm text-gray">订单编号：</text>
-			<text class="text-sm text-gray margin-left">3463867637862764322</text>
+			<text class="text-sm text-gray">订单编号</text>
+			<text class="text-black margin-left-xs">3463867637862764322</text>
 		</view>
 		<view class="padding-sm">
-			<text class="text-sm text-gray">买家留言：</text>
-			<text class="text-sm text-gray margin-left">发顺丰快递</text>
+			<text class="text-sm text-gray">买家留言</text>
+			<text class="text-black margin-left-xs">发顺丰快递</text>
 		</view>
 		<view class="padding-sm">
-			<text class="text-sm text-gray">创建时间：</text>
-			<text class="text-sm text-gray margin-left">2019-10-16 09:52:44</text>
-		</view>
-		<view class="padding-sm">
-			<text class="text-sm text-gray">支付方式：</text>
-			<text class="text-sm text-gray margin-left">微信支付</text>
+			<text class="text-sm text-gray">下单日期</text>
+			<text class="text-black margin-left-xs">2019-10-16 09:52:44</text>
 		</view>
 	</view>
 	<view class="cu-tabbar-height"></view>
@@ -152,21 +149,22 @@
 				class="margin-left-xs text-lg">联系客服</text></button>
 	</view>
 	<view wx:if="{{trade_status==1}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="closeOrder">取消订单 </button>
-		<button class="cu-btn line-red margin-right-sm">立即支付</button>
+		<button class="cu-btn line-gray margin-right-sm round" data-id="{{item.id}}" bindtap="closeOrder">取消订单 </button>
+		<button class="cu-btn line-red margin-right-sm round">立即支付</button>
 	</view>
 	<view wx:if="{{trade_status==2}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="remind">提醒发货</button>
+		<button class="cu-btn line-gray margin-right-smround " data-id="{{item.id}}" bindtap="remind">提醒发货</button>
 	</view>
 	<view wx:if="{{trade_status==3}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="confirmGet">确认收货</button>
-		<button class="cu-btn line-red margin-right-sm">查看物流</button>
+	
+		<button class="cu-btn line-gray margin-right-sm round">查看物流</button>
+		<button class="cu-btn line-red margin-right-sm round" data-id="{{item.id}}" bindtap="confirmGet">确认收货</button>
 	</view>
 	<view wx:if="{{trade_status==4}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="cancelOrder">申请售后</button>
-		<button class="cu-btn line-red margin-right-sm">立即评价</button>
+		<button class="cu-btn line-gray margin-right-sm round" data-id="{{item.id}}" bindtap="cancelOrder">申请售后</button>
+		<button class="cu-btn line-red margin-right-sm round">立即评价</button>
 	</view>
 	<view wx:if="{{trade_status==5}}">
-		<button class="cu-btn line-info margin-right-sm " data-id="{{item.id}}" bindtap="cancelOrder">删除订单</button>
+		<button class="cu-btn line-gray margin-right-sm round" data-id="{{item.id}}" bindtap="cancelOrder">删除订单</button>
 	</view>
 </view>

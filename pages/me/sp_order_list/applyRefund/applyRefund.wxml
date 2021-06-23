@@ -1,92 +1,104 @@
 <view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
+		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
 		<cu-custom isBack="{{true}}">
 			<view slot="backText">订单售后</view>
 		</cu-custom>
 	</view>
 </view>
-<view class=" bg-white padding-xs">
-	<view>
-		<view class="bg-white flex">
-			<view style="height:150rpx;width:150rpx;">
-				<image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg" mode="widthFix"></image>
-			</view>
-			<view class="margin-left-xs ">
-				<view class="productTitle">ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家</view>
-				<view class="text-gray margin-top-sm text-sm">经典款</view>
-			</view>
-		</view>
-	</view>
-</view>
 
-<form bindsubmit="formSubmit">
-	<view class="bg-white margin-top padding-xs">
-		<view class="margin-tb-sm">
-			<text><text class=" cuIcon-titles text-orange"></text>退款类型</text>
-		</view>
-		<view class="flex">
-			<view name="way" class="padding-sm {{flag?'on':'selectWay'}}" bindtap="selectWay" style="flex:1;line-height:50rpx">
-				<text class="text-bold">仅退款</text>
-				<view>未收到货(未签收)，未协商同意前提下</view>
-			</view>
-			<view class="margin-left padding-sm {{flag1?'on':'selectWay'}}" bindtap="selectWay1" style="flex:1;line-height:50rpx">
-				<text class="text-bold">退款退货</text>
-				<view>已收到货，需要退还已收到的货物</view>
-			</view>
-		</view>
-	</view>
+<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
 
 
-	<view class="margin-top-sm padding-xs bg-white">
+	<view class=" bg-white padding-xs">
 		<view>
-			<text><text class=" cuIcon-titles text-orange"></text>退款类型</text>
-			<text class="margin-left text-red">必选</text>
-		</view>
-		<view class="margin-tb-sm flex justify-between align-center">
-			<picker name="reason" style="width:100%" mode="selector" value="{{index}}" range="{{array}}" range-key="{{'name'}}" bindchange="changeSexy">
-				<view class="{{index?'text-black':'text-gray'}}">
-					{{index?array[index].name:'请选择原因'}}
+			<view class="bg-white flex">
+				<view style="height:150rpx;width:150rpx;">
+					<image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg"
+						mode="widthFix"></image>
 				</view>
-			</picker>
-			<text class="{{'cuIcon-right text-gray'}}"></text>
+				<view class="margin-left-xs ">
+					<view class="productTitle">ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家</view>
+					<view class="text-gray margin-top-sm text-sm">经典款</view>
+				</view>
+			</view>
 		</view>
 	</view>
 
-	<view class="padding-xs bg-white margin-top">
-		<text class="margin-tb-sm ">	<text><text class=" cuIcon-titles text-orange"></text>退款金额</text>  可修改，最多<text class="margin-left-sm text-price text-red">1299.00</text></text>
-		<input name="money" class="margin-tb-sm" type="number" style="width:100%" value="{{1299.00}}" placeholder="请输入退款金额" />
-	</view>
+	<form bindsubmit="formSubmit">
+		<view class="bg-white margin-top padding-xs">
+			<view class="margin-tb-sm">
+				<text><text class=" cuIcon-titles text-orange"></text>退款类型</text>
+			</view>
+			<view class="flex">
+				<view name="way" class="padding-sm {{flag?'on':'selectWay'}}" bindtap="selectWay"
+					style="flex:1;line-height:50rpx">
+					<text class="text-bold">仅退款</text>
+					<view>未收到货(未签收)，未协商同意前提下</view>
+				</view>
+				<view class="margin-left padding-sm {{flag1?'on':'selectWay'}}" bindtap="selectWay1"
+					style="flex:1;line-height:50rpx">
+					<text class="text-bold">退款退货</text>
+					<view>已收到货，需要退还已收到的货物</view>
+				</view>
+			</view>
+		</view>
 
-	<view class="padding-xs bg-white margin-top">
+
+		<view class="margin-top-sm padding-xs bg-white">
+			<view>
+				<text><text class=" cuIcon-titles text-orange"></text>退款类型</text>
+				<text class="margin-left text-red">必选</text>
+			</view>
+			<view class="margin-tb-sm flex justify-between align-center">
+				<picker name="reason" style="width:100%" mode="selector" value="{{index}}" range="{{array}}"
+					range-key="{{'name'}}" bindchange="changeSexy">
+					<view class="{{index?'text-black':'text-gray'}}">
+						{{index?array[index].name:'请选择原因'}}
+					</view>
+				</picker>
+				<text class="{{'cuIcon-right text-gray'}}"></text>
+			</view>
+		</view>
+
+		<view class="padding-xs bg-white margin-top">
+			<text class="margin-tb-sm "> <text><text class=" cuIcon-titles text-orange"></text>退款金额</text> 可修改，最多<text
+					class="margin-left-sm text-price text-red">1299.00</text></text>
+			<input name="money" class="margin-tb-sm" type="number" style="width:100%" value="{{1299.00}}"
+				placeholder="请输入退款金额" />
+		</view>
+
+		<view class="padding-xs bg-white margin-top">
 			<text><text class=" cuIcon-titles text-orange"></text>退款说明</text>
-		<input name="explain" maxlength="200" class="margin-tb-sm" style="width:100%;" placeholder="选填"></input>
-	</view>
-	<view class="cu-bar bg-white margin-top">
-		<view class="action">
-			上传凭证
+			<input name="explain" maxlength="200" class="margin-tb-sm" style="width:100%;" placeholder="选填"></input>
 		</view>
-		<view class="action">
-			最多上传3张图片
+		<view class="cu-bar bg-white margin-top">
+			<view class="action">
+				上传凭证
+			</view>
+			<view class="action">
+				最多上传3张图片
+			</view>
 		</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-3 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
+		<view class="cu-form-group">
+			<view class="grid col-3 grid-square flex-sub">
+				<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+					<image src='{{imgList[index]}}' mode='aspectFill'></image>
+					<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+						<text class="cuIcon-close"></text>
+					</view>
+				</view>
+				<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<3}}">
+					<text class="cuIcon-cameraadd"></text>
+					<view></view>
 				</view>
 			</view>
-			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<3}}">
-				<text class="cuIcon-cameraadd"></text>
-				<view></view>
-			</view>
 		</view>
-	</view>
+	</form>
 
+	<view class='cu-tabbar-height'></view>
+</scroll-view>
 
-	<view class="cu-bar tabbar foot bg-red justify-center">
-		<button class="cu-btn lg bg-red" form-type="submit">确认提交</button>
-	</view>
-
-</form>
+<view class="cu-bar tabbar foot bg-red justify-center">
+	<button class="cu-btn lg bg-red" form-type="submit">确认提交</button>
+</view>

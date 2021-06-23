@@ -11,36 +11,31 @@ Component({
         nickName: "", //用户昵称
         flag: false,
         flag1: true,
-        myTools: [{
-                id: 1,
-                icon: 'vipcard',
-                name: '会员卡',
-
-            },
+        myTools: [
             {
-                id: 2,
+                id: 1,
                 icon: 'shopfill',
                 name: '积分商城',
 
             },
             {
-                id: 3,
+                id: 2,
                 icon: 'ticket',
                 name: '优惠券',
 
             },
             {
-                id: 4,
+                id: 3,
                 icon: 'locationfill ',
                 name: '收货地址',
 
-            }
-            // {
-            //     id: 5,
-            //     icon: 'peoplelist ',
-            //     name: '关于普斯',
+            },
+            {
+                id: 4,
+                icon: 'repair',
+                name: '技术售后',
 
-            // }
+            }
         ],
         orderItems: [{
                 typeId: 1,

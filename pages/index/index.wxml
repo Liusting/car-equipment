@@ -27,7 +27,7 @@
 		</view>
 		<view class="{{PageCur=='MyCart'?'text-blue text-sm margin-top-xs':'text-gray text-sm margin-top-xs'}}">购物车
 		</view>
-		<view class="cu-tag1 round badge1 text-xxl" wx:if="{{cartTotal!=0}}">
+		<view class="cu-tag1 round badge1" wx:if="{{cartTotal!=0}}">
 			<block wx:if="{{cartTotal!=0}}">{{cartTotal>99?"99+":cartTotal}}</block>
 		</view>
 	</view>

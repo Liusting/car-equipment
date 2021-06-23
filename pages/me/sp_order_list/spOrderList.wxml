@@ -1,23 +1,22 @@
-<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
-		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+<view class="cu-custom" style="height:{{CustomBar}}px">
+	<view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
 		<cu-custom isBack="{{true}}">
 			<view slot="backText">我的订单</view>
 		</cu-custom>
 	</view>
 </view>
-<view class="bg-white nva">
+<view class="bg-gray">
 	<view class=" grid col-5 cu-tabbar-height">
-		<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key
-			bindtap="tabSwitch" data-current="{{item.index}}">
-			{{item.name}}
+		<view class=" flex  justify-center align-center" wx:for="{{swipertab}}" wx:key="index">
+			<view class=" {{currtab == item.index ? 'bg-yellow' : ''}} cu-btn round" bindtap="tabSwitch"
+				data-current="{{item.index}}">
+				{{item.name}}
+			</view>
+
 		</view>
 	</view>
 </view>
-<scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
-	<view class="cu-tabbar-height"></view>
-
-
+<scroll-view scroll-y style="height:{{deviceH-CustomBar-67}}px">
 	<view class="" wx:for="{{orderList}}" wx:key="index">
 		<view class="bg-white margin-sm" style="border-radius:7px">
 			<view class="flex align-center justify-between padding-sm">
@@ -35,7 +34,7 @@
 			<view class="margin-lr-sm padding-tb-sm" wx:key
 				style="border-top:1px solid #F7F7F7;border-bottom:1px solid #F7F7F7">
 
-				<view wx:for="{{item.children}}" wx:for-item="items" wx:key>
+				<view wx:for="{{item.children}}" wx:for-item="items" wx:key="index">
 					<view bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}"
 						data-tradeStatus="{{item.trade_status}}">
 						<view class="flex margin-bottom-sm">
@@ -44,66 +43,53 @@
 							</view>
 							<view class="margin-lr-sm">
 								<view class="productTitle">{{items.name}}
-								{{items.length}}
+									{{items.length}}
 								</view>
 								<view class="margin-top-sm text-sm">{{items.typeName}}</view>
-								<view class="flex-sub margin-top-sm">
-									<text class="text-price text-black">{{items.money}}</text>
-									<text class="margin-left text-gray">x{{items.number}}</text>
+								<view class="flex-sub margin-top-sm text-gray">
+									<text class="text-price ">{{items.money}}.00</text>
+									<text class="margin-left">x</text><text> {{items.number}}</text>
 								</view>
 							</view>
 						</view>
 					</view>
 				</view>
-
-				<!-- <view class="flex" bindtap="orderDetail" data-shopid="{{item.shopId}}" data-id="{{item.order_id}}"
-					data-tradeStatus="{{item.trade_status}}">
-					<view class="productImg">
-						<image src="{{item.imageUrl}}" mode="widthFix"></image>
-					</view>
-					<view class="margin-lr-sm">
-						<view class="productTitle">{{item.name}}</view>
-						<view class="margin-top-sm text-sm">{{item.typeName}}</view>
-						<view class="flex-sub margin-top-sm">
-							<text class="text-price text-black">{{item.money}}</text>
-							<text class="margin-left text-gray">x{{item.number}}</text>
-						</view>
-					</view>
-				</view> -->
 			</view>
 
 			<view class="flex justify-end margin-lr-sm padding-tb-sm">
-				<text>实付款：<text class="text-price text-red">1899</text></text>
+				<text>共2件商品，实付款：<text class="text-price text-red">1899.00</text></text>
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==1}}">
 				<view>
-					<button class="cu-btn line-info" data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
-					<button class="cu-btn line-red margin-left-sm">立即支付</button>
+					<button class="cu-btn round line-gray" data-id="{{item.id}}" bindtap="cancelOrder">取消订单 </button>
+					<button class="cu-btn round line-red margin-left-sm">立即支付</button>
 				</view>
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==2}}">
-				<button bindtap="expressDetail" class="cu-btn line-info" data-id="{{item.id}}" bindtap="remind">提醒发货</button>
+				<button bindtap="expressDetail" class="cu-btn round line-gray" data-id="{{item.id}}"
+					bindtap="remind">提醒发货</button>
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==3}}">
 				<view>
-					<button class="cu-btn line-info" data-id="{{item.id}}" bindtap="confirmGet">确认收货</button>
-					<button class="cu-btn line-red margin-left-sm" bindtap="expressDetail">查看物流</button>
+
+					<button class="cu-btn round line-gray " bindtap="expressDetail">查看物流</button>
+					<button class="cu-btn round line-red margin-left-sm" data-id="{{item.id}}" bindtap="confirmGet">确认收货</button>
 				</view>
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==4}}">
 				<view>
-					<button class="cu-btn line-info" data-id="{{item.id}}" bindtap="applyRefund">申请售后</button>
-					<button class="cu-btn line-red margin-left-sm" bindtap="appraise">立即评价</button>
+					<button class="cu-btn line-gray round" data-id="{{item.id}}" bindtap="applyRefund">申请售后</button>
+					<button class="cu-btn line-red margin-left-sm round" bindtap="appraise">立即评价</button>
 				</view>
 			</view>
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==5}}">
 				<view>
-					<button class="cu-btn line-info" data-id="{{item.id}}" bindtap="deleteOrder">删除订单</button>
+					<button class="cu-btn line-gray round" data-id="{{item.id}}" bindtap="deleteOrder">删除订单</button>
 				</view>
 			</view>
 		</view>
