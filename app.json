@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/test/test",
+
     "pages/index/index",
     "pages/me/me",
     "pages/item_type/sp_item/spItem",
@@ -15,7 +15,7 @@
     "pages/home/home",
     "pages/cart/cart",
     "pages/home/moreDiscount/moreDiscount",
-    
+    "pages/test/test",    
     "pages/item_type/itemType/itemType",
 
     "pages/Login/index",
