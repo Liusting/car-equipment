@@ -15,8 +15,8 @@
 	<!-- <view class="flex justify-center padding">
   <image src="../images/cart.png" mode='aspectFit'></image>
 </view> -->
-	<view class='margin-lr-sm bg-white margin-tb-xs' style="border-radius:7px" wx:for='{{shopcarData}}'>
-		<view class="flex align-center {{index==0?'':'line'}}" wx:for='{{item.itemdata}}' wx:for-item="items" wx:key
+	<view class='margin-lr-sm bg-white margin-tb-xs' style="border-radius:7px" wx:for='{{shopcarData}}' wx:key="id">
+		<view class="flex align-center {{index==0?'':'line'}}" wx:for='{{item.itemdata}}' wx:for-item="items" wx:key="id"
 			bindlongtap="delete" data-id="{{items.id}}" data-index="{{index}}">
 			<view class='flex align-center padding-xs ' style="font-size:40rpx">
 				<text class="cuIcon-round" bindtap="checkTap" hidden='{{items.check}}' data-id="{{items.id}}"
@@ -71,16 +71,19 @@
 				<text class=" margin-left cuIcon-round" hidden='{{allsel}}' catchtap='allcheckTap'></text>
 				<text class=" margin-left cuIcon-roundcheckfill text-blue" hidden='{{!allsel}}' catchtap='allcheckTap'></text>
 			</view>
-			<text class="margin-left-xs" hidden='{{adminShow}}'>全选</text>
+			<text class="margin-left-xs" >全选</text>
 		</view>
 		<view class="flex align-center">
 			<view style="width:auto;" class="margin-right-sm" hidden='{{adminShow}}'>合计：<text
 					class='text-price text-red'>{{total}} </text>
 			</view>
-			<view class="flex align-center justify-center bg-red cu-tabbar-height2 padding-lr" style="width:auto;"
-				hidden='{{adminShow}}' catchtap="goclearingTap">结算({{totalNumber}})</view>
-			<view hidden='{{!adminShow}}' class="flex align-center justify-center bg-grey cu-tabbar-height2"
-				style="width:{{deviceW/5}}px;" catchtap='deleteshopTap'>删除</view>
+			<view class="flex align-center justify-center cu-tabbar-height2 padding-lr" style="width:auto;"
+				hidden='{{adminShow}}' catchtap="goclearingTap">
+				<button class=" cu-btn round bg-pink lg">结算({{totalNumber}})</button>
+				</view>
+			<view hidden='{{!adminShow}}' class="flex align-center justify-center cu-tabbar-height2 padding-lr"
+				style="width:auto;" catchtap='deleteshopTap'>
+				<button class="{{itemNumber>0?'bg-red':'bg-gray'}} cu-btn round  lg">删除</button></view>
 		</view>
 	</view>
 </view>

@@ -1,9 +1,8 @@
-import { http } from '../http';
+import { request } from '../http';
 
 const address = {
   addressList(params) {
-    console.log(params)
-    http('/spAddress/getAddressList', 'post', params)
+    return request('/spAddress/spAddressList', 'get', params)
   }
 }
 

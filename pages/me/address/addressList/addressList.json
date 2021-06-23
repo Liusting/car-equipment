@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "cu-tip": "../../../../colorui/components/cu-tip/cu-tip"
+  },
   "navigationBarTitleText": "管理地址",
   "navigationBarTextStyle": "black"
 }

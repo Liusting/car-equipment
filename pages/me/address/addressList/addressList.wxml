@@ -1,30 +1,34 @@
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+	<view slot="backText">{{type==2?'选择收货地址':'管理地址'}}</view>
+</cu-custom>
 
-		<cu-custom isBack="{{true}}" bgColor="bg-white">
-			<view slot="backText">{{type==2?'选择收货地址':'管理地址'}}</view>
-		</cu-custom>
-
-
+<!-- <cu-tip bgImageUrl="https://pusiqibao-oss.oss-cn-guangzhou.aliyuncs.com/pusiqibaominipro/noaddress.png?versionId=CAEQChiBgIDR9rje0RciIDk2MGFmYjlmYTk0MDRhYTU4MzEzYjkzZmJkMmU3NjQ0">
+		<view slot="content">暂无地址</view>
+	</cu-tip> -->
 
 
 <scroll-view scroll-y="true" style="height:{{deviceH-CustomBar}}px">
-	<view wx:if="{{type==3}}" class="bg-white cu-bar margin-bottom-xs align-center flex justify-between" bindtap="getWeixinAddress">
+
+	<view wx:if="{{type==3}}" class="bg-white cu-bar margin-bottom-xs align-center flex justify-between"
+		bindtap="getWeixinAddress">
 		<view>
 			<text class="margin-left cuIcon-weixin text-green"></text><text class="margin-left">获取微信收货地址</text>
 		</view>
 		<text class="cuIcon-right margin-right"></text>
 	</view>
-	<view wx:for="{{addressList}}" wx:key bindtap='addClick' data-id='{{item.id}}' data-item='{{item}}'>
+	<view wx:for="{{addressList}}" wx:key bindtap='addClick' data-id='{{item.id}}' data-item='{{item}}' wx:key="id">
 		<view class="cu-bar flex bg-white " style="border-bottom:1px solid #f1f1f1">
-			<view wx:if="{{type==2}}" style="width:10px" class="cuIcon-{{idx==item.id?'check':''}} margin-left-xs text-green "></view>
+			<view wx:if="{{type==2}}" style="width:10px"
+				class="cuIcon-{{idx==item.id?'check':''}} margin-left-xs text-green "></view>
 			<view class="margin-sm">
 				<view class="flex align-center text-lg">
-					<text class="text-black text-bold">{{item.addresseeName}}</text>
-					<text class="text-black text-bold">，{{item.phoneNumber}}</text>
-					<text wx:if="{{index==0}}" class="cu-tag text-xs margin-left sm radius line-orange">默认</text>
+					<text class="text-black text-bold">{{item.receivername}}</text>
+					<text class="text-black text-bold">，{{item.phonenumber}}</text>
+					<text wx:if="{{item.defaultaddress==1}}" class="cu-tag text-xs margin-left sm radius line-orange">默认</text>
 				</view>
 
 				<view class="text-cut text-grey margin-top-xs" style="width:620rpx;">
-					<text>收货地址：{{item.provinceName}}{{item.cityName}}{{item.countyName}}{{item.addressdetail}}</text>
+					<text>收货地址：{{item.provincename}}{{item.cityname}}{{item.countyname}}{{item.addressdetail}}</text>
 				</view>
 			</view>
 			<view class="">

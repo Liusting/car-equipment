@@ -13,10 +13,10 @@
 					<text  class="text-lg padding-xs">{{userInfo.nickName}} </text>
 					<view class="flex align-center cu-tag round bg-black margin-top-sm" bindtap="memberMessage">
 						<text class="cuIcon-vip"></text>
-						<text class="margin-lr-xs" >普通会员<text class="cuIcon-right"></text></text>
+						<text class="margin-lr-xs" >普通会员111<text class="cuIcon-right"></text></text>
 					</view>
 				</view>
-			</view>
+			</view>     
 	
 		</view>
 		<view class="flex align-center" wx:if="{{!hasUserInfo}}">

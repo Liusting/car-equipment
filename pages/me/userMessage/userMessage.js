@@ -95,7 +95,7 @@ Page({
                 that.setData({
                     deviceW: res.windowWidth,//当前屏幕宽度
                     deviceH: res.windowHeight,//当前屏幕高度
-                    userInfo:app.globalData.userInfo
+                    userInfo:app.globalData.userInfo  //测试
                 })
             }
         });

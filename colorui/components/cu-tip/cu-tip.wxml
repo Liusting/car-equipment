@@ -1,0 +1,10 @@
+<view>
+  <view class="flex justify-center padding">
+    <image mode="aspectFit" src="{{bgImageUrl}}">
+    </image>
+
+  </view>
+  <view class="flex justify-center margin-top text-xl  content">
+    <slot></slot>
+  </view>
+</view>

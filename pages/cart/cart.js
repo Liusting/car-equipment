@@ -3,7 +3,7 @@ import http from '../../utils/api'
 
 Component({
     data: {
-        hfShow: true, //头部底部显示
+        hfShow: false, //头部底部显示
         adminShow: false, //管理
         total: 0, //总金额
         shopsel: false,
@@ -40,7 +40,7 @@ Component({
                 "name": "ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家",
                 "id": "88156285615944f491b0a2f90bba5d75",
                 "check": false
-            },{
+            }, {
                 "number": 99,
                 "typeList": "大方体方形四档套装-旗舰款;10寸",
                 "money": 100,
@@ -51,7 +51,7 @@ Component({
                 "name": "ANISUN/艾尼森30S地藏小剪式举升机汽车维修举升机升降机厂家",
                 "id": "88156285615944f491b0a2f90bba5d73",
                 "check": false
-            },{
+            }, {
                 "number": 10,
                 "typeList": "经典圆形三档套装;8寸",
                 "money": 110,
@@ -62,7 +62,7 @@ Component({
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
                 "id": "c21d63af1b784f278d32c547283b1821",
                 "check": false
-            },{
+            }, {
                 "number": 10,
                 "typeList": "经典圆形三档套装;8寸",
                 "money": 110,
@@ -73,7 +73,7 @@ Component({
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
                 "id": "c21d63af1b784f278d32c547283b1822",
                 "check": false
-            },{
+            }, {
                 "number": 10,
                 "typeList": "经典圆形三档套装;8寸",
                 "money": 110,
@@ -84,7 +84,7 @@ Component({
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
                 "id": "c21d63af1b784f278d32c547283b1823",
                 "check": false
-            },{
+            }, {
                 "number": 10,
                 "typeList": "经典圆形三档套装;8寸",
                 "money": 110,
@@ -95,8 +95,7 @@ Component({
                 "name": "道达尔红运TIR7400通用CI级柴油车发动机润滑油15W-40重卡20W-50",
                 "id": "c21d63af1b784f278d32c547283b1824",
                 "check": false
-            }
-            ]
+            }]
         }], //购物车商品列表
         changeNumber: '',
         deviceW: '', //屏幕宽度
@@ -104,14 +103,17 @@ Component({
         StatusBar: app.globalData.StatusBar,
         CustomBar: app.globalData.CustomBar,
         Custom: app.globalData.Custom,
-        totalNumber: 0,
-        hfShow: false
+        totalNumber: 0
     },
     // tab切换的时候马上响应数据
     ready: function () {
+        // console.log(app.globalData.deviceH)
         // wx.showLoading({
         //   title:'加载中'
         // })
+        // setTimeout(function(){
+        //     wx.hideLoading()
+        // },1000)
         var that = this;
         // wx.request({
         //   url: app.ipAndPort + '/spCart/getCartDetail',
@@ -140,6 +142,7 @@ Component({
 
         //   }
         // });
+      
         wx.getSystemInfo({
             success: function (res) {
                 that.setData({
@@ -382,8 +385,7 @@ Component({
                 header: {
                     'content-type': 'application/x-www-form-urlencoded'
                 },
-                success: function (res) {
-                }
+                success: function (res) {}
             })
         },
         //点击单个选择按钮

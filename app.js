@@ -9,7 +9,7 @@ import http from './utils/api';
 
 App({
   // 全局ip+端口
-  ipAndPort: 'http://localhost:8066',
+  ipAndPort: 'http://localhost:8022',
   onLaunch: function () {
     this.screenSize();
     // 展示本地存储能力
@@ -50,6 +50,8 @@ App({
         let custom = wx.getMenuButtonBoundingClientRect();
         this.globalData.Custom = custom;
         this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+        this.globalData.deviceW = e.windowWidth;
+        this.globalData.deviceH = e.windowHeight;
       }
     })
   },

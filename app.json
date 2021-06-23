@@ -1,12 +1,13 @@
 {
   "pages": [
 
+
     "pages/index/index",
     "pages/me/me",
     "pages/item_type/sp_item/spItem",
     "pages/me/integral/integral",
+    "pages/me/address/editAddress/editAddress",
     "pages/me/address/addressList/addressList",
-    "pages/me/address/addAddress/address",
     "pages/me/sp_order_list/orderDetail/orderDetail",
     "pages/me/sp_order_list/spOrderList",
     "pages/item_type/sp_item_list/spItemList",
@@ -34,7 +35,7 @@
     "pages/me/memberMessage/memberMessage",
     "pages/me/userMessage/userMessage",
     "pages/me/sp_order_list/expressInformation/expressInformation",
-    "pages/me/address/editAddress/editAddress",
+
     "pages/me/order/payResult/orderComplete",
     "pages/home/goodSearch/goodSearch"
 
@@ -48,7 +49,7 @@
     "backgroundColor": "#fff"
   },
   "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom/cu-custom"
   },
   "networkTimeout": {
     "request": 30000,

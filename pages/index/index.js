@@ -1,8 +1,7 @@
-
 Page({
     data: {
         PageCur: 'HomePage',
-        cartTotal: ''
+        cartTotal: '12'
     },
     NavChange(e) {
 
@@ -11,12 +10,12 @@ Page({
         });
     },
     onLoad: function () {
-        wx.cloud.callFunction({
-            name:'test',
+        // wx.cloud.callFunction({
+        //     name:'test',
 
-        }).then(res =>{
-            console.log(res)
-        })
+        // }).then(res =>{
+        //     console.log(res)
+        // })
     },
     onShow: function (options) {
         // console.log(options);
