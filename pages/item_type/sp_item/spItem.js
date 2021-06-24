@@ -30,37 +30,38 @@ Page({
         cartslength: [],
         currtab: 0,
         swipertab: [{
-                name: '宝贝详情',
+                name: '宝贝',
                 index: 0
-            },
-            {
-                name: '产品参数',
+            }, {
+                name: '详情',
                 index: 1
             },
             {
-                name: '商品评价',
+                name: '评价',
                 index: 2
-            }
-        ],
-        params:[
+            },
             {
-                id:1,
-                name:'品牌',
-                des:'科林起重机'
-            }, {
-                id:2,
-                name:'起重',
-                des:'100kg'
-            }, {
-                id:3,
-                name:'生产地',
-                des:'山东莱芜'
-            }, {
-                id:4,
-                name:'质保',
-                des:'一年'
+                name: '推荐',
+                index: 3
             }
         ],
+        params: [{
+            id: 1,
+            name: '品牌',
+            des: '科林起重机'
+        }, {
+            id: 2,
+            name: '起重',
+            des: '100kg'
+        }, {
+            id: 3,
+            name: '生产地',
+            des: '山东莱芜'
+        }, {
+            id: 4,
+            name: '质保',
+            des: '一年'
+        }],
         // GMSL 购买数量，初始化为1
         GMSL: 1,
         // money 价格，初始化为0
@@ -88,7 +89,7 @@ Page({
         tipsTitle: "",
         modalType: "",
         menuTop: "",
-        kk:0
+        kk: 0
     },
     /**
      * @Explain：选项卡点击切换
@@ -110,26 +111,27 @@ Page({
             title: '普斯汽保-您身边值得信赖汽保设备商',
         }
     },
-    sssss:function(e){
+    sssss: function (e) {
         let kk = this.data.kk;
         // console.log(kk)
-        console.log(e.detail.scrollTop/300)
-        let jj = e.detail.scrollTop/300;
+        console.log(e.detail.scrollTop / 300)
+        let jj = e.detail.scrollTop / 300;
+        let _this = this;
         if (this.data.menuFixed === (e.detail.scrollTop > this.data.menuTop)) return;
         // 当页面滚动距离scrollTop > menuTop菜单栏距离顶部的距离时，菜单栏固定定位
         this.setData({
             menuFixed: (e.detail.scrollTop > this.data.menuTop),
-            kk:jj
+            kk: jj
         })
 
-        
+
     },
     // 监听页面滚动距离
-    onPageScroll:function (e) {
+    onPageScroll: function (e) {
         var scrollTop = e.scrollTop;
         var isSatisfy = scrollTop >= this.data.navbarInitTop;
         this.setData({
-          isFixed: isSatisfy
+            isFixed: isSatisfy
         });
     },
     /**
@@ -539,7 +541,7 @@ Page({
         var index = e.currentTarget.dataset.index;
         var list = this.data.swiperList;
         var listNew = [];
-        for(let i in list){
+        for (let i in list) {
             listNew.push(list[i].url)
         }
         wx.previewImage({

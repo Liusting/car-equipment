@@ -1,38 +1,37 @@
-
-		<cu-custom bgColor="bg-white" isBack="{{true}}">
-			<view slot="backText">商品详情</view>
-		
-		</cu-custom>
-		<!-- <view style="opacity:{{kk}}">hhhhhhhh</view> -->
+<!-- <view style="opacity:{{kk}}">hhhhhhhh</view> -->
+<cu-custom wx:if="{{menuFixed}}" bgColor="bg-white" isBack="{{true}}">
+	<view slot="backText">商品详情</view>
+</cu-custom>
 
 
-
-<scroll-view scroll-y style='height:{{deviceH-CustomBar}}px' bindscroll="sssss">
+<scroll-view scroll-y style='height:{{deviceH}}px' bindscroll="sssss">
 	<view>
 		<view style="position: relative;">
-			<swiper class="flex justify-center" style="height: 450px;" class="" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+			<swiper class="flex justify-center" style="height: 450px;" class="" indicator-dots="true" autoplay="true"
+				interval="5000" duration="1000">
 				<block wx:for="{{swiperList}}" wx:key="index">
 					<swiper-item>
-						<image style="width: 100%;height: 100%;" src="{{item.url}}" data-index='{{index}}' bindtap='previewImg' data-previewurl='{{item.url}}' data-currenturl='{{item.url}}' />
+						<image style="width: 100%;height: 100%;" src="{{item.url}}" data-index='{{index}}' bindtap='previewImg'
+							data-previewurl='{{item.url}}' data-currenturl='{{item.url}}' />
 					</swiper-item>
 				</block>
 			</swiper>
 		</view>
 	</view>
 	<view class="padding bg-white">
-		<view class="flex justify-between align-center text-xl text-black">
-			<text class=' '>小车方向助力油货车轿车方向盘转向油ATF220方向机助力液压传动油 </text>
-			<button class="padding-lr-xs text-center bg-white kf-button" open-type="share">
-				<view class="text-xxl">
-				<text  class="cuIcon-forward text-red">
-				</text>
-				</view>
+		<view class="flex justify-between align-center text-black">
+			<view class='text-black text-xl'>小车方向助力油货车轿车方向盘转向油ATF220方向机助力液压传动油</view>
+			<button class=" text-center bg-white kf-button text-xxl" open-type="share">
+				<text class="cuIcon-forward text-red "> </text>
 			</button>
 		</view>
+		<view class='text-gray'>每日海量好货 最快次日达</view>
+		<view class='cu-tag radius bg-gray margin-top'>免运费</view>
 		<view class="flex align-center justify-between padding-tb-sm">
 			<view class=" text-red">
-				<view class="text-xxl">
-					<text class="text-bold text-price ">95.90-410.20</text>
+				<view class="">
+					<text class="text-sm text-red text-price  margin-right-xs"></text><text class="text-xxl ">95.90</text><text
+						class="text-sm text-gray margin-left-xs">起</text>
 					<text class="text-sm text-gray margin-left-xs text-price" style="text-decoration:line-through">15.80</text>
 				</view>
 			</view>
@@ -56,8 +55,9 @@
 
 
 	<view id='affix' class="bg-white">
-		<view class=" grid col-3 cu-tabbar-height">
-			<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+		<view class=" grid col-4 cu-tabbar-height">
+			<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}"
+				wx:key bindtap="tabSwitch" data-current="{{item.index}}">
 				{{item.name}}
 			</view>
 		</view>
@@ -65,8 +65,10 @@
 
 
 	<view wx:if="{{menuFixed}}" class="{{menuFixed?'fixed1 cu-tabbar-height bg-white':''}}">
-		<view class=" grid col-3 cu-tabbar-height">
-			<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-current="{{item.index}}">
+
+		<view class=" grid col-4 cu-tabbar-height">
+			<view class="{{currtab == item.index ? 'on' : ''}} flex  justify-center align-center" wx:for="{{swipertab}}"
+				wx:key bindtap="tabSwitch" data-current="{{item.index}}">
 				{{item.name}}
 			</view>
 		</view>
@@ -96,7 +98,8 @@
 		<view wx:for="{{3}}">
 			<view class="padding">
 				<view class="flex align-center">
-					<view class="cu-avatar sm round " style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+					<view class="cu-avatar sm round "
+						style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
 					<text class="margin-left-xs">笨笨糖</text>
 				</view>
 				<view class="text margin-top-xs">
@@ -113,7 +116,8 @@
 			<view class="cuIcon-home"></view> 首页
 		</view>
 		<view class="action">
-			<button open-type="contact" session-from="webapp" class="bg-white kf-button" style=" text-align: unset;padding: 0rpx;line-height: unset;font-size: unset;">
+			<button open-type="contact" session-from="webapp" class="bg-white kf-button"
+				style=" text-align: unset;padding: 0rpx;line-height: unset;font-size: unset;">
 				<text class="cuIcon-weixin"></text>
 			</button>
 			客服
@@ -140,7 +144,8 @@
 
 
 <!-- 加入购物车/立即购买 -->
-<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal" style='overflow: hidden;text-align: left;'>
+<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal"
+	style='overflow: hidden;text-align: left;'>
 	<view class="cu-dialog background-white" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
 		<view class="cu-card article npl-intro {{isCard?'no-card':''}}">
 			<view class="cu-item shadow">
@@ -174,7 +179,10 @@
 				</view>
 				<view class='padding-sm flex flex-wrap'>
 					<view class="padding-xs" wx:for="{{typeValue.list}}" wx:key wx:for-item="objectValue">
-						<view class="cu-tag line-{{clickMap[typeValue.typeId]==objectValue.name?'yellow':(objectValue.state?'black':'gray')}}" bindtap="objClick" data-objName="{{objectValue.name}}" data-typeId="{{typeValue.typeId}}" data-state="{{objectValue.state}}">
+						<view
+							class="cu-tag line-{{clickMap[typeValue.typeId]==objectValue.name?'yellow':(objectValue.state?'black':'gray')}}"
+							bindtap="objClick" data-objName="{{objectValue.name}}" data-typeId="{{typeValue.typeId}}"
+							data-state="{{objectValue.state}}">
 							{{objectValue.name}}
 						</view>
 					</view>
@@ -185,15 +193,19 @@
 				<view class="title">购买数量</view>
 				<view class="flex align-center" style="border:1px solid #eee">
 
-					<view class="padding-sm {{items.number == '1' ? 'text-grey':'text-gray'}}" style="border-right:1px solid #eee" data-index='{{item.shopId}}' data-types='minus' data-id="{{items.id}}" bindtap="GMSLMoveOrAdd" data-target="move">
+					<view class="padding-sm {{items.number == '1' ? 'text-grey':'text-gray'}}" style="border-right:1px solid #eee"
+						data-index='{{item.shopId}}' data-types='minus' data-id="{{items.id}}" bindtap="GMSLMoveOrAdd"
+						data-target="move">
 						<text class="cuIcon-move"></text>
 					</view>
 
 
-					<view class="text-center" style="width:60px;" bindtap="showModal" data-id="{{items.id}}" data-target="nameModal" data-number="{{items.number}}"> {{GMSL}} </view>
+					<view class="text-center" style="width:60px;" bindtap="showModal" data-id="{{items.id}}"
+						data-target="nameModal" data-number="{{items.number}}"> {{GMSL}} </view>
 
 
-					<view class="padding-sm" style="border-left:1px solid #eee" data-index='{{item.shopId}}' data-types='add' bindtap="GMSLMoveOrAdd" data-target="add" data-id="{{items.id}}">
+					<view class="padding-sm" style="border-left:1px solid #eee" data-index='{{item.shopId}}' data-types='add'
+						bindtap="GMSLMoveOrAdd" data-target="add" data-id="{{items.id}}">
 						<text class="cuIcon-add"></text>
 					</view>
 				</view>
