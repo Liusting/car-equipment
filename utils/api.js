@@ -1,6 +1,8 @@
-import address from './address/address'
+import address from './allApi/address'
+import category from './allApi/category'
 
 
 export default { // 暴露接口
-    address
+    address,
+    category
 }

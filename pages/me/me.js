@@ -12,22 +12,24 @@ Component({
         flag: false,
         flag1: true,
         myTools: [
+
             {
                 id: 1,
-                icon: 'shopfill',
-                name: '积分商城',
-
-            },
-            {
-                id: 2,
                 icon: 'ticket',
                 name: '优惠券',
 
             },
+         
             {
-                id: 3,
+                id: 2,
                 icon: 'locationfill ',
                 name: '收货地址',
+
+            },
+            {
+                id: 3,
+                icon: 'shopfill',
+                name: '积分商城',
 
             },
             {
@@ -138,7 +140,7 @@ Component({
                         app.globalData.userInfo = res.data;
                         app.globalData.hasUserInfo = true;
                         _this.setData({
-                            hasUserInfo:!_this.data.hasUserInfo,
+                            hasUserInfo: !_this.data.hasUserInfo,
                             userInfo: res.data
                         })
                     }
@@ -185,35 +187,40 @@ Component({
             switch (id) {
                 case 1:
                     wx.navigateTo({
-                        url: '../me/vipCard/vipCard',
-                    });
-                    break;
-                case 2:
-                    wx.navigateTo({
-                        url: '../me/integral/integral',
-                    });
-                    break;
-                case 3:
-                    wx.navigateTo({
                         url: '../me/preferential/preferential',
                     });
                     break;
-
-                case 4:
+                    // wx.navigateTo({
+                    //     url: '../me/vipCard/vipCard',
+                    // });
+                    // break;
+                case 2:
                     wx.navigateTo({
                         url: '../me/address/addressList/addressList?type=' + 3
                     });
                     break;
+                  
+                case 3:
+                   
+                    wx.navigateTo({
+                        url: '../me/integral/integral',
+                    });
+                    break;
+                case 4:
+                    // wx.navigateTo({
+                    //     url: '../me/address/addressList/addressList?type=' + 3
+                    // });
+                    // break;
                 case 5:
-                    wx.navigateTo({
-                        url: '../me/aboutOur/index'
-                    });
-                    break;
-                case 6:
-                    wx.navigateTo({
-                        url: '../accountSecurity/accountSecurity'
-                    });
-                    break;
+                    // wx.navigateTo({
+                    //     url: '../me/aboutOur/index'
+                    // });
+                    // break;
+                // case 6:
+                //     wx.navigateTo({
+                //         url: '../accountSecurity/accountSecurity'
+                //     });
+                //     break;
             }
         },
         exit: function () {

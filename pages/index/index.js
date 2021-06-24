@@ -1,6 +1,6 @@
 Page({
     data: {
-        PageCur: 'HomePage',
+        PageCur: 'ClassificationOfCommodities',
         cartTotal: '9'
     },
     NavChange(e) {
