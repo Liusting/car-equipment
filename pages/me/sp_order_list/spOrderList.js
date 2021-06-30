@@ -171,15 +171,7 @@ Page({
             url: '../sp_order_list/expressInformation/expressInformation',
         })
     },
-    //退货/退款
-    applyRefund: function (e) {
-        let id = e.currentTarget.dataset.id;
-        let shop_id = e.currentTarget.dataset.shopid;
-        let tradestatus = e.currentTarget.dataset.tradestatus;
-        wx.navigateTo({
-            url: '../sp_order_list/applyRefund/applyRefund'
-        })
-    },
+  
     // 订单详情页
     orderDetail: function (e) {
         let id = e.currentTarget.dataset.id;

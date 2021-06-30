@@ -133,7 +133,15 @@ Page({
     onReady: function () {
 
     },
-
+  //退货/退款
+  applyRefund: function (e) {
+    let id = e.currentTarget.dataset.id;
+    let shop_id = e.currentTarget.dataset.shopid;
+    let tradestatus = e.currentTarget.dataset.tradestatus;
+    wx.navigateTo({
+        url: '../applyRefund/applyRefund'
+    })
+},
     // 取消订单
     closeOrder: function (e) {
         var that = this;

@@ -12,19 +12,13 @@ Page({
         CustomBar: app.globalData.CustomBar,
         Custom: app.globalData.Custom,
         numList: [{
-            name: '我的订单'
+            name: '发起售后'
         }, {
-            name: '生产日期'
+            name: '商家审核'
         }, {
-            name: '物流'
-        }, {
-            name: '安装'
-        }, {
-            name: '验收'
-        }, {
-            name: '售后'
+            name: '售后完成'
         }],
-        num: 3,
+        num: 1,
     },
     numSteps() {
         this.setData({

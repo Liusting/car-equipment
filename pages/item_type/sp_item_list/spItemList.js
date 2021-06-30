@@ -103,7 +103,7 @@ Page({
     },
 
     onLoad: function (options) {
-        console.log(this.data.CustomBar)
+        console.log(options)
         
         var that = this;
         if (options.type == 1) {
@@ -122,11 +122,11 @@ Page({
      
         wx.getSystemInfo({ //微信自身api
             success: function (res) {
-                console.log(res)
+                // console.log(res)
                 let custom = wx.getMenuButtonBoundingClientRect();
-                console.log(custom)
-                console.log( res.windowHeight - (custom.bottom + custom.top - res.statusBarHeight))
-                console.log(custom.bottom + custom.top - res.statusBarHeight)
+                // console.log(custom)
+                // console.log( res.windowHeight - (custom.bottom + custom.top - res.statusBarHeight))
+                // console.log(custom.bottom + custom.top - res.statusBarHeight)
                 that.setData({
                     deviceW: res.windowWidth, //当前屏幕宽度
                     deviceH: res.windowHeight, //当前屏幕高度

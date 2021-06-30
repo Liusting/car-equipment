@@ -63,7 +63,7 @@ Component({
       let tabHeight = 0;
       if (this.data.load) {
         for (let i = 0; i < list.length; i++) {
-          console.log(list[i].id)
+          // console.log(list[i].id)
           let view = this.createSelectorQuery().select("#main-" + list[i].id);
           view.fields({
             size: true
@@ -98,8 +98,9 @@ Component({
     // 页面点处理事件
     typeClick: function (e) {
       let query = e.currentTarget.dataset['index'];
+      console.log(e.currentTarget.dataset.id)
       wx.navigateTo({
-        url: '../item_type/sp_item_list/spItemList',
+        url: '../item_type/sp_item_list/spItemList?id='+e.currentTarget.dataset.id,
       });
     }
   }
