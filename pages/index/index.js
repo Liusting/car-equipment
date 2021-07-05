@@ -1,6 +1,6 @@
 Page({
     data: {
-        PageCur: 'ClassificationOfCommodities',
+        PageCur: 'HomePage',
         cartTotal: '9'
     },
     NavChange(e) {
@@ -22,7 +22,7 @@ Page({
     },
     onShareAppMessage() {
         return {
-            title: '普斯汽保-您身边值得信赖汽保设备商',
+            title: '鑫弘誉-您身边值得信赖汽配设备商',
             path: '/pages/index/index'
         }
     },

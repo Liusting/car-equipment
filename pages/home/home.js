@@ -88,11 +88,21 @@ Component({
       name: '专用耗材'
     }, {
       id:7,
+      imageUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3380929416,626499548&fm=26&gp=0.jpg',
+      color: 'blue',
+      name: '年审必备'
+    }, {
+      id:8,
+      imageUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3380929416,626499548&fm=26&gp=0.jpg',
+      color: 'blue',
+      name: '车上必备'
+    }, {
+      id:9,
       imageUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3053357756,1218486966&fm=26&gp=0.jpg',
       color: 'purple',
       name: '领券中心'
     }, {
-      id:8,
+      id:10,
       imageUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2494090163,1357672127&fm=26&gp=0.jpg',
       color: 'mauve',
       name: '限时折扣'

@@ -1,8 +1,8 @@
 <view class="cu-custom bg-blue" style="height:{{CustomBar}}px">
 	<view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}"
 		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-		<view class="margin-left text-xl text-white">
-			<text>普斯汽保</text>
+		<view class="margin-left text-white">
+			<text class="text-xl">鑫弘誉汽配</text>
 		</view>
 	</view>
 </view>
@@ -17,7 +17,7 @@
 <scroll-view scroll-y style="height:{{deviceH-CustomBar-50}}px">
 
 
-	<view>
+	<view >
 		<swiper class="screen-swiper round-dot  " indicator-dots="true" circular="true" autoplay="true" interval="5000"
 			duration="500">
 			<swiper-item wx:for="{{imgList}}" wx:key>
@@ -27,18 +27,18 @@
 	</view>
 
 
-	<view class="cu-list grid col-4 no-border margin-xs" style="border-radius:7px">
+	<view class="cu-list grid col-5 no-border margin-xs" style="border-radius:7px">
 		<view class="flex justify-center padding-sm" wx:for="{{iconList}}" wx:key>
 			<view bindtap="gotoClassify" data-id="{{item.id}}">
-				<view class="cu-avatar xl round " style="background-image:url({{item.imageUrl}})">
+				<view class="cu-avatar lg round " style="background-image:url({{item.imageUrl}})">
 				</view>
-				<view class="margin-top-sm  text-black">{{item.name}}</view>
+				<view class="margin-top-sm text-sm  text-black">{{item.name}}</view>
 			</view>
 		</view>
 	</view>
 
-	<view class="margin-xs"
-		style="border-radius:7px;background: #FF416C;background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);background: linear-gradient(to right,#FF4B2B, #FF416C);">
+	<view class="margin-xs bg-white"
+		style="border-radius:7px; ">
 		<view class="cu-bar padding-lr-sm">
 			<view class="flex align-center">
 				<text class="text-black ">优惠专区</text>
@@ -50,7 +50,7 @@
 
 		<scroll-view scroll-x style='white-space: nowrap;'>
 			<view wx:for="{{4}}" wx:key style="display: inline-block">
-				<view class="margin-xs padding-xs text-center bg-white radius">
+				<view class="margin-xs padding-xs text-center bg-gray radius">
 					<image class="scimg"
 						src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=244947859,3502261540&fm=26&gp=0.jpg"
 						mode="widthFix"></image>
