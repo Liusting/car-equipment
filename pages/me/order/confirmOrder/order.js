@@ -175,9 +175,43 @@ Page({
         })
     },
     applyOrder() {
-        wx.navigateTo({
-            url: '../payResult/orderComplete',
+        wx.login({
+          timeout: 2000,
+          success(res){
+              console.log(res.code)
+              wx.request({
+                url: 'http://weixin123.gz2vip.idcfengye.com/weixin/code2Session?code='+res.code,
+                method:'GET',
+                success(res){
+                    wx.request({
+                      url: 'http://weixin123.gz2vip.idcfengye.com/weixin/wxpay?openId='+res.data.openid,
+                      method:'POST',
+                      success(res){
+                          console.log(res.data)
+
+                          wx.requestPayment({
+                            nonceStr: res.data.nonceStr,
+                            package: res.data.packages,
+                            signType: res.data.signType,
+                            paySign: res.data.paySign,
+                            timeStamp:res.data.timeStamp,
+                            success (res) {
+                                console.log(res)
+                             },
+                             fail(err){
+                                 console.log(err)
+                             }
+                          })
+                      }
+                    })
+                    console.log(res.data.openid)
+                }
+              })
+          }
         })
+        // wx.navigateTo({
+        //     url: '../payResult/orderComplete',
+        // })
     },
     //选择默认地址
     defaultAddress() {

@@ -145,7 +145,7 @@
 
 
 <!-- 加入购物车/立即购买 -->
-<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'':'show'}}" bindtap="hideModal"
+<view class="cu-modal justify-start bottom-modal {{modalName=='bottomModal'?'show':''}}" bindtap="hideModal"
 	style='overflow: hidden;text-align: left;'>
 	<view class="cu-dialog background-white" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
 		<view class="cu-card article npl-intro {{isCard?'no-card':''}}">
