@@ -30,7 +30,7 @@
 				</view>
 				<view class="cu-list grid col-3 {{gridBorder?'':'no-border'}}">
 					<view class="cu-item" wx:for="{{listType2.children}}" wx:for-item="listType3" wx:key="id" bindtap="typeClick"
-						data-index="../sp_item_list/spItemList?name={{listType3.name}}" data-name="{{listType3.name}}">
+						data-index="../sp_item_list/spItemList?name={{listType3.name}}" data-name="{{listType3.name}}" data-id="{{listType3.id}}">
 						<view>
 							<image class="scimg" mode="aspectFit" src="{{listType3.imageUrl}}"></image>
 						</view>

@@ -87,6 +87,33 @@ Component({
 
     },
     methods: {
+        getPhoneNumber (e) {
+            console.log(e.detail.errMsg)
+            console.log("iv="+e.detail.iv)
+            console.log("encryptedData"+e.detail.encryptedData)
+            wx.login({
+                success(res){
+                    wx.request({
+                        url: 'http://weixin123.gz2vip.idcfengye.com/weixin/getUserPhoneNumber',
+                        method: 'post',
+                        data: {
+                            encryptedData: e.detail.encryptedData,
+                            code: res.code,
+                            iv: e.detail.iv
+                        },
+                        header: {
+                            'content-type': 'application/json' // 默认值
+                        },
+                        success(res) {
+                            console.log(res)
+                        }
+                    })
+                }
+            })
+     
+
+            
+          },
         wxGetUserProfile: function () {
             return new Promise((resolve, reject) => {
                 wx.getUserProfile({
@@ -107,6 +134,7 @@ Component({
             return new Promise((resolve, reject) => {
                 wx.login({
                     success(res) {
+                        console.log(res.code)
                         resolve(res.code)
                     },
                     fail(err) {
@@ -115,7 +143,29 @@ Component({
                 })
             })
         },
+        
         getUserInfo: function () {
+            // // 获取用户信息
+    // wx.getSetting({
+    //     success: res => {
+    //       if (res.authSetting['scope.userInfo']) {
+    //         // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    //         wx.getUserInfo({
+    //           success: res => {
+    //             console.log(res)
+    //             // 可以将 res 发送给后台解码出 unionId
+    //             this.globalData.userInfo = res.userInfo
+  
+    //             // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+    //             // 所以此处加入 callback 以防止这种情况
+    //             if (this.userInfoReadyCallback) {
+    //               this.userInfoReadyCallback(res)
+    //             }
+    //           }
+    //         })
+    //       }
+    //     }
+    //   })
             let _this = this;
             let p1 = this.wxSilentLogin()
             let p2 = this.wxGetUserProfile()
@@ -125,10 +175,9 @@ Component({
                 let encryptedData = res[1].encryptedData
                 // 请求服务器
                 wx.request({
-                    url: 'http://localhost:8086/getCovidMsg/getUserInfoMsg',
+                    url: 'http://weixin123.gz2vip.idcfengye.com/weixin/getUserInfoMsg',
                     method: 'post',
                     data: {
-
                         encryptedData: encryptedData,
                         code: code,
                         iv: iv
@@ -148,6 +197,8 @@ Component({
             }).catch((err) => {
                 console.log(err)
             })
+
+           
 
         },
         messageList: function () {

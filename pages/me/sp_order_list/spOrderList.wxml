@@ -82,7 +82,6 @@
 
 			<view class="flex justify-end padding-sm" wx:if="{{item.trade_status==4}}">
 				<view>
-					<button class="cu-btn line-gray round" data-id="{{item.id}}" bindtap="applyRefund">申请售后</button>
 					<button class="cu-btn line-red margin-left-sm round" bindtap="appraise">立即评价</button>
 				</view>
 			</view>

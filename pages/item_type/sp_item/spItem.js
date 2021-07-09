@@ -30,38 +30,38 @@ Page({
         cartslength: [],
         currtab: 0,
         swipertab: [{
-                name: '宝贝',
+                name: '宝贝详情',
                 index: 0
-            }, {
-                name: '详情',
+            },
+            {
+                name: '产品参数',
                 index: 1
             },
             {
-                name: '评价',
+                name: '商品评价',
                 index: 2
-            },
-            {
-                name: '推荐',
-                index: 3
             }
         ],
-        params: [{
-            id: 1,
-            name: '品牌',
-            des: '科林起重机'
-        }, {
-            id: 2,
-            name: '起重',
-            des: '100kg'
-        }, {
-            id: 3,
-            name: '生产地',
-            des: '山东莱芜'
-        }, {
-            id: 4,
-            name: '质保',
-            des: '一年'
-        }],
+        params:[
+            {
+                id:1,
+                name:'品牌',
+                des:'科林起重机'
+            }, {
+                id:2,
+                name:'起重',
+                des:'100kg'
+            }, {
+                id:3,
+                name:'生产地',
+                des:'山东莱芜'
+            }, {
+                id:4,
+                name:'质保',
+                des:'一年'
+            }
+        ],
+        itemDetail:{},
         // GMSL 购买数量，初始化为1
         GMSL: 1,
         // money 价格，初始化为0
@@ -69,13 +69,14 @@ Page({
         // 商品类型和属性值list（js备份固定不变）
         spTypeObjList: [],
         // 商品类型和属性值list（显示用，点击会改变）
-        spTypeObjListLet: [],
+        spTypeObjListLet: [{}],
         //商品的名称货发货地
-        goodsDetailList: [],
+        goodsDetailList: [{}],
         // 商品点击选中的值
         spClickMap: {},
-        spObjectList: [],
-        spTypeList: [],
+        spObjectList: [{}],
+        selectList:[],
+    spTypeList: [{}],
         itemId: 0,
         shopId: '',
         shopName: '',
@@ -88,8 +89,7 @@ Page({
         // 提示选中什么或者要用户要选择什么
         tipsTitle: "",
         modalType: "",
-        menuTop: "",
-        kk: 0
+        menuTop: ""
     },
     /**
      * @Explain：选项卡点击切换
@@ -111,27 +111,22 @@ Page({
             title: '普斯汽保-您身边值得信赖汽保设备商',
         }
     },
-    sssss: function (e) {
-        let kk = this.data.kk;
-        // console.log(kk)
-        console.log(e.detail.scrollTop / 300)
-        let jj = e.detail.scrollTop / 300;
-        let _this = this;
+    sssss:function(e){
+        console.log(e.detail.scrollTop)
         if (this.data.menuFixed === (e.detail.scrollTop > this.data.menuTop)) return;
         // 当页面滚动距离scrollTop > menuTop菜单栏距离顶部的距离时，菜单栏固定定位
         this.setData({
-            menuFixed: (e.detail.scrollTop > this.data.menuTop),
-            kk: jj
+            menuFixed: (e.detail.scrollTop > this.data.menuTop)
         })
 
-
+        
     },
     // 监听页面滚动距离
-    onPageScroll: function (e) {
+    onPageScroll:function (e) {
         var scrollTop = e.scrollTop;
         var isSatisfy = scrollTop >= this.data.navbarInitTop;
         this.setData({
-            isFixed: isSatisfy
+          isFixed: isSatisfy
         });
     },
     /**
@@ -143,12 +138,12 @@ Page({
         query.select('#affix').boundingClientRect();
         query.selectViewport().scrollOffset();
         query.exec(function (res) {
-            console.log(res)
+            // console.log(res)
             _this.setData({
                 menuTop: res[0].top
             })
         })
-        console.log(e);
+        // console.log(e);
         var that = this;
         let itemId = e.itemId;
         let shopId = e.shopId;
@@ -169,17 +164,34 @@ Page({
             shopId: '2',
             shopName: '壹品印象旗舰店'
         })
+
+
         wx.request({
-                url: app.ipAndPort + '/spCart/getCartDetail',
-                method: 'POST',
+          url: 'http://localhost:8022/spProductAttribute/selectOneDetail?id=1',
+          method:'GET',
+          success(res){
+            
+            that.setData({
+                spTypeObjList:res.data.data,
+
+            })
+              console.log(res.data.data)
+          }
+        })
+
+        wx.request({
+                url: 'http://localhost:8022/spProduct/selectOne?id=1',
+                method: 'GET',
                 data: {},
                 header: {
                     'content-type': 'application/x-www-form-urlencoded'
                 },
                 success: function (res) {
+                    console.log( res.data.data)
                     let resData = res.data;
                     let cartslength = resData.CartDetailList;
                     that.setData({
+                        itemDetail:res.data.data,
                         cartslength: cartslength,
                         itemId: e.itemId
                     })
@@ -187,104 +199,104 @@ Page({
             }),
             //根据商品的id值获取商品信息
             wx.request({
-                url: app.ipAndPort + '/spObject/getSpObject',
-                method: 'POST',
-                data: {
-                    // itemId: itemId
-                    itemId: '10'
-                },
-                header: {
-                    'content-type': 'application/x-www-form-urlencoded'
-                },
-                success: function (res) {
-                    let resData = res.data;
-                    //将商品详情赋值给goodsDetailList数组
-                    that.setData({
-                        goodsDetailList: resData.getGoodsDetail,
-                        money: resData.getGoodsDetail[0].minPrice
-                    })
-                    let spObjectList = resData.spObjectList;
+                // url: app.ipAndPort + '/spObject/getSpObject',
+                // method: 'POST',
+                // data: {
+                //     // itemId: itemId
+                //     itemId: '10'
+                // },
+                // header: {
+                //     'content-type': 'application/x-www-form-urlencoded'
+                // },
+                // success: function (res) {
+                    // let resData = res.data;
+                    // //将商品详情赋值给goodsDetailList数组
+                    // that.setData({
+                    //     goodsDetailList: resData.getGoodsDetail,
+                    //     money: resData.getGoodsDetail[0].minPrice
+                    // })
+                    // let spObjectList = resData.spObjectList;
 
-                    that.data.spObjectList = resData.spObjectList;
-                    let spObjectTypeList = resData.spObjectTypeList;
-                    let getSpObjectToStartList = resData.getSpObjectToStartList;
-                    let typeMap = resData.typeMap;
+                    // that.data.spObjectList = resData.spObjectList;
+                    // let spObjectTypeList = resData.spObjectTypeList;
+                    // let getSpObjectToStartList = resData.getSpObjectToStartList;
+                    // let typeMap = resData.typeMap;
                     // console.log(getSpObjectToStartList);
-                    let spTypeList = resData.spObjectTypeList;
-                    that.setData({
-                        spTypeList: spTypeList,
-                    })
-                    let spTypeObjList = [];
-                    for (let i = 0; i < getSpObjectToStartList.length; i++) {
-                        let list = [];
-                        let obj = {};
-                        obj.objId = getSpObjectToStartList[i].id;
-                        obj.objName = getSpObjectToStartList[i].name;
-                        obj.objMoney = getSpObjectToStartList[i].money;
-                        obj.typeId = getSpObjectToStartList[i].typeId;
-                        obj.objspecsId = getSpObjectToStartList[i].specsId;
-                        obj.typeName = typeMap[getSpObjectToStartList[i].typeId];
-                        list.push(obj);
+                    // let spTypeList = resData.spObjectTypeList;
+                    // that.setData({
+                    //     spTypeList: spTypeList,
+                    // })
+                    // let spTypeObjList = [];
+                    // for (let i = 0; i < getSpObjectToStartList.length; i++) {
+                    //     let list = [];
+                    //     let obj = {};
+                    //     obj.objId = getSpObjectToStartList[i].id;
+                    //     obj.objName = getSpObjectToStartList[i].name;
+                    //     obj.objMoney = getSpObjectToStartList[i].money;
+                    //     obj.typeId = getSpObjectToStartList[i].typeId;
+                    //     obj.objspecsId = getSpObjectToStartList[i].specsId;
+                    //     obj.typeName = typeMap[getSpObjectToStartList[i].typeId];
+                    //     list.push(obj);
 
-                        let letId = getSpObjectToStartList[i].id;
-                        for (let j = 0; j < spObjectList.length; j++) {
-                            if (letId == spObjectList[j].upperId) {
-                                let obj = {};
-                                obj.objId = spObjectList[j].id;
-                                obj.objName = spObjectList[j].name;
-                                obj.objMoney = spObjectList[j].money;
-                                obj.objspecsId = spObjectList[j].specsId;
-                                obj.typeId = spObjectList[j].typeId;
-                                obj.typeName = typeMap[spObjectList[j].typeId];
-                                list.push(obj);
+                    //     let letId = getSpObjectToStartList[i].id;
+                    //     for (let j = 0; j < spObjectList.length; j++) {
+                    //         if (letId == spObjectList[j].upperId) {
+                    //             let obj = {};
+                    //             obj.objId = spObjectList[j].id;
+                    //             obj.objName = spObjectList[j].name;
+                    //             obj.objMoney = spObjectList[j].money;
+                    //             obj.objspecsId = spObjectList[j].specsId;
+                    //             obj.typeId = spObjectList[j].typeId;
+                    //             obj.typeName = typeMap[spObjectList[j].typeId];
+                    //             list.push(obj);
 
-                                letId = spObjectList[j].id;
-                            }
-                        }
-                        spTypeObjList.push(list);
-                    }
+                    //             letId = spObjectList[j].id;
+                    //         }
+                    //     }
+                    //     spTypeObjList.push(list);
+                    // }
 
-                    that.setData({
-                        spTypeObjList: spTypeObjList
-                    })
+                    // that.setData({
+                    //     spTypeObjList: spTypeObjList
+                    // })
 
 
-                    let spTypeObjListLet = that.data.spTypeObjListLet;
+                    // let spTypeObjListLet = that.data.spTypeObjListLet;
 
-                    let typeObj = {};
+                    // let typeObj = {};
 
-                    for (let i = 0; i < spTypeList.length; i++) {
-                        typeObj[spTypeList[i].id] = [];
-                    }
-                    for (let i = 0; i < spTypeObjList.length; i++) {
-                        let dataList = spTypeObjList[i];
-                        for (let j = 0; j < dataList.length; j++) {
-                            let valueList = typeObj[dataList[j].typeId];
-                            if (that.containsJs(dataList[j].objName, valueList, "name")) {
+                    // for (let i = 0; i < spTypeList.length; i++) {
+                    //     typeObj[spTypeList[i].id] = [];
+                    // }
+                    // for (let i = 0; i < spTypeObjList.length; i++) {
+                    //     let dataList = spTypeObjList[i];
+                    //     for (let j = 0; j < dataList.length; j++) {
+                    //         let valueList = typeObj[dataList[j].typeId];
+                    //         if (that.containsJs(dataList[j].objName, valueList, "name")) {
 
-                            } else {
-                                let map = {};
-                                map.name = dataList[j].objName;
-                                map.state = true;
-                                valueList.push(map);
-                                typeObj[dataList[j].typeId] = valueList;
-                            }
-                        }
-                    }
+                    //         } else {
+                    //             let map = {};
+                    //             map.name = dataList[j].objName;
+                    //             map.state = true;
+                    //             valueList.push(map);
+                    //             typeObj[dataList[j].typeId] = valueList;
+                    //         }
+                    //     }
+                    // }
 
-                    for (let i = 0; i < spTypeList.length; i++) {
-                        let map = {};
-                        map["typeId"] = spTypeList[i].id;
-                        map["typeName"] = spTypeList[i].name;
-                        map["list"] = typeObj[spTypeList[i].id];
-                        spTypeObjListLet.push(map);
-                    }
-                    that.setData({
-                        spTypeObjListLet: spTypeObjListLet
-                    });
-                    that.showTipsTitle();
+                    // for (let i = 0; i < spTypeList.length; i++) {
+                    //     let map = {};
+                    //     map["typeId"] = spTypeList[i].id;
+                    //     map["typeName"] = spTypeList[i].name;
+                    //     map["list"] = typeObj[spTypeList[i].id];
+                    //     spTypeObjListLet.push(map);
+                    // }
+                    // that.setData({
+                    //     spTypeObjListLet: spTypeObjListLet
+                    // });
+                    // that.showTipsTitle();
 
-                }
+                // }
             });
 
     },
@@ -346,84 +358,110 @@ Page({
 
     // 类型选择点击事件
     objClick: function (e) {
-        let objname = e.currentTarget.dataset.objname;
-        let typeid = e.currentTarget.dataset.typeid;
-        let state = e.currentTarget.dataset.state;
-        let clickMap = this.data.spClickMap;
-        let spTypeObjList = this.data.spTypeObjList;
-        let spTypeObjListLet = this.data.spTypeObjListLet;
-        if (!state) {
-            return;
-        }
+        console.log(this.data.spTypeObjList)
+        // console.log(e)
+        // let selectList = this.data.spTypeObjList;
+        
+        // let clickMap = e.currentTarget.dataset;
+        // let selectList = this.data.selectList;
+        // if(selectList.length==0){
+        //     selectList.push(clickMap);
+        // }else{
 
-        // 改变点击获取的类型参数
-        if (clickMap[typeid] == objname) {
-            delete clickMap[typeid];
-        } else {
-            clickMap[typeid] = objname;
-        }
-        this.setData({
-            clickMap: clickMap
-        });
+        //     for(let i=0;i<selectList.length;i++){
+        //         console.log(clickMap.id != selectList[i].id )
+        //         if(clickMap.id != selectList[i].id ){
+        //             selectList.push(clickMap);
+        //        }
+        //     }
+        // }
+        // console.log(selectList.length)
+        // this.setData({
+        //     selectList:selectList
+        // })
+      
+        // console.log(selectList)
+        // console.log(e.currentTarget.dataset)
 
-        // 先全部弄成不能点击，可以点击的下面在处理
-        for (let i = 0; i < spTypeObjListLet.length; i++) {
-            let dataList = spTypeObjListLet[i].list;
-            for (let j = 0; j < dataList.length; j++) {
-                dataList[j].state = false;
-            }
-            spTypeObjListLet[i].list = dataList;
-        }
 
-        // 处理可以显示点击的选项
-        for (let i = 0; i < spTypeObjList.length; i++) {
-            let dataList = spTypeObjList[i];
-            let pangDuan = true;
-            for (let j = 0; j < dataList.length; j++) {
-                if (clickMap[dataList[j].typeId] != null) {
-                    if (clickMap[dataList[j].typeId] != dataList[j].objName) {
-                        pangDuan = false;
-                    }
-                }
-            }
-            if (pangDuan) {
-                for (let j = 0; j < spTypeObjListLet.length; j++) {
-                    for (let z = 0; z < dataList.length; z++) {
-                        if (spTypeObjListLet[j].typeId == dataList[z].typeId) {
-                            let objList = spTypeObjListLet[j].list;
-                            for (let y = 0; y < objList.length; y++) {
-                                if (objList[y].name == dataList[z].objName) {
-                                    objList[y].state = true;
-                                }
-                            }
-                            spTypeObjListLet[j].list = objList;
-                            this.setData({
-                                spTypeObjListLet: spTypeObjListLet
-                            });
-                        }
-                    }
-                }
-            }
-        }
+        // let objname = e.currentTarget.dataset.objname;
+        // let typeid = e.currentTarget.dataset.typeid;
+        // let state = e.currentTarget.dataset.state;
+        // let clickMap = this.data.spClickMap;
+        // let spTypeObjList = this.data.spTypeObjList;
+        // let spTypeObjListLet = this.data.spTypeObjListLet;
+        // if (!state) {
+        //     return;
+        // }
 
-        // 如果是只选中一类，那这一类其他都可以设置成可选中
-        if (Object.keys(clickMap).length == 1) {
-            for (let i = 0; i < spTypeObjListLet.length; i++) {
-                if (clickMap[spTypeObjListLet[i].typeId] != null) {
-                    let dataList = spTypeObjListLet[i].list;
-                    for (let j = 0; j < dataList.length; j++) {
-                        dataList[j].state = true;
-                    }
-                    spTypeObjListLet[i].list = dataList;
-                    this.setData({
-                        spTypeObjListLet: spTypeObjListLet
-                    });
-                }
-            }
-        }
-        this.showMoney();
-        // 刷新提示显示
-        this.showTipsTitle();
+        // // 改变点击获取的类型参数
+        // if (clickMap[typeid] == objname) {
+        //     delete clickMap[typeid];
+        // } else {
+        //     clickMap[typeid] = objname;
+        // }
+        // this.setData({
+        //     clickMap: clickMap
+        // });
+
+        // // 先全部弄成不能点击，可以点击的下面在处理
+        // for (let i = 0; i < spTypeObjListLet.length; i++) {
+        //     let dataList = spTypeObjListLet[i].list;
+        //     for (let j = 0; j < dataList.length; j++) {
+        //         dataList[j].state = false;
+        //     }
+        //     spTypeObjListLet[i].list = dataList;
+        // }
+
+        // // 处理可以显示点击的选项
+        // for (let i = 0; i < spTypeObjList.length; i++) {
+        //     let dataList = spTypeObjList[i];
+        //     let pangDuan = true;
+        //     for (let j = 0; j < dataList.length; j++) {
+        //         if (clickMap[dataList[j].typeId] != null) {
+        //             if (clickMap[dataList[j].typeId] != dataList[j].objName) {
+        //                 pangDuan = false;
+        //             }
+        //         }
+        //     }
+        //     if (pangDuan) {
+        //         for (let j = 0; j < spTypeObjListLet.length; j++) {
+        //             for (let z = 0; z < dataList.length; z++) {
+        //                 if (spTypeObjListLet[j].typeId == dataList[z].typeId) {
+        //                     let objList = spTypeObjListLet[j].list;
+        //                     for (let y = 0; y < objList.length; y++) {
+        //                         if (objList[y].name == dataList[z].objName) {
+        //                             objList[y].state = true;
+        //                         }
+        //                     }
+        //                     spTypeObjListLet[j].list = objList;
+        //                     this.setData({
+        //                         spTypeObjListLet: spTypeObjListLet
+        //                     });
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        // // 如果是只选中一类，那这一类其他都可以设置成可选中
+        // if (Object.keys(clickMap).length == 1) {
+        //     for (let i = 0; i < spTypeObjListLet.length; i++) {
+        //         if (clickMap[spTypeObjListLet[i].typeId] != null) {
+        //             let dataList = spTypeObjListLet[i].list;
+        //             for (let j = 0; j < dataList.length; j++) {
+        //                 dataList[j].state = true;
+        //             }
+        //             spTypeObjListLet[i].list = dataList;
+        //             this.setData({
+        //                 spTypeObjListLet: spTypeObjListLet
+        //             });
+        //         }
+        //     }
+        // }
+        // this.showMoney();
+        // // 刷新提示显示
+        // this.showTipsTitle();
     },
     //领券
     coupon: function () {
@@ -539,13 +577,13 @@ Page({
     //点击图片预览
     previewImg: function (e) {
         var index = e.currentTarget.dataset.index;
-        var list = this.data.swiperList;
+        var list = this.data.itemDetail.ablums;
         var listNew = [];
-        for (let i in list) {
-            listNew.push(list[i].url)
+        for(let i in list){
+            listNew.push(list[i])
         }
         wx.previewImage({
-            current: list[index].url, //必须是http图片，本地图片无效
+            current: list[index], //必须是http图片，本地图片无效
             urls: listNew, //必须是http图片，本地图片无效
         })
     },

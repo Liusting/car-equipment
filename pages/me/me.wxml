@@ -53,7 +53,7 @@
 	</view>
 
 
-
+	<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
 
 	<view class="bg-white margin-sm" style="border-radius:7px">
 		<view class="padding-top padding-left">

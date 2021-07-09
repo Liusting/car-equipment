@@ -1,6 +1,5 @@
 <view class="cu-custom bg-red" style="height:{{CustomBar}}px">
-	<view class="cu-bar  fixed"
-		style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+	<view class="cu-bar  fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
 		<cu-custom class="text-white" isBack="{{true}}">
 			<view slot="backText">订单详情</view>
 			<!-- <view slot="content">订单详情</view> -->
@@ -82,36 +81,38 @@
 						<view class="margin-tb-sm text-sm">{{items.typeName}}</view>
 						<view>
 						</view>
-						<view style="height:100%;width:150rpx;">
+						<view class="flex justify-between align-center">
+						<view>
 							<text style="margin-right:20rpx;" class="text-price">{{items.money}}</text>
 							<text style="margin-right:20rpx;color:gray;font-size:20rpx;">x{{items.number}}</text>
+						</view>
+						
+							<button wx:if="{{trade_status==4||trade_status==5}}" class="cu-btn round line-gray sm" bindtap="applyRefund">申请售后</button>
 						</view>
 					</view>
 
 				</view>
 			</view>
 		</view>
-		<view class="margin-lr-sm padding-tb-xs flex justify-between">
+		<view class="margin-lr-sm padding-tb-sm flex justify-between">
 			<text class="text-sm text-gray">商品总价</text>
 			<text class="text-sm text-gray text-price">26.00</text>
 		</view>
 		<view class="margin-lr-sm padding-tb-xs flex justify-between">
 			<text class="text-sm text-gray">运费(快递)</text>
-			<text class="text-sm text-gray" >+ <text
-					class="text-sm text-gray text-price">0.00</text></text>
+			<text class="text-sm text-gray">+ <text class="text-sm text-gray text-price">0.00</text></text>
 		</view>
 		<view class="margin-lr-sm padding-tb-xs flex justify-between">
 			<text class="text-sm text-gray">优惠券抵扣</text>
-			<text class="text-sm text-gray" >- <text
-					class="text-sm text-gray text-price">0.00</text></text>
+			<text class="text-sm text-gray">- <text class="text-sm text-gray text-price">0.00</text></text>
 		</view>
 		<view class="margin-lr-sm padding-tb-xs flex justify-between" style="  border-bottom: 1px solid #F7F7F7;">
 			<text class="text-sm text-gray">订单总价</text>
-			<text class="text-price" >26.00</text>
+			<text class="text-price">26.00</text>
 		</view>
 		<view class="margin-lr-sm padding-tb-xs flex justify-between">
 			<text>需付款</text>
-			<text class="text-price text-red text-lg" >26.00</text>
+			<text class="text-price text-red text-lg">26.00</text>
 		</view>
 	</view>
 
@@ -156,12 +157,11 @@
 		<button class="cu-btn line-gray margin-right-smround " data-id="{{item.id}}" bindtap="remind">提醒发货</button>
 	</view>
 	<view wx:if="{{trade_status==3}}">
-	
+
 		<button class="cu-btn line-gray margin-right-sm round">查看物流</button>
 		<button class="cu-btn line-red margin-right-sm round" data-id="{{item.id}}" bindtap="confirmGet">确认收货</button>
 	</view>
 	<view wx:if="{{trade_status==4}}">
-		<button class="cu-btn line-gray margin-right-sm round" data-id="{{item.id}}" bindtap="cancelOrder">申请售后</button>
 		<button class="cu-btn line-red margin-right-sm round">立即评价</button>
 	</view>
 	<view wx:if="{{trade_status==5}}">

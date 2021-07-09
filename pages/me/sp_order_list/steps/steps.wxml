@@ -1,10 +1,7 @@
-<view class="cu-custom" style="background:#2f70df;height:{{CustomBar}}px">
-  <view class="cu-bar fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
-    <cu-custom isBack="{{true}}">
-      <view slot="backText">售后进度</view>
-    </cu-custom>
-  </view>
-</view>
+<cu-custom isBack="{{true}}" bgColor="bg-white">
+  <view slot="backText">售后进度</view>
+</cu-custom>
+
 
 <scroll-view scroll-y style="height:{{deviceH-CustomBar}}px">
   <view class="bg-white padding">
@@ -15,18 +12,19 @@
     </view>
   </view>
   <view class="margin-top bg-white">
-     <view class="padding-sm">
+    <view class="padding-sm">
       <text><text class=" cuIcon-titles text-orange"></text>商品信息</text>
     </view>
     <view class="bg-white padding-xs flex" wx:for="{{1}}" wx:key>
       <view style="height:200rpx;width:200rpx;">
-        <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg" mode="widthFix"></image>
+        <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=179584017,3580078821&fm=26&gp=0.jpg"
+          mode="widthFix"></image>
       </view>
       <view class="padding-xs ">
         <view class="productTitle">红木家具非洲进口中式餐桌圆凳直径1.5米带钢化玻璃防热搞1.1米梨花木耐用原产地质量100%保证</view>
         <view class="cu-bar">
-          <text>单价:<text class="text-price text-red text-bold text-xl" >60000.00</text></text>
-          <text class="margin-left">数量:<text class=" text-red text-bold text-xl" >1</text></text>
+          <text>单价:<text class="text-price text-red text-bold text-xl">60000.00</text></text>
+          <text class="margin-left">数量:<text class=" text-red text-bold text-xl">1</text></text>
         </view>
       </view>
     </view>
@@ -45,7 +43,8 @@
     </view>
     <view class="padding-xs">
       <text class="text-sm text-gray">优惠券抵扣</text>
-      <text class="text-sm text-gray" style="float:right">- <text class="text-sm text-gray text-price">1000</text></text>
+      <text class="text-sm text-gray" style="float:right">- <text
+          class="text-sm text-gray text-price">1000</text></text>
     </view>
 
     <view class="padding-xs" style="  border-top: 1px solid #f1f1f1;">
@@ -91,7 +90,7 @@
       <text class="text-sm text-gray margin-left">18678879787</text>
     </view>
   </view>
-  <view class="flex align-center justify-center padding">
+  <view class="flex align-center justify-center padding bg-white">
     <button class=" cu-btn line-red round">取消售后</button>
     <button class="margin-left cu-btn line-red round">删除服务单</button>
   </view>
