@@ -183,6 +183,7 @@ Page({
                 url: 'http://weixin123.gz2vip.idcfengye.com/weixin/code2Session?code='+res.code,
                 method:'GET',
                 success(res){
+                    console.log(res.data.openid)
                     wx.request({
                       url: 'http://weixin123.gz2vip.idcfengye.com/weixin/wxpay?openId='+res.data.openid,
                       method:'POST',

@@ -9,7 +9,7 @@ import http from './utils/api';
 
 App({
   // 全局ip+端口
-  ipAndPort: 'http://localhost:8022',
+  ipAndPort: 'http://weixin123.gz2vip.idcfengye.com',
   onLaunch: function () {
     this.screenSize();
     // 展示本地存储能力
@@ -23,7 +23,7 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
-              console.log(res)
+              // console.log(res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
 

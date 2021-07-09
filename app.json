@@ -1,11 +1,11 @@
 {
   "pages": [
-   
+    "pages/item_type/sp_item/spItem",
   
     "pages/index/index",
     "pages/me/me",
     "pages/me/sp_order_list/spOrderList",
-    "pages/item_type/sp_item/spItem",
+
     "pages/me/integral/integral",
     "pages/me/address/editAddress/editAddress",
     "pages/me/address/addressList/addressList",

@@ -359,8 +359,8 @@ Page({
     // 类型选择点击事件
     objClick: function (e) {
         console.log(this.data.spTypeObjList)
-        console.log(e)
-        let selectList = this.data.spTypeObjList;
+        // console.log(e)
+        // let selectList = this.data.spTypeObjList;
         
         // let clickMap = e.currentTarget.dataset;
         // let selectList = this.data.selectList;
